@@ -1,0 +1,2201 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Modern Office Chair",
+      "description": "Ergonomic office chair with adjustable height and lumbar support for maximum comfort during long work hours.",
+      "category": "chair",
+      "price": 199.99,
+      "discountPercentage": 15.5,
+      "rating": 4.5,
+      "stock": 15,
+      "quantity": 1,
+      "color": "black",
+      "tags": ["office", "ergonomic", "chair"],
+      "brand": "OfficePro",
+      "sku": "CHA-OFF-001",
+      "weight": 18,
+      "dimensions": {
+        "width": 24.5,
+        "height": 45.2,
+        "depth": 24.8
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 2-4 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very comfortable for long hours!",
+          "date": "2024-12-30T09:41:02.053Z",
+          "reviewerName": "John Smith",
+          "reviewerEmail": "john.smith@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-12-01T09:41:02.053Z",
+        "updatedAt": "2024-12-30T09:41:02.053Z",
+        "barcode": "5784719087681",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1517705008128-361805f42e86?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1517705008128-361805f42e86?w=300",
+      "isNew": true,
+      "isFeatured": true,
+      "isTrending": true
+    },
+    {
+      "id": 2,
+      "title": "Executive Leather Chair",
+      "description": "Premium leather executive chair with high back support and adjustable features for office professionals.",
+      "category": "chair",
+      "price": 349.99,
+      "discountPercentage": 12.3,
+      "rating": 4.7,
+      "stock": 8,
+      "quantity": 1,
+      "color": "brown",
+      "tags": ["executive", "leather", "premium"],
+      "brand": "EliteSeating",
+      "sku": "CHA-ELI-002",
+      "weight": 25,
+      "dimensions": {
+        "width": 26.8,
+        "height": 48.5,
+        "depth": 26.2
+      },
+      "warrantyInformation": "3 years warranty",
+      "shippingInformation": "Ships in 3-5 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Luxurious and comfortable!",
+          "date": "2024-12-29T09:41:02.053Z",
+          "reviewerName": "Michael Brown",
+          "reviewerEmail": "michael.brown@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-11-15T09:41:02.053Z",
+        "updatedAt": "2024-12-29T09:41:02.053Z",
+        "barcode": "5784719087682",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1718200675097-12611ddf6c4e?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1718200675097-12611ddf6c4e?w=300",
+      "isNew": true,
+      "isFeatured": true,
+      "isTrending": true
+    },
+    {
+      "id": 3,
+      "title": "Gaming Chair Pro",
+      "description": "Professional gaming chair with advanced lumbar support, adjustable armrests, and premium materials for gamers.",
+      "category": "chair",
+      "price": 299.99,
+      "discountPercentage": 18.7,
+      "rating": 4.6,
+      "stock": 12,
+      "quantity": 1,
+      "color": "red",
+      "tags": ["gaming", "ergonomic", "premium"],
+      "brand": "GameZone",
+      "sku": "CHA-GAM-003",
+      "weight": 22,
+      "dimensions": {
+        "width": 25.6,
+        "height": 52.3,
+        "depth": 25.1
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 1-3 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect for long gaming sessions!",
+          "date": "2024-12-27T09:41:02.053Z",
+          "reviewerName": "David Wilson",
+          "reviewerEmail": "david.wilson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-11-20T09:41:02.053Z",
+        "updatedAt": "2024-12-27T09:41:02.053Z",
+        "barcode": "5784719087683",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1628489529253-9f3164fcbd8d?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1628489529253-9f3164fcbd8d?w=300"
+    },
+    {
+      "id": 4,
+      "title": "Wooden Dining Chair",
+      "description": "Solid wood dining chair crafted from premium oak with comfortable curved design for family dining.",
+      "category": "chair",
+      "price": 89.99,
+      "discountPercentage": 8.9,
+      "rating": 4.4,
+      "stock": 20,
+      "quantity": 1,
+      "color": "natural",
+      "tags": ["dining", "wooden", "traditional"],
+      "brand": "WoodCraft",
+      "sku": "CHA-WOO-004",
+      "weight": 12,
+      "dimensions": {
+        "width": 18.2,
+        "height": 36.8,
+        "depth": 20.5
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 3-6 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Beautiful and sturdy chairs",
+          "date": "2024-12-26T09:41:02.053Z",
+          "reviewerName": "Emily Chen",
+          "reviewerEmail": "emily.chen@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 2,
+      "meta": {
+        "createdAt": "2024-11-10T09:41:02.053Z",
+        "updatedAt": "2024-12-26T09:41:02.053Z",
+        "barcode": "5784719087684",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1656403002413-2ac6137237d6?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1656403002413-2ac6137237d6?w=300",
+      "isNew": true,
+      "isFeatured": true,
+      "isTrending": true
+    },
+    {
+      "id": 5,
+      "title": "Modern Accent Chair",
+      "description": "Contemporary accent chair with velvet upholstery and sleek metal legs, perfect for modern living rooms.",
+      "category": "chair",
+      "price": 179.99,
+      "discountPercentage": 14.2,
+      "rating": 4.3,
+      "stock": 10,
+      "quantity": 1,
+      "color": "blue",
+      "tags": ["accent", "modern", "velvet"],
+      "brand": "ModernHome",
+      "sku": "CHA-MOD-005",
+      "weight": 15,
+      "dimensions": {
+        "width": 22.4,
+        "height": 32.7,
+        "depth": 23.9
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-4 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Love the color and design!",
+          "date": "2024-12-24T09:41:02.053Z",
+          "reviewerName": "Jessica Lee",
+          "reviewerEmail": "jessica.lee@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-11-05T09:41:02.053Z",
+        "updatedAt": "2024-12-24T09:41:02.053Z",
+        "barcode": "5784719087685",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://plus.unsplash.com/premium_photo-1683120951444-3128a958c0c6?w=300"],
+      "thumbnail": "https://plus.unsplash.com/premium_photo-1683120951444-3128a958c0c6?w=300",
+      "isNew": true,
+      "isFeatured": true,
+      "isTrending": true
+    },
+    {
+      "id": 6,
+      "title": "Rocking Chair Classic",
+      "description": "Traditional wooden rocking chair with curved arms and comfortable cushion, perfect for relaxation.",
+      "category": "chair",
+      "price": 229.99,
+      "discountPercentage": 9.8,
+      "rating": 4.8,
+      "stock": 6,
+      "quantity": 1,
+      "color": "walnut",
+      "tags": ["rocking", "traditional", "wooden"],
+      "brand": "VintageWood",
+      "sku": "CHA-VIN-006",
+      "weight": 20,
+      "dimensions": {
+        "width": 26.3,
+        "height": 41.5,
+        "depth": 28.7
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 4-7 business days",
+      "availabilityStatus": "Low Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect for my porch!",
+          "date": "2024-12-23T09:41:02.053Z",
+          "reviewerName": "Thomas Anderson",
+          "reviewerEmail": "thomas.anderson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-10-28T09:41:02.053Z",
+        "updatedAt": "2024-12-23T09:41:02.053Z",
+        "barcode": "5784719087686",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1696676218620-e004b92cdb61?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1696676218620-e004b92cdb61?w=300",
+      "isNew": true,
+      "isFeatured": true,
+      "isTrending": true
+    },
+    {
+      "id": 7,
+      "title": "Folding Chair Set",
+      "description": "Portable folding chairs made from durable materials, perfect for events, parties, and outdoor activities.",
+      "category": "chair",
+      "price": 49.99,
+      "discountPercentage": 5.5,
+      "rating": 4.2,
+      "stock": 30,
+      "quantity": 4,
+      "color": "white",
+      "tags": ["folding", "portable", "event"],
+      "brand": "EasyFold",
+      "sku": "CHA-EAS-007",
+      "weight": 8,
+      "dimensions": {
+        "width": 19.8,
+        "height": 34.2,
+        "depth": 19.1
+      },
+      "warrantyInformation": "6 months warranty",
+      "shippingInformation": "Ships in 1-2 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Great for parties",
+          "date": "2024-12-21T09:41:02.053Z",
+          "reviewerName": "Maria Rodriguez",
+          "reviewerEmail": "maria.rodriguez@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 2,
+      "meta": {
+        "createdAt": "2024-10-15T09:41:02.053Z",
+        "updatedAt": "2024-12-21T09:41:02.053Z",
+        "barcode": "5784719087687",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500"],
+      "thumbnail": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300"
+    },
+    {
+      "id": 8,
+      "title": "Bar Stool Premium",
+      "description": "Adjustable height bar stool with comfortable padded seat and sturdy metal frame for kitchen and bar areas.",
+      "category": "chair",
+      "price": 129.99,
+      "discountPercentage": 11.2,
+      "rating": 4.4,
+      "stock": 18,
+      "quantity": 1,
+      "color": "chrome",
+      "tags": ["bar", "stool", "adjustable"],
+      "brand": "KitchenPro",
+      "sku": "CHA-KIT-008",
+      "weight": 14,
+      "dimensions": {
+        "width": 17.6,
+        "height": 45.8,
+        "depth": 17.3
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect height for my kitchen island",
+          "date": "2024-12-20T09:41:02.053Z",
+          "reviewerName": "Daniel Kim",
+          "reviewerEmail": "daniel.kim@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-10-10T09:41:02.053Z",
+        "updatedAt": "2024-12-20T09:41:02.053Z",
+        "barcode": "5784719087688",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1532090904700-5e3ddbb47c3e?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1532090904700-5e3ddbb47c3e?w=300",
+      "isNew": true,
+      "isFeatured": true,
+      "isTrending": true
+    },
+    {
+      "id": 9,
+      "title": "Leather Sofa Set",
+      "description": "3-seater luxury leather sofa with premium cushioning and elegant design for modern living rooms.",
+      "category": "sofa",
+      "price": 1299.99,
+      "discountPercentage": 12.5,
+      "rating": 4.7,
+      "stock": 5,
+      "quantity": 1,
+      "color": "brown",
+      "tags": ["sofa", "leather", "luxury"],
+      "brand": "LuxuryLiving",
+      "sku": "SOF-LUX-009",
+      "weight": 85,
+      "dimensions": {
+        "width": 88.5,
+        "height": 36.2,
+        "depth": 42.8
+      },
+      "warrantyInformation": "5 years warranty",
+      "shippingInformation": "Ships in 5-7 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Absolutely stunning sofa!",
+          "date": "2024-12-19T09:41:02.053Z",
+          "reviewerName": "Sarah Johnson",
+          "reviewerEmail": "sarah.johnson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-10-05T09:41:02.053Z",
+        "updatedAt": "2024-12-19T09:41:02.053Z",
+        "barcode": "5784719087689",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=500"],
+      "thumbnail": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=300",
+      "isTrending": true
+    },
+    {
+      "id": 10,
+      "title": "Fabric Sectional Sofa",
+      "description": "Large L-shaped sectional sofa with soft fabric upholstery and comfortable cushions for family gatherings.",
+      "category": "sofa",
+      "price": 899.99,
+      "discountPercentage": 18.3,
+      "rating": 4.6,
+      "stock": 7,
+      "quantity": 1,
+      "color": "gray",
+      "tags": ["sectional", "fabric", "comfortable"],
+      "brand": "ComfortPlus",
+      "sku": "SOF-COM-010",
+      "weight": 95,
+      "dimensions": {
+        "width": 120.8,
+        "height": 34.5,
+        "depth": 45.2
+      },
+      "warrantyInformation": "3 years warranty",
+      "shippingInformation": "Ships in 6-8 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect for movie nights!",
+          "date": "2024-12-18T09:41:02.053Z",
+          "reviewerName": "Kevin Martinez",
+          "reviewerEmail": "kevin.martinez@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-09-28T09:41:02.053Z",
+        "updatedAt": "2024-12-18T09:41:02.053Z",
+        "barcode": "5784719087690",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500"],
+      "thumbnail": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300"
+    },
+    {
+      "id": 11,
+      "title": "Velvet Loveseat",
+      "description": "Elegant velvet loveseat with tufted back and golden legs, perfect for small living spaces.",
+      "category": "sofa",
+      "price": 459.99,
+      "discountPercentage": 14.7,
+      "rating": 4.4,
+      "stock": 9,
+      "quantity": 1,
+      "color": "emerald",
+      "tags": ["loveseat", "velvet", "elegant"],
+      "brand": "ElegantHome",
+      "sku": "SOF-ELE-011",
+      "weight": 42,
+      "dimensions": {
+        "width": 58.3,
+        "height": 32.8,
+        "depth": 34.7
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 4-6 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Beautiful color and design!",
+          "date": "2024-12-17T09:41:02.053Z",
+          "reviewerName": "Lisa Wang",
+          "reviewerEmail": "lisa.wang@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-09-20T09:41:02.053Z",
+        "updatedAt": "2024-12-17T09:41:02.053Z",
+        "barcode": "5784719087691",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://plus.unsplash.com/premium_photo-1690971631383-326a8b5d8ed7?w=300"],
+      "thumbnail": "https://plus.unsplash.com/premium_photo-1690971631383-326a8b5d8ed7?w=300"
+    },
+    {
+      "id": 12,
+      "title": "Recliner Chair",
+      "description": "Comfortable recliner chair with massage function and cup holders, perfect for relaxation.",
+      "category": "sofa",
+      "price": 399.99,
+      "discountPercentage": 16.2,
+      "rating": 4.8,
+      "stock": 6,
+      "quantity": 1,
+      "color": "black",
+      "tags": ["recliner", "massage", "comfort"],
+      "brand": "RelaxMax",
+      "sku": "SOF-REL-012",
+      "weight": 38,
+      "dimensions": {
+        "width": 35.8,
+        "height": 42.5,
+        "depth": 38.9
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 3-5 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Best recliner ever!",
+          "date": "2024-12-16T09:41:02.053Z",
+          "reviewerName": "Robert Taylor",
+          "reviewerEmail": "robert.taylor@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-09-15T09:41:02.053Z",
+        "updatedAt": "2024-12-16T09:41:02.053Z",
+        "barcode": "5784719087692",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1585128792020-803d29415281?w=500"],
+      "thumbnail": "https://images.unsplash.com/photo-1585128792020-803d29415281?w=300"
+    },
+    {
+      "id": 13,
+      "title": "Coffee Table Modern",
+      "description": "Glass top coffee table with wooden legs and sleek design, perfect for contemporary living spaces.",
+      "category": "table",
+      "price": 199.99,
+      "discountPercentage": 8.7,
+      "rating": 4.5,
+      "stock": 12,
+      "quantity": 1,
+      "color": "clear",
+      "tags": ["coffee", "table", "modern"],
+      "brand": "ModernSpace",
+      "sku": "TAB-MOD-013",
+      "weight": 22,
+      "dimensions": {
+        "width": 48.3,
+        "height": 18.7,
+        "depth": 28.9
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 3-5 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Beautiful and functional",
+          "date": "2024-12-15T09:41:02.053Z",
+          "reviewerName": "Amanda White",
+          "reviewerEmail": "amanda.white@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-09-10T09:41:02.053Z",
+        "updatedAt": "2024-12-15T09:41:02.053Z",
+        "barcode": "5784719087693",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://plus.unsplash.com/premium_photo-1681487772142-e97e8c90a6c6?w=300"],
+      "thumbnail": "https://plus.unsplash.com/premium_photo-1681487772142-e97e8c90a6c6?w=300"
+    },
+    {
+      "id": 14,
+      "title": "Dining Table Set",
+      "description": "6-seater dining table with matching chairs, crafted from solid wood with elegant finish.",
+      "category": "table",
+      "price": 799.99,
+      "discountPercentage": 13.6,
+      "rating": 4.7,
+      "stock": 3,
+      "quantity": 6,
+      "color": "oak",
+      "tags": ["dining", "table", "set"],
+      "brand": "FamilyDine",
+      "sku": "TAB-FAM-014",
+      "weight": 110,
+      "dimensions": {
+        "width": 72.8,
+        "height": 30.5,
+        "depth": 36.4
+      },
+      "warrantyInformation": "4 years warranty",
+      "shippingInformation": "Ships in 6-9 business days",
+      "availabilityStatus": "Low Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect for family dinners!",
+          "date": "2024-12-14T09:41:02.053Z",
+          "reviewerName": "Jennifer Lopez",
+          "reviewerEmail": "jennifer.lopez@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-09-05T09:41:02.053Z",
+        "updatedAt": "2024-12-14T09:41:02.053Z",
+        "barcode": "5784719087694",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://plus.unsplash.com/premium_photo-1676320514175-8a41932fcd46?w=300"],
+      "thumbnail": "https://plus.unsplash.com/premium_photo-1676320514175-8a41932fcd46?w=300"
+    },
+    {
+      "id": 15,
+      "title": "Console Table",
+      "description": "Slim console table with drawer and shelf, perfect for entryways or behind sofas.",
+      "category": "table",
+      "price": 149.99,
+      "discountPercentage": 11.2,
+      "rating": 4.3,
+      "stock": 15,
+      "quantity": 1,
+      "color": "white",
+      "tags": ["console", "entryway", "slim"],
+      "brand": "SpaceSaver",
+      "sku": "TAB-SPA-015",
+      "weight": 18,
+      "dimensions": {
+        "width": 36.2,
+        "height": 32.8,
+        "depth": 12.4
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-4 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Perfect size for my hallway",
+          "date": "2024-12-13T09:41:02.053Z",
+          "reviewerName": "Chris Evans",
+          "reviewerEmail": "chris.evans@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-08-28T09:41:02.053Z",
+        "updatedAt": "2024-12-13T09:41:02.053Z",
+        "barcode": "5784719087695",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1667892703018-cff173f4b820?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1667892703018-cff173f4b820?w=300"
+    },
+    {
+      "id": 16,
+      "title": "Study Desk",
+      "description": "Computer study desk with drawer and cable management for organized workspace.",
+      "category": "desk",
+      "price": 179.99,
+      "discountPercentage": 7.8,
+      "rating": 4.5,
+      "stock": 10,
+      "quantity": 1,
+      "color": "walnut",
+      "tags": ["desk", "study", "office"],
+      "brand": "WorkSmart",
+      "sku": "DES-WOR-016",
+      "weight": 28,
+      "dimensions": {
+        "width": 47.6,
+        "height": 29.3,
+        "depth": 23.8
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect for home office!",
+          "date": "2024-12-12T09:41:02.053Z",
+          "reviewerName": "Alex Thompson",
+          "reviewerEmail": "alex.thompson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-08-20T09:41:02.053Z",
+        "updatedAt": "2024-12-12T09:41:02.053Z",
+        "barcode": "5784719087696",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://plus.unsplash.com/premium_photo-1683309563206-7dab995540fa?w=300"],
+      "thumbnail": "https://plus.unsplash.com/premium_photo-1683309563206-7dab995540fa?w=300"
+    },
+    {
+      "id": 17,
+      "title": "Standing Desk",
+      "description": "Electric standing desk with adjustable height for ergonomic work setup and healthy posture.",
+      "category": "desk",
+      "price": 299.99,
+      "discountPercentage": 15.4,
+      "rating": 4.7,
+      "stock": 8,
+      "quantity": 1,
+      "color": "black",
+      "tags": ["standing", "adjustable", "ergonomic"],
+      "brand": "ErgoWorks",
+      "sku": "DES-ERG-017",
+      "weight": 45,
+      "dimensions": {
+        "width": 55.8,
+        "height": 48.9,
+        "depth": 27.6
+      },
+      "warrantyInformation": "3 years warranty",
+      "shippingInformation": "Ships in 4-6 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Game changer for my back pain!",
+          "date": "2024-12-11T09:41:02.053Z",
+          "reviewerName": "Michelle Garcia",
+          "reviewerEmail": "michelle.garcia@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-08-15T09:41:02.053Z",
+        "updatedAt": "2024-12-11T09:41:02.053Z",
+        "barcode": "5784719087697",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://plus.unsplash.com/premium_photo-1683121961260-4f4365223c0f?w=300"],
+      "thumbnail": "https://plus.unsplash.com/premium_photo-1683121961260-4f4365223c0f?w=300",
+      "isBestSeller": true,
+      "isSpecialOffer": true
+    },
+    {
+      "id": 18,
+      "title": "Writing Desk",
+      "description": "Compact writing desk with single drawer, perfect for small spaces and home offices.",
+      "category": "desk",
+      "price": 129.99,
+      "discountPercentage": 9.6,
+      "rating": 4.4,
+      "stock": 18,
+      "quantity": 1,
+      "color": "oak",
+      "tags": ["writing", "compact", "home"],
+      "brand": "SimpleSpace",
+      "sku": "DES-SIM-018",
+      "weight": 22,
+      "dimensions": {
+        "width": 36.9,
+        "height": 30.7,
+        "depth": 20.3
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 3-5 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect size for my apartment",
+          "date": "2024-12-10T09:41:02.053Z",
+          "reviewerName": "David Miller",
+          "reviewerEmail": "david.miller@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-08-10T09:41:02.053Z",
+        "updatedAt": "2024-12-10T09:41:02.053Z",
+        "barcode": "5784719087698",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1618254170747-35f7ba2f9a6e?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1618254170747-35f7ba2f9a6e?w=300",
+      "isBestSeller": true,
+      "isSpecialOffer": true
+    },
+    {
+      "id": 19,
+      "title": "Bookshelf Oak",
+      "description": "5-shelf oak wood bookshelf with sturdy construction and elegant finish for home library or office.",
+      "category": "shelf",
+      "price": 299.99,
+      "discountPercentage": 10.2,
+      "rating": 4.6,
+      "stock": 8,
+      "quantity": 1,
+      "color": "oak",
+      "tags": ["bookshelf", "oak", "storage"],
+      "brand": "WoodWorks",
+      "sku": "SHE-WOO-019",
+      "weight": 45,
+      "dimensions": {
+        "width": 35.8,
+        "height": 72.5,
+        "depth": 15.2
+      },
+      "warrantyInformation": "3 years warranty",
+      "shippingInformation": "Ships in 4-6 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect for my book collection!",
+          "date": "2024-12-09T09:41:02.053Z",
+          "reviewerName": "Rachel Green",
+          "reviewerEmail": "rachel.green@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-08-05T09:41:02.053Z",
+        "updatedAt": "2024-12-09T09:41:02.053Z",
+        "barcode": "5784719087699",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=500"],
+      "thumbnail": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=300",
+      "isTrending": true
+    },
+    {
+      "id": 20,
+      "title": "Wall Shelf Unit",
+      "description": "Modern wall-mounted shelf unit with 3 tiers for displaying decor and organizing items.",
+      "category": "shelf",
+      "price": 89.99,
+      "discountPercentage": 12.8,
+      "rating": 4.5,
+      "stock": 6,
+      "quantity": 1,
+      "color": "white",
+      "tags": ["wall", "shelf", "modern"],
+      "brand": "WallDecor",
+      "sku": "SHE-WAL-020",
+      "weight": 12,
+      "dimensions": {
+        "width": 45.8,
+        "height": 76.3,
+        "depth": 19.7
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 4-7 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Love my new shelves!",
+          "date": "2024-12-08T09:41:02.053Z",
+          "reviewerName": "Sophia Martinez",
+          "reviewerEmail": "sophia.martinez@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-07-28T09:41:02.053Z",
+        "updatedAt": "2024-12-08T09:41:02.053Z",
+        "barcode": "5784719087700",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1593085260707-5377ba37f868?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1593085260707-5377ba37f868?w=300"
+    },
+    {
+
+      "id": 21,
+      "title": "Shoe Rack Organizer",
+      "description": "Multi-layer shoe storage rack with 4 tiers for organized shoe storage in entryways.",
+      "category": "shelf",
+      "price": 79.99,
+      "discountPercentage": 6.5,
+      "rating": 4.2,
+      "stock": 25,
+      "quantity": 1,
+      "color": "black",
+      "tags": ["shoe", "rack", "storage"],
+      "brand": "OrganizeIt",
+      "sku": "SHE-ORG-021",
+      "weight": 12,
+      "dimensions": {
+        "width": 24.8,
+        "height": 35.2,
+        "depth": 12.4
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-4 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Keeps my shoes organized",
+          "date": "2024-12-07T09:41:02.053Z",
+          "reviewerName": "James Wilson",
+          "reviewerEmail": "james.wilson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-07-20T09:41:02.053Z",
+        "updatedAt": "2024-12-07T09:41:02.053Z",
+        "barcode": "5784719087701",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://plus.unsplash.com/premium_photo-1681487528571-b1637224799c?w=300"],
+      "thumbnail": "https://plus.unsplash.com/premium_photo-1681487528571-b1637224799c?w=300",
+      "isBestSeller": true,
+      "isSpecialOffer": true
+    },
+    {
+      "id": 22,
+      "title": "King Size Bed Frame",
+      "description": "King size bed frame with built-in storage and premium headboard, crafted from solid wood.",
+      "category": "bed",
+      "price": 899.99,
+      "discountPercentage": 15.8,
+      "rating": 4.8,
+      "stock": 4,
+      "quantity": 1,
+      "color": "walnut",
+      "tags": ["bed", "king", "storage"],
+      "brand": "SleepWell",
+      "sku": "BED-SLE-022",
+      "weight": 120,
+      "dimensions": {
+        "width": 78.5,
+        "height": 48.3,
+        "depth": 86.7
+      },
+      "warrantyInformation": "5 years warranty",
+      "shippingInformation": "Ships in 7-10 business days",
+      "availabilityStatus": "Low Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very comfortable and spacious!",
+          "date": "2024-12-06T09:41:02.053Z",
+          "reviewerName": "Brian Davis",
+          "reviewerEmail": "brian.davis@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-07-15T09:41:02.053Z",
+        "updatedAt": "2024-12-06T09:41:02.053Z",
+        "barcode": "5784719087702",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1635594202056-9ea3b497e5c0?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1635594202056-9ea3b497e5c0?w=300"
+    },
+    {
+      "id": 23,
+      "title": "Queen Platform Bed",
+      "description": "Modern platform bed with slatted base and minimalist design, no box spring needed.",
+      "category": "bed",
+      "price": 599.99,
+      "discountPercentage": 12.3,
+      "rating": 4.6,
+      "stock": 8,
+      "quantity": 1,
+      "color": "oak",
+      "tags": ["platform", "queen", "modern"],
+      "brand": "ModernSleep",
+      "sku": "BED-MOD-023",
+      "weight": 85,
+      "dimensions": {
+        "width": 63.8,
+        "height": 42.5,
+        "depth": 85.2
+      },
+      "warrantyInformation": "3 years warranty",
+      "shippingInformation": "Ships in 5-7 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Sleek and sturdy design!",
+          "date": "2024-12-05T09:41:02.053Z",
+          "reviewerName": "Emma Thompson",
+          "reviewerEmail": "emma.thompson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-07-10T09:41:02.053Z",
+        "updatedAt": "2024-12-05T09:41:02.053Z",
+        "barcode": "5784719087703",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?w=300",
+      "isFeatured": true
+    },
+    {
+      "id": 24,
+      "title": "Bunk Bed with Storage",
+      "description": "Space-saving bunk bed with built-in drawers and ladder, perfect for kids' rooms.",
+      "category": "bed",
+      "price": 459.99,
+      "discountPercentage": 18.7,
+      "rating": 4.5,
+      "stock": 6,
+      "quantity": 1,
+      "color": "white",
+      "tags": ["bunk", "kids", "storage"],
+      "brand": "KidsSpace",
+      "sku": "BED-KID-024",
+      "weight": 95,
+      "dimensions": {
+        "width": 55.2,
+        "height": 68.9,
+        "depth": 82.4
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 6-8 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "My kids love it!",
+          "date": "2024-12-04T09:41:02.053Z",
+          "reviewerName": "Mike Johnson",
+          "reviewerEmail": "mike.johnson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-07-05T09:41:02.053Z",
+        "updatedAt": "2024-12-04T09:41:02.053Z",
+        "barcode": "5784719087704",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1517912181842-e5a9d4701a4e?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1517912181842-e5a9d4701a4e?w=300",
+      "isBestSeller": true,
+      "isSpecialOffer": true
+    },
+    {
+      "id": 25,
+      "title": "Wardrobe Cabinet",
+      "description": "Large wardrobe with mirror doors and ample storage space for clothing and accessories.",
+      "category": "cabinet",
+      "price": 599.99,
+      "discountPercentage": 11.4,
+      "rating": 4.4,
+      "stock": 7,
+      "quantity": 1,
+      "color": "white",
+      "tags": ["wardrobe", "cabinet", "storage"],
+      "brand": "StoragePlus",
+      "sku": "CAB-STOR-025",
+      "weight": 95,
+      "dimensions": {
+        "width": 48.9,
+        "height": 84.2,
+        "depth": 24.6
+      },
+      "warrantyInformation": "3 years warranty",
+      "shippingInformation": "Ships in 5-8 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Great storage solution",
+          "date": "2024-12-03T09:41:02.053Z",
+          "reviewerName": "Nancy Lee",
+          "reviewerEmail": "nancy.lee@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-06-28T09:41:02.053Z",
+        "updatedAt": "2024-12-03T09:41:02.053Z",
+        "barcode": "5784719087705",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://plus.unsplash.com/premium_photo-1676890863093-b944dda91e23?w=300"],
+      "thumbnail": "https://plus.unsplash.com/premium_photo-1676890863093-b944dda91e23?w=300",
+      "isNew": true,
+      "isFeatured": true,
+      "isTrending": true
+    },
+    {
+      "id": 26,
+      "title": "TV Stand Unit",
+      "description": "Modern TV stand with shelves and storage compartments for media equipment and accessories.",
+      "category": "cabinet",
+      "price": 249.99,
+      "discountPercentage": 9.3,
+      "rating": 4.3,
+      "stock": 15,
+      "quantity": 1,
+      "color": "black",
+      "tags": ["tv", "stand", "media"],
+      "brand": "MediaSpace",
+      "sku": "CAB-MED-026",
+      "weight": 35,
+      "dimensions": {
+        "width": 60.2,
+        "height": 24.8,
+        "depth": 18.9
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 3-4 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Fits my 65-inch TV perfectly",
+          "date": "2024-12-02T09:41:02.053Z",
+          "reviewerName": "Kevin Brown",
+          "reviewerEmail": "kevin.brown@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-06-20T09:41:02.053Z",
+        "updatedAt": "2024-12-02T09:41:02.053Z",
+        "barcode": "5784719087706",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?w=300",
+      "isBestSeller": true,
+      "isSpecialOffer": true
+    },
+    {
+      "id": 27,
+      "title": "Night Stand",
+      "description": "Bedside night stand with drawer and shelf for convenient bedroom storage.",
+      "category": "cabinet",
+      "price": 89.99,
+      "discountPercentage": 8.2,
+      "rating": 4.4,
+      "stock": 18,
+      "quantity": 1,
+      "color": "walnut",
+      "tags": ["night", "stand", "bedroom"],
+      "brand": "BedroomEssentials",
+      "sku": "CAB-BED-027",
+      "weight": 15,
+      "dimensions": {
+        "width": 18.9,
+        "height": 24.7,
+        "depth": 15.3
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 3-5 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect size for bedside",
+          "date": "2024-12-01T09:41:02.053Z",
+          "reviewerName": "Carlos Rodriguez",
+          "reviewerEmail": "carlos.rodriguez@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-06-15T09:41:02.053Z",
+        "updatedAt": "2024-12-01T09:41:02.053Z",
+        "barcode": "5784719087707",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1560752323-bb0a9680945f?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1560752323-bb0a9680945f?w=300"
+    },
+    {
+      "id": 28,
+      "title": "Dressing Table",
+      "description": "Vanity dressing table with mirror and storage drawers for makeup and accessories.",
+      "category": "cabinet",
+      "price": 349.99,
+      "discountPercentage": 12.8,
+      "rating": 4.5,
+      "stock": 6,
+      "quantity": 1,
+      "color": "white",
+      "tags": ["dressing", "table", "vanity"],
+      "brand": "BeautySpace",
+      "sku": "CAB-BEA-028",
+      "weight": 42,
+      "dimensions": {
+        "width": 45.8,
+        "height": 76.3,
+        "depth": 19.7
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 4-7 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Love my new vanity!",
+          "date": "2024-11-30T09:41:02.053Z",
+          "reviewerName": "Susan Clark",
+          "reviewerEmail": "susan.clark@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-06-10T09:41:02.053Z",
+        "updatedAt": "2024-11-30T09:41:02.053Z",
+        "barcode": "5784719087708",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://plus.unsplash.com/premium_photo-1670869816874-5a22db823d6f?w=300"],
+      "thumbnail": "https://plus.unsplash.com/premium_photo-1670869816874-5a22db823d6f?w=300"
+    },
+    {
+      "id": 29,
+      "title": "Bookcase with Doors",
+      "description": "Tall bookcase with glass doors to protect your books while displaying them beautifully.",
+      "category": "cabinet",
+      "price": 329.99,
+      "discountPercentage": 13.5,
+      "rating": 4.6,
+      "stock": 9,
+      "quantity": 1,
+      "color": "cherry",
+      "tags": ["bookcase", "glass", "display"],
+      "brand": "LibraryStyle",
+      "sku": "CAB-LIB-029",
+      "weight": 52,
+      "dimensions": {
+        "width": 32.8,
+        "height": 78.9,
+        "depth": 16.4
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 5-7 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect for my collection!",
+          "date": "2024-11-29T09:41:02.053Z",
+          "reviewerName": "Jason Taylor",
+          "reviewerEmail": "jason.taylor@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-06-05T09:41:02.053Z",
+        "updatedAt": "2024-11-29T09:41:02.053Z",
+        "barcode": "5784719087709",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1603058817990-2b9a9abbce86?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1603058817990-2b9a9abbce86?w=300",
+      "isBestSeller": true,
+      "isSpecialOffer": true
+    },
+    {
+      "id": 30,
+      "title": "Storage Cabinet",
+      "description": "Multi-purpose storage cabinet with adjustable shelves and locking doors for secure storage.",
+      "category": "cabinet",
+      "price": 199.99,
+      "discountPercentage": 10.7,
+      "rating": 4.3,
+      "stock": 12,
+      "quantity": 1,
+      "color": "gray",
+      "tags": ["storage", "cabinet", "adjustable"],
+      "brand": "StoreSmart",
+      "sku": "CAB-STOR-030",
+      "weight": 38,
+      "dimensions": {
+        "width": 36.2,
+        "height": 72.8,
+        "depth": 18.9
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 3-5 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Great for office supplies",
+          "date": "2024-11-28T09:41:02.053Z",
+          "reviewerName": "Laura Wilson",
+          "reviewerEmail": "laura.wilson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-05-28T09:41:02.053Z",
+        "updatedAt": "2024-11-28T09:41:02.053Z",
+        "barcode": "5784719087710",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1662986788510-54df238c001e?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1662986788510-54df238c001e?w=300",
+      "isBestSeller": true,
+      "isSpecialOffer": true
+    },
+    {
+      "id": 31,
+      "title": "Floor Lamp Modern",
+      "description": "Contemporary floor lamp with adjustable head and dimmable LED lighting for ambient illumination.",
+      "category": "lighting",
+      "price": 129.99,
+      "discountPercentage": 14.2,
+      "rating": 4.5,
+      "stock": 15,
+      "quantity": 1,
+      "color": "black",
+      "tags": ["floor", "lamp", "dimmable"],
+      "brand": "LightStyle",
+      "sku": "LIG-LIG-031",
+      "weight": 8,
+      "dimensions": {
+        "width": 12.8,
+        "height": 65.2,
+        "depth": 12.8
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect reading light!",
+          "date": "2024-11-27T09:41:02.053Z",
+          "reviewerName": "Michael Brown",
+          "reviewerEmail": "michael.brown@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-05-20T09:41:02.053Z",
+        "updatedAt": "2024-11-27T09:41:02.053Z",
+        "barcode": "5784719087711",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1559234698-07927b48f729?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1559234698-07927b48f729?w=300",
+      "isTrending": true
+    },
+    {
+      "id": 32,
+      "title": "Pendant Light Cluster",
+      "description": "Set of 3 pendant lights with adjustable heights, perfect for kitchen islands or dining areas.",
+      "category": "lighting",
+      "price": 189.99,
+      "discountPercentage": 16.8,
+      "rating": 4.7,
+      "stock": 7,
+      "quantity": 3,
+      "color": "brass",
+      "tags": ["pendant", "cluster", "adjustable"],
+      "brand": "ModernLights",
+      "sku": "LIG-MOD-032",
+      "weight": 12,
+      "dimensions": {
+        "width": 18.9,
+        "height": 48.7,
+        "depth": 18.9
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 4-6 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Beautiful over my dining table!",
+          "date": "2024-11-26T09:41:02.053Z",
+          "reviewerName": "Sarah Johnson",
+          "reviewerEmail": "sarah.johnson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-05-15T09:41:02.053Z",
+        "updatedAt": "2024-11-26T09:41:02.053Z",
+        "barcode": "5784719087712",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1674744540420-e94848013fa7?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1674744540420-e94848013fa7?w=300",
+      "isBestSeller": true,
+      "isSpecialOffer": true
+    },
+    {
+      "id": 33,
+      "title": "Table Lamp Set",
+      "description": "Pair of elegant table lamps with fabric shades and touch control for bedside tables.",
+      "category": "lighting",
+      "price": 89.99,
+      "discountPercentage": 11.3,
+      "rating": 4.4,
+      "stock": 20,
+      "quantity": 2,
+      "color": "white",
+      "tags": ["table", "lamp", "touch"],
+      "brand": "BedsideGlow",
+      "sku": "LIG-BED-033",
+      "weight": 6,
+      "dimensions": {
+        "width": 8.9,
+        "height": 24.8,
+        "depth": 8.9
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-4 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Perfect for our bedroom",
+          "date": "2024-11-25T09:41:02.053Z",
+          "reviewerName": "David Wilson",
+          "reviewerEmail": "david.wilson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-05-10T09:41:02.053Z",
+        "updatedAt": "2024-11-25T09:41:02.053Z",
+        "barcode": "5784719087713",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1580130281320-0ef0754f2bf7?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1580130281320-0ef0754f2bf7?w=300"
+    },
+    {
+      "id": 34,
+      "title": "LED Strip Lights",
+      "description": "Smart LED strip lights with color changing options and app control for ambient lighting.",
+      "category": "lighting",
+      "price": 49.99,
+      "discountPercentage": 22.5,
+      "rating": 4.6,
+      "stock": 35,
+      "quantity": 1,
+      "color": "multicolor",
+      "tags": ["led", "strip", "smart"],
+      "brand": "SmartGlow",
+      "sku": "LIG-SMA-034",
+      "weight": 2,
+      "dimensions": {
+        "width": 3.2,
+        "height": 1.8,
+        "depth": 5.8
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 1-2 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "So many color options!",
+          "date": "2024-11-24T09:41:02.053Z",
+          "reviewerName": "Jessica Lee",
+          "reviewerEmail": "jessica.lee@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-05-05T09:41:02.053Z",
+        "updatedAt": "2024-11-24T09:41:02.053Z",
+        "barcode": "5784719087714",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1639744933969-c619e02ebc41?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1639744933969-c619e02ebc41?w=300"
+    },
+    {
+      "id": 35,
+      "title": "Area Rug Modern",
+      "description": "Large area rug with geometric pattern and soft pile, perfect for living rooms.",
+      "category": "rug",
+      "price": 199.99,
+      "discountPercentage": 18.7,
+      "rating": 4.5,
+      "stock": 8,
+      "quantity": 1,
+      "color": "gray",
+      "tags": ["area", "rug", "geometric"],
+      "brand": "RugStyle",
+      "sku": "RUG-RUG-035",
+      "weight": 15,
+      "dimensions": {
+        "width": 152.4,
+        "height": 243.8,
+        "depth": 1.2
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 5-7 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Soft and beautiful pattern!",
+          "date": "2024-11-23T09:41:02.053Z",
+          "reviewerName": "Emily Chen",
+          "reviewerEmail": "emily.chen@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-04-28T09:41:02.053Z",
+        "updatedAt": "2024-11-23T09:41:02.053Z",
+        "barcode": "5784719087715",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?w=300"
+    },
+    {
+      "id": 36,
+      "title": "Runner Rug",
+      "description": "Long runner rug with traditional pattern, perfect for hallways and entryways.",
+      "category": "rug",
+      "price": 89.99,
+      "discountPercentage": 12.4,
+      "rating": 4.3,
+      "stock": 12,
+      "quantity": 1,
+      "color": "beige",
+      "tags": ["runner", "rug", "traditional"],
+      "brand": "HallwayStyle",
+      "sku": "RUG-HAL-036",
+      "weight": 8,
+      "dimensions": {
+        "width": 76.2,
+        "height": 243.8,
+        "depth": 1.0
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 3-5 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Perfect for my long hallway",
+          "date": "2024-11-22T09:41:02.053Z",
+          "reviewerName": "Thomas Anderson",
+          "reviewerEmail": "thomas.anderson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-04-20T09:41:02.053Z",
+        "updatedAt": "2024-11-22T09:41:02.053Z",
+        "barcode": "5784719087716",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1759472659432-3232e42d04d2?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1759472659432-3232e42d04d2?w=300"
+    },
+    {
+      "id": 37,
+      "title": "Round Rug",
+      "description": "Circular area rug with modern design and soft texture for living spaces.",
+      "category": "rug",
+      "price": 149.99,
+      "discountPercentage": 15.8,
+      "rating": 4.6,
+      "stock": 6,
+      "quantity": 1,
+      "color": "navy",
+      "tags": ["round", "rug", "modern"],
+      "brand": "RoundStyle",
+      "sku": "RUG-ROU-037",
+      "weight": 12,
+      "dimensions": {
+        "width": 182.9,
+        "height": 182.9,
+        "depth": 1.1
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 4-6 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Love the circular shape!",
+          "date": "2024-11-21T09:41:02.053Z",
+          "reviewerName": "Maria Rodriguez",
+          "reviewerEmail": "maria.rodriguez@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-04-15T09:41:02.053Z",
+        "updatedAt": "2024-11-21T09:41:02.053Z",
+        "barcode": "5784719087717",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://plus.unsplash.com/premium_photo-1661963581928-86280bc2afdd?w=300"],
+      "thumbnail": "https://plus.unsplash.com/premium_photo-1661963581928-86280bc2afdd?w=300"
+    },
+    {
+      "id": 38,
+      "title": "Outdoor Patio Set",
+      "description": "Complete outdoor patio set with table and 4 chairs, weather-resistant materials.",
+      "category": "outdoor",
+      "price": 499.99,
+      "discountPercentage": 20.5,
+      "rating": 4.7,
+      "stock": 5,
+      "quantity": 5,
+      "color": "brown",
+      "tags": ["outdoor", "patio", "weather-resistant"],
+      "brand": "OutdoorLiving",
+      "sku": "OUT-OUT-038",
+      "weight": 85,
+      "dimensions": {
+        "width": 152.4,
+        "height": 91.4,
+        "depth": 91.4
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 7-10 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect for our backyard!",
+          "date": "2024-11-20T09:41:02.053Z",
+          "reviewerName": "Daniel Kim",
+          "reviewerEmail": "daniel.kim@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-04-10T09:41:02.053Z",
+        "updatedAt": "2024-11-20T09:41:02.053Z",
+        "barcode": "5784719087718",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1643061052776-e84aa7613348?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1643061052776-e84aa7613348?w=300",
+      "isTrending": true
+    },
+    {
+      "id": 39,
+      "title": "Garden Bench",
+      "description": "Wooden garden bench with weather-resistant finish, perfect for outdoor spaces.",
+      "category": "outdoor",
+      "price": 179.99,
+      "discountPercentage": 13.7,
+      "rating": 4.4,
+      "stock": 8,
+      "quantity": 1,
+      "color": "teak",
+      "tags": ["garden", "bench", "outdoor"],
+      "brand": "GardenStyle",
+      "sku": "OUT-GAR-039",
+      "weight": 28,
+      "dimensions": {
+        "width": 121.9,
+        "height": 86.4,
+        "depth": 45.7
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 5-7 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Beautiful addition to our garden",
+          "date": "2024-11-19T09:41:02.053Z",
+          "reviewerName": "Lisa Garcia",
+          "reviewerEmail": "lisa.garcia@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-04-05T09:41:02.053Z",
+        "updatedAt": "2024-11-19T09:41:02.053Z",
+        "barcode": "5784719087719",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1739926712147-01f8d3ba2d61?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1739926712147-01f8d3ba2d61?w=300"
+    },
+    {
+      "id": 40,
+      "title": "Outdoor Dining Table",
+      "description": "Large outdoor dining table with umbrella hole, perfect for family gatherings.",
+      "category": "outdoor",
+      "price": 329.99,
+      "discountPercentage": 16.2,
+      "rating": 4.6,
+      "stock": 6,
+      "quantity": 1,
+      "color": "gray",
+      "tags": ["outdoor", "dining", "table"],
+      "brand": "PatioDine",
+      "sku": "OUT-PAT-040",
+      "weight": 45,
+      "dimensions": {
+        "width": 182.9,
+        "height": 76.2,
+        "depth": 101.6
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 6-8 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect for outdoor dinners!",
+          "date": "2024-11-18T09:41:02.053Z",
+          "reviewerName": "Robert Taylor",
+          "reviewerEmail": "robert.taylor@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-03-28T09:41:02.053Z",
+        "updatedAt": "2024-11-18T09:41:02.053Z",
+        "barcode": "5784719087720",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1747256311196-0276bcb9080b?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1747256311196-0276bcb9080b?w=300"
+    },
+    {
+      "id": 41,
+      "title": "Accent Armchair",
+      "description": "Comfortable accent armchair with high back and plush cushioning for reading nooks.",
+      "category": "chair",
+      "price": 279.99,
+      "discountPercentage": 14.8,
+      "rating": 4.5,
+      "stock": 10,
+      "quantity": 1,
+      "color": "green",
+      "tags": ["accent", "armchair", "reading"],
+      "brand": "ComfortNook",
+      "sku": "CHA-COM-041",
+      "weight": 32,
+      "dimensions": {
+        "width": 35.6,
+        "height": 98.4,
+        "depth": 38.1
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 3-5 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "My favorite reading spot!",
+          "date": "2024-11-17T09:41:02.053Z",
+          "reviewerName": "Amanda White",
+          "reviewerEmail": "amanda.white@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-03-20T09:41:02.053Z",
+        "updatedAt": "2024-11-17T09:41:02.053Z",
+        "barcode": "5784719087721",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://plus.unsplash.com/premium_photo-1693252886111-7b9f89b92903?w=300"],
+      "thumbnail": "https://plus.unsplash.com/premium_photo-1693252886111-7b9f89b92903?w=300"
+    },
+    {
+      "id": 42,
+      "title": "Swivel Chair",
+      "description": "Modern swivel chair with 360-degree rotation and comfortable padding for office use.",
+      "category": "chair",
+      "price": 189.99,
+      "discountPercentage": 11.9,
+      "rating": 4.4,
+      "stock": 14,
+      "quantity": 1,
+      "color": "charcoal",
+      "tags": ["swivel", "office", "modern"],
+      "brand": "SpinStyle",
+      "sku": "CHA-SPI-042",
+      "weight": 26,
+      "dimensions": {
+        "width": 63.5,
+        "height": 101.6,
+        "depth": 63.5
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 2-4 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Great for my home office",
+          "date": "2024-11-16T09:41:02.053Z",
+          "reviewerName": "Chris Evans",
+          "reviewerEmail": "chris.evans@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-03-15T09:41:02.053Z",
+        "updatedAt": "2024-11-16T09:41:02.053Z",
+        "barcode": "5784719087722",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1685612215270-2a8fbc0c371a?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1685612215270-2a8fbc0c371a?w=300"
+    },
+    {
+      "id": 43,
+      "title": "Chaise Lounge",
+      "description": "Elegant chaise lounge with curved back and comfortable cushion for luxurious relaxation.",
+      "category": "sofa",
+      "price": 459.99,
+      "discountPercentage": 17.3,
+      "rating": 4.7,
+      "stock": 4,
+      "quantity": 1,
+      "color": "cream",
+      "tags": ["chaise", "lounge", "luxury"],
+      "brand": "LuxuryRelax",
+      "sku": "SOF-LUX-043",
+      "weight": 48,
+      "dimensions": {
+        "width": 68.6,
+        "height": 88.9,
+        "depth": 182.9
+      },
+      "warrantyInformation": "3 years warranty",
+      "shippingInformation": "Ships in 5-7 business days",
+      "availabilityStatus": "Low Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Absolutely luxurious!",
+          "date": "2024-11-15T09:41:02.053Z",
+          "reviewerName": "Jennifer Lopez",
+          "reviewerEmail": "jennifer.lopez@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-03-10T09:41:02.053Z",
+        "updatedAt": "2024-11-15T09:41:02.053Z",
+        "barcode": "5784719087723",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=500"],
+      "thumbnail": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=300",
+      "isTrending": true
+    },
+    {
+      "id": 44,
+      "title": "Console Table with Drawers",
+      "description": "Elegant console table with two drawers and metal legs, perfect for entryways.",
+      "category": "table",
+      "price": 169.99,
+      "discountPercentage": 12.6,
+      "rating": 4.5,
+      "stock": 11,
+      "quantity": 1,
+      "color": "walnut",
+      "tags": ["console", "table", "drawers"],
+      "brand": "EntryStyle",
+      "sku": "TAB-ENT-044",
+      "weight": 24,
+      "dimensions": {
+        "width": 121.9,
+        "height": 76.2,
+        "depth": 35.6
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 3-5 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect for our foyer!",
+          "date": "2024-11-14T09:41:02.053Z",
+          "reviewerName": "Alex Thompson",
+          "reviewerEmail": "alex.thompson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-03-05T09:41:02.053Z",
+        "updatedAt": "2024-11-14T09:41:02.053Z",
+        "barcode": "5784719087724",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://plus.unsplash.com/premium_photo-1683705132597-1d8c724f415a?w=300"],
+      "thumbnail": "https://plus.unsplash.com/premium_photo-1683705132597-1d8c724f415a?w=300",
+      "isTrending": true
+    },
+    {
+      "id": 45,
+      "title": "L-Shaped Desk",
+      "description": "Spacious L-shaped desk with built-in power outlets and cable management system.",
+      "category": "desk",
+      "price": 349.99,
+      "discountPercentage": 19.2,
+      "rating": 4.8,
+      "stock": 7,
+      "quantity": 1,
+      "color": "black",
+      "tags": ["l-shaped", "desk", "office"],
+      "brand": "CornerWorks",
+      "sku": "DES-COR-045",
+      "weight": 52,
+      "dimensions": {
+        "width": 152.4,
+        "height": 76.2,
+        "depth": 152.4
+      },
+      "warrantyInformation": "3 years warranty",
+      "shippingInformation": "Ships in 5-7 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect for dual monitors!",
+          "date": "2024-11-13T09:41:02.053Z",
+          "reviewerName": "Michelle Garcia",
+          "reviewerEmail": "michelle.garcia@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-02-28T09:41:02.053Z",
+        "updatedAt": "2024-11-13T09:41:02.053Z",
+        "barcode": "5784719087725",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1720129002834-d873849518fc?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1720129002834-d873849518fc?w=300"
+    },
+    {
+      "id": 46,
+      "title": "Floating Shelves Set",
+      "description": "Set of 3 floating shelves with invisible brackets for modern wall display.",
+      "category": "shelf",
+      "price": 69.99,
+      "discountPercentage": 13.8,
+      "rating": 4.4,
+      "stock": 22,
+      "quantity": 3,
+      "color": "white",
+      "tags": ["floating", "shelves", "wall"],
+      "brand": "WallStyle",
+      "sku": "SHE-WAL-046",
+      "weight": 8,
+      "dimensions": {
+        "width": 60.9,
+        "height": 15.2,
+        "depth": 15.2
+      },
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Easy to install and look great",
+          "date": "2024-11-12T09:41:02.053Z",
+          "reviewerName": "David Miller",
+          "reviewerEmail": "david.miller@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-02-20T09:41:02.053Z",
+        "updatedAt": "2024-11-12T09:41:02.053Z",
+        "barcode": "5784719087726",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1588111948296-83a8e036e004?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1588111948296-83a8e036e004?w=300"
+    },
+    {
+      "id": 47,
+      "title": "Full Size Bed Frame",
+      "description": "Sturdy full size bed frame with slatted base and minimalist metal design.",
+      "category": "bed",
+      "price": 279.99,
+      "discountPercentage": 14.5,
+      "rating": 4.6,
+      "stock": 9,
+      "quantity": 1,
+      "color": "black",
+      "tags": ["full", "bed", "metal"],
+      "brand": "MetalFrame",
+      "sku": "BED-MET-047",
+      "weight": 68,
+      "dimensions": {
+        "width": 137.2,
+        "height": 91.4,
+        "depth": 203.2
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 4-6 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very sturdy and easy to assemble",
+          "date": "2024-11-11T09:41:02.053Z",
+          "reviewerName": "Rachel Green",
+          "reviewerEmail": "rachel.green@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-02-15T09:41:02.053Z",
+        "updatedAt": "2024-11-11T09:41:02.053Z",
+        "barcode": "5784719087727",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=300",
+      "isTrending": true
+    },
+    {
+      "id": 48,
+      "title": "Display Cabinet",
+      "description": "Glass display cabinet with LED lighting to showcase collectibles and decor items.",
+      "category": "cabinet",
+      "price": 429.99,
+      "discountPercentage": 16.9,
+      "rating": 4.7,
+      "stock": 5,
+      "quantity": 1,
+      "color": "white",
+      "tags": ["display", "cabinet", "led"],
+      "brand": "ShowcaseStyle",
+      "sku": "CAB-SHO-048",
+      "weight": 58,
+      "dimensions": {
+        "width": 91.4,
+        "height": 182.9,
+        "depth": 35.6
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 6-8 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect for my collectibles!",
+          "date": "2024-11-10T09:41:02.053Z",
+          "reviewerName": "Sophia Martinez",
+          "reviewerEmail": "sophia.martinez@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-02-10T09:41:02.053Z",
+        "updatedAt": "2024-11-10T09:41:02.053Z",
+        "barcode": "5784719087728",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://plus.unsplash.com/premium_photo-1674773520163-c93eeb8cc2f7?w=300"],
+      "thumbnail": "https://plus.unsplash.com/premium_photo-1674773520163-c93eeb8cc2f7?w=300"
+    },
+    {
+      "id": 49,
+      "title": "Track Lighting Kit",
+      "description": "Adjustable track lighting kit with multiple heads for customizable room illumination.",
+      "category": "lighting",
+      "price": 139.99,
+      "discountPercentage": 18.4,
+      "rating": 4.5,
+      "stock": 13,
+      "quantity": 1,
+      "color": "chrome",
+      "tags": ["track", "lighting", "adjustable"],
+      "brand": "TrackLight",
+      "sku": "LIG-TRA-049",
+      "weight": 9,
+      "dimensions": {
+        "width": 152.4,
+        "height": 10.2,
+        "depth": 10.2
+      },
+      "warrantyInformation": "2 years warranty",
+      "shippingInformation": "Ships in 3-5 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Great for highlighting artwork",
+          "date": "2024-11-09T09:41:02.053Z",
+          "reviewerName": "James Wilson",
+          "reviewerEmail": "james.wilson@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-02-05T09:41:02.053Z",
+        "updatedAt": "2024-11-09T09:41:02.053Z",
+        "barcode": "5784719087729",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1562237329-3ce123028958?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1562237329-3ce123028958?w=300"
+    },
+    {
+      "id": 50,
+      "title": "Outdoor Lounge Set",
+      "description": "Complete outdoor lounge set with sofa, chairs, and coffee table for patio relaxation.",
+      "category": "outdoor",
+      "price": 899.99,
+      "discountPercentage": 22.7,
+      "rating": 4.8,
+      "stock": 3,
+      "quantity": 5,
+      "color": "gray",
+      "tags": ["outdoor", "lounge", "patio"],
+      "brand": "PatioLounge",
+      "sku": "OUT-PAT-050",
+      "weight": 125,
+      "dimensions": {
+        "width": 243.8,
+        "height": 91.4,
+        "depth": 152.4
+      },
+      "warrantyInformation": "3 years warranty",
+      "shippingInformation": "Ships in 8-12 business days",
+      "availabilityStatus": "Low Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Perfect for our backyard parties!",
+          "date": "2024-11-08T09:41:02.053Z",
+          "reviewerName": "Brian Davis",
+          "reviewerEmail": "brian.davis@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "2024-01-28T09:41:02.053Z",
+        "updatedAt": "2024-11-08T09:41:02.053Z",
+        "barcode": "5784719087730",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": ["https://images.unsplash.com/photo-1574197634772-f0de0d41a02e?w=300"],
+      "thumbnail": "https://images.unsplash.com/photo-1574197634772-f0de0d41a02e?w=300"
+    }
+  ]
+}
+
