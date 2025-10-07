@@ -42,7 +42,7 @@ const TrendingProducts = () => {
   let [activebtn, setActiveBtn] = useState("wood")
 
   let data = useContext(ApiData)
-  let trendingProducts = data.filter(item => item.isTrending)
+  let trendingProducts = data?.products?.filter(item => item.isTrending) || []
 
   var settings = {
     slidesToShow: 4,
@@ -161,7 +161,7 @@ const TrendingProducts = () => {
 
         <div className="mt-[100px]">
           <div className="font-josefin">
-            <h2 className="text-center text-[#1A0B5B] text-[42px] font-semibold mb-5">Sofa Collection</h2>
+            <h2 className="text-center text-[#1A0B5B] text-[42px] font-semibold mb-5">Discount Item</h2>
 
             <div className="flex justify-center gap-8 mb-12">
               <button

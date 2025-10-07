@@ -4,12 +4,13 @@ import { ApiData } from './ContextApi'
 import Slider from 'react-slick'
 import { FaHeart, FaShoppingCart, } from 'react-icons/fa'
 import { FiZoomIn } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
 
 const Products = () => {
-  let data = useContext(ApiData)
+  let data = useContext(ApiData);
 
-  let featuredProducts = data.filter((item) => item.isFeatured)
+  let featuredProducts = data?.products?.filter(item => item.isFeatured) || [];
 
 var products = {
     infinite: true,
@@ -60,7 +61,6 @@ var products = {
               {featuredProducts.map((item) => (
                 <div className="w-[24%] px-3">
                  <div className="bg-gray-100 p-4 h-[320px] flex items-center justify-center shadow-lg relative group">
-                  {/* Icons on Hover - Top Left */}
                   <div className="absolute left-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex  gap-2">
                     <button className="bg-white p-2 rounded-full shadow-md hover:bg-red-50 hover:text-red-500 transition-colors">
                       <FaHeart className="text-sm" />
@@ -73,16 +73,15 @@ var products = {
                     </button>
                   </div>
                   
-                  {/* View Details Button on Hover */}
                   <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-6 py-2 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-blue-700">
                     View Details
                   </button>
                   
-                  <img 
+                 <Link to="/allproduct"> <img 
                     className='w-[250px] h-[250px] object-cover' 
                     src={item.thumbnail} 
                     alt={item.title} 
-                  />
+                  /></Link>
                 </div>
                    <div className="bg-white p-4 shadow-lg min-h-[120px] group hover:bg-[#2F1AC4] transition-all duration-300 ease-in-out cursor-pointer text-center">
                   <div className="">

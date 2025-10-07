@@ -1,35 +1,20 @@
-import Header from "./component/Header"
-import { useContext, useEffect } from 'react';
-import { initFlowbite } from 'flowbite';
-import Navbar from "./component/Navbar";
-import Banner from "./component/Banner";
-import Products from "./component/Products";
-import { ApiData } from "./component/ContextApi";
-import Latest from "./component/Latest";
-import Trending from "./component/Trending";
-import TrendingProducts from "./component/TrendingProducts";
-import Category from "./component/Category";
-import Footer from "./component/Footer";
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
+import Home from "./pages/Home"
+import RootLayout from "./component/root/RootLayout"
+import AllProduct from "./pages/AllProduct"
 
+let router = createBrowserRouter(createRoutesFromElements(
+  <Route element={<RootLayout/>}>
+    <Route path="/" element={<Home/>}></Route>
+    <Route path="/allproduct" element={<AllProduct/>}></Route>
+  </Route>
+))
 
 function App() {
 
-  let data = useContext(ApiData)
-  
-  useEffect(() => {
-    initFlowbite();
-  }, []);
   return (
     <>
-      <Header/>
-      <Navbar/>
-      <Banner/>
-      <Products/>
-      <Latest/>
-      <Trending/>
-      <TrendingProducts/>
-      <Category/>
-      <Footer/>
+    <RouterProvider router={router}></RouterProvider>
     </>
   )
 }

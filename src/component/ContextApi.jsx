@@ -19,7 +19,7 @@ const ContextApi = ({children}) => {
 
 
   return (
-    <ApiData.Provider value={info}>{children}</ApiData.Provider>
+    <ApiData.Provider value={{products: info }}>{children}</ApiData.Provider>
   )
 }
 

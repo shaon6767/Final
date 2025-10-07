@@ -6,6 +6,7 @@ import delivery from "../assets/delivery.png"
 import quality from "../assets/quality.png"
 import cashback from "../assets/cashback.png"
 import support from "../assets/support.png"
+import { useNavigate } from 'react-router-dom'
 
 const Products = () => {
   let data = useContext(ApiData)
@@ -17,15 +18,18 @@ const Products = () => {
 
   let filteredProducts = []
 
+  
+if (data && data.products) {
   if (newArrival) {
-    filteredProducts = data.filter(item => item.isNew)
+    filteredProducts = data.products.filter(item => item.isNew)
   } else if (bestSeller) {
-    filteredProducts = data.filter(item => item.isBestSeller)
+    filteredProducts = data.products.filter(item => item.isBestSeller)
   } else if (featured) {
-    filteredProducts = data.filter(item => item.isFeatured)
+    filteredProducts = data.products.filter(item => item.isFeatured)
   } else if (specialOffer) {
-    filteredProducts = data.filter(item => item.isSpecialOffer)
+    filteredProducts = data.products.filter(item => item.isSpecialOffer)
   }
+}
 
   filteredProducts = filteredProducts.slice(0, 6)
 
@@ -57,6 +61,7 @@ const Products = () => {
     setFeatured(false)
     setSpecialOffer(true)
   }
+
 
   return (
     <Container>

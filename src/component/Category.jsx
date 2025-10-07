@@ -13,7 +13,7 @@ const Category = () => {
 
   let data = useContext(ApiData)
 
-  let categories = [...new Set(data.map(item => item.category))];
+  let categories = [...new Set(data?.products?.map(item => item.category) || [])];
 
   const settings = {
     arrows: false,
@@ -38,7 +38,7 @@ const Category = () => {
 
         <Slider {...settings}>
           {categories.map((category, index) => {
-            let categoryProduct = data.find((item) => item.category === category);
+            let categoryProduct = data?.products?.find((item) => item.category === category);
             return (
               <div className="px-6 mt-[50px]">
                 <div className="text-center group cursor-pointer">
