@@ -11,6 +11,7 @@ import three from "../assets/chairthree.png"
 import { TiTick } from 'react-icons/ti'
 import pinksofa from "../assets/pinksofa.png"
 import { FaHeart, FaShoppingCart, FaSync } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 
 function SampleNextArrow(props) {
@@ -42,7 +43,13 @@ const TrendingProducts = () => {
   let [activebtn, setActiveBtn] = useState("wood")
 
   let data = useContext(ApiData)
+  let navigate = useNavigate()
   let trendingProducts = data?.products?.filter(item => item.isTrending) || []
+
+  let handleTrnd = ()=>{
+  navigate("/allproduct")
+  }
+  
 
   var settings = {
     slidesToShow: 4,
@@ -58,7 +65,7 @@ const TrendingProducts = () => {
         <div className="">
           <div className="mt-8">
 
-            <div className="relative">
+            <div className="relative" onClick={handleTrnd}>
               <Slider {...settings}>
                 {trendingProducts.map((item) => (
        <div className="px-3">

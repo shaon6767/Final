@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Products = () => {
   let data = useContext(ApiData)
+  let navigate = useNavigate();
 
   let [newArrival, setNewArrival] = useState(true)
   let [bestSeller, setBestSeller] = useState(false)
@@ -17,6 +18,10 @@ const Products = () => {
   let [specialOffer, setSpecialOffer] = useState(false)
 
   let filteredProducts = []
+
+  let handleLtst = ()=>{
+    navigate("/allproduct")
+  }
 
   
 if (data && data.products) {
@@ -81,7 +86,7 @@ if (data && data.products) {
           {filteredProducts.map((item) => (
             <div className="group">
               <div className="bg-white p-6 h-[400px] flex items-center justify-center relative overflow-hidden">
-                <img
+                <img onClick={handleLtst}
                   className='w-[300px] h-[300px] object-cover transition-all z-10 duration-300 group-hover:scale-105' src={item.thumbnail} alt="" />
                 <div className="absolute inset-0 bg-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
                 <div className="absolute left-0 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col gap-4">

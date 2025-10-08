@@ -558,7 +558,7 @@ const AllProduct = () => {
 
                 {/* changes */}
 
-                {/* Products Display - Conditional Grid/List */}
+                {/*Grid */}
                 {view === 'grid' ? (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {currentProducts.map(item => (
@@ -592,9 +592,9 @@ const AllProduct = () => {
                             )}
                           </div>
                           <div className="flex opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out flex-col gap-3">
-                            <SlHeart />
-                            <GoZoomIn />
-                            <BsCart />
+                            <button className=" hover:bg-gray-100 rounded-full transition-colors"><SlHeart size={18} className="text-gray-600 hover:text-red-500"/></button>
+                            <button className=" hover:bg-gray-100 rounded-full transition-colors"><GoZoomIn size={18} className="text-gray-600 hover:text-red-500"/></button>
+                            <button className=" hover:bg-gray-100 rounded-full transition-colors"><BsCart size={18} className="text-gray-600 hover:text-red-500"/></button>
                           </div>
                         </div>
                         <div className="text-xs text-gray-500 mt-2">
@@ -604,11 +604,12 @@ const AllProduct = () => {
                     ))}
                   </div>
                 ) : (
-                  // ✅ LIST VIEW
+
+                  // List
+
                   <div className="space-y-6">
                     {currentProducts.map(item => (
                       <div key={item.id} className="flex p-6 hover:shadow-lg hover:scale-105 transition-all duration-200 group">
-                        {/* Image Section */}
                         <div className="w-1/4 mr-6">
                           <div className="bg-gray-200 h-48 rounded flex items-center justify-center">
                             <Link to={`/productdetails/${item.id}`} className='block h-full w-full'>
@@ -621,7 +622,6 @@ const AllProduct = () => {
                           </div>
                         </div>
 
-                        {/* Content Section */}
                         <div className="w-3/4">
                           <div className="flex justify-between items-start mb-3">
                             <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
@@ -646,7 +646,7 @@ const AllProduct = () => {
                               <span className="text-sm text-gray-500">SKU: {item.sku}</span>
                             </div>
 
-                            {/* Action Buttons - Horizontal in List View */}
+                          {/* buttons */}
                             <div className="flex opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out space-x-4">
                               <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                                 <SlHeart size={18} className="text-gray-600 hover:text-red-500" />
@@ -660,7 +660,7 @@ const AllProduct = () => {
                             </div>
                           </div>
 
-                          {/* Additional Info */}
+                          {/* Extra */}
                           <div className="flex space-x-6 mt-4 text-xs text-gray-500">
                             <span>🛒 {item.stock} in stock</span>
                             <span>🚚 {item.shippingInformation}</span>
@@ -674,13 +674,10 @@ const AllProduct = () => {
                 )}
 
 
-                {/* changes */}
-
-                {/* pagination */}
                 {/* Pagination */}
                 {totalPages > 1 && (
                   <div className="flex justify-center items-center space-x-2 mt-8">
-                    {/* Previous Button */}
+                    {/* Previous*/}
                     <button
                       onClick={prevPage}
                       disabled={currentPage === 1}
@@ -695,7 +692,6 @@ const AllProduct = () => {
                     {/* Page Numbers */}
                     {[...Array(totalPages)].map((_, index) => {
                       const pageNumber = index + 1;
-                      // Show limited page numbers for better UX
                       if (
                         pageNumber === 1 ||
                         pageNumber === totalPages ||
@@ -719,7 +715,7 @@ const AllProduct = () => {
                       return null;
                     })}
 
-                    {/* Next Button */}
+                   {/* Next */}
                     <button
                       onClick={nextPage}
                       disabled={currentPage === totalPages}
@@ -731,7 +727,6 @@ const AllProduct = () => {
                       Next
                     </button>
 
-                    {/* Page Info */}
                     <span className="text-sm text-gray-600 ml-4">
                       Page {currentPage} of {totalPages}
                     </span>
@@ -740,47 +735,6 @@ const AllProduct = () => {
                 {/* pagination */}
 
 
-                {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filterShow.map(item => (
-                    <div className="p-4 hover:shadow-lg group hover:scale-110 duration-300 ease-in-out transition-all">
-                      <div className="bg-gray-200 h-48 mb-4 rounded flex items-center justify-center">
-                        <img
-                          src={item.thumbnail}
-                          alt={item.title}
-                          className="h-full w-full object-cover rounded"
-                        />
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <h3 className="font-semibold text-gray-800 mb-2">{item.title}</h3>
-                        <span className="text-sm text-gray-500 capitalize">{item.color}</span>
-                      </div>
-                      <div className="flex items-center mb-2">
-                        <div className="flex text-yellow-400">
-                          {renderRatingStars(item.rating)}
-                        </div>
-                        <span className="text-sm text-gray-600 ml-2">({item.rating})</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <span className="text-lg font-bold text-blue-600">${item.price}</span>
-                          {item.discountPercentage > 0 && (
-                            <span className="text-sm text-green-600 ml-2">
-                              {item.discountPercentage}% off
-                            </span>
-                          )}
-                        </div>
-                        <div className="flex opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out flex-col gap-3">
-                          <SlHeart />
-                          <GoZoomIn />
-                          <BsCart />
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-2">
-                        {item.brand} • {item.category}
-                      </div>
-                    </div>
-                  ))}
-                </div> */}
 
                 {filterShow.length === 0 && (
                   <div className="text-center text-gray-500 py-12">

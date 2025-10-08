@@ -2,14 +2,19 @@ import React, { useContext } from 'react'
 import Container from '../component/Container'
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 import { FaStar, FaStarHalfAlt, FaRegStar, FaHeart, FaShoppingCart, FaArrowLeft } from 'react-icons/fa';
 import { BsShare } from 'react-icons/bs';
 import { ApiData } from '../component/ContextApi';
 import { FaArrowRightLong } from 'react-icons/fa6';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../component/slice/productSlice';
+
 
 const ProductDetails = () => {
 
     let productId = useParams();
+    let dispatch = useDispatch();
     let navigate = useNavigate();
     let data = useContext(ApiData);
 
@@ -50,6 +55,15 @@ const ProductDetails = () => {
             );
         });
     }
+
+    let handleCart = (item) => {      
+        dispatch(addToCart(item))
+        toast("Your Order is Successfull");
+        setTimeout(() => {
+            navigate("/cart")
+        }, 1500)
+    }
+
     return (
         <Container>
             <div className="">
@@ -170,27 +184,8 @@ const ProductDetails = () => {
 
                                 {/* Quantity*/}
                                 <div className="space-y-4">
-                                    <div className="flex items-center gap-4">
-                                        <span className="font-semibold text-gray-700">Quantity:</span>
-                                        <div className="flex items-center border rounded-lg">
-                                            <button
-                                                onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                                                className="px-4 py-2 text-gray-600 "
-                                            >
-                                                -
-                                            </button>
-                                            <span className="px-4 py-2 border-x">{quantity}</span>
-                                            <button
-                                                onClick={() => setQuantity(quantity + 1)}
-                                                className="px-4 py-2 text-gray-600"
-                                            >
-                                                +
-                                            </button>
-                                        </div>
-                                    </div>
-
                                     <div className="flex gap-4">
-                                        <button className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2">
+                                        <button onClick={()=>handleCart(singleProduct)} className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2">
                                             <FaShoppingCart />
                                             Add to Cart
                                         </button>
@@ -202,9 +197,10 @@ const ProductDetails = () => {
                                         </button>
                                     </div>
                                 </div>
+                                <ToastContainer />
 
                                 {/* Additional info */}
-                                <div className="border-t pt-6 space-y-3 text-sm text-gray-600">
+                                <div className="pt-4 space-y-3 text-sm text-gray-600">
                                     <div className="flex justify-between">
                                         <span>Shipping:</span>
                                         <span>{singleProduct.shippingInformation}</span>
@@ -230,8 +226,8 @@ const ProductDetails = () => {
                                         key={section}
                                         onClick={() => setActiveSection(section)}
                                         className={`px-6 py-3 font-semibold transition-colors ${activeSection === section
-                                                ? 'text-blue-600 border-b-2 border-blue-600'
-                                                : 'text-gray-500 hover:text-gray-700'
+                                            ? 'text-blue-600 border-b-2 border-blue-600'
+                                            : 'text-gray-500 hover:text-gray-700'
                                             }`}
                                     >
                                         {section === 'description' && 'Description'}
@@ -248,19 +244,19 @@ const ProductDetails = () => {
                                         <h3 className="text-xl font-bold text-gray-800 mb-4">Varius tempor.</h3>
                                         <div className="text-gray-600 leading-relaxed">
                                             <p>Aliquam dis vulputate vulputate integer sagittis. Faucibus dolor ornare faucibus vel sed et eleifend habitasse amet. Montes, mauris varius ac est bibendum. Scelerisque a, risus ac ante. Velit consectetur neque, elit, aliquet. Non varius proin sed urna, egestas consequat laoreet diam tincidunt. Magna eget faucibus cras justo, tortor sed donec tempus. Imperdiet consequat, quis diam arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate nunc nec. Dui, massa viverr .</p>
-                                        
+
                                         </div>
                                         <h3 className="text-xl font-bold text-gray-800 mb-4 mt-4">More details</h3>
                                         <div className="text-gray-600 space-y-2 leading-relaxed">
                                             <p className='flex gap-2 items-center'><span><FaArrowRightLong /></span>Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate nunc nec. Dui, massa viverr .</p>
-                                           
+
                                             <p className='flex gap-2 items-center'><span><FaArrowRightLong /></span>Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate nunc nec. Dui, massa viverr .</p>
-                                           
+
                                             <p className='flex gap-2 items-center'><span><FaArrowRightLong /></span>Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate nunc nec. Dui, massa viverr .</p>
-                                           
+
                                             <p className='flex gap-2 items-center'><span><FaArrowRightLong /></span>Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate nunc nec. Dui, massa viverr .</p>
-                                           
-                                        
+
+
                                         </div>
                                     </div>
                                 )}
@@ -294,7 +290,7 @@ const ProductDetails = () => {
                                 {activeSection === 'reviews' && (
                                     <div>
                                         <h3 className="text-xl font-bold text-gray-800 mb-4">
-                                        Reviews ({singleProduct.reviews?.length || 0})
+                                            Reviews ({singleProduct.reviews?.length || 0})
                                         </h3>
                                         {singleProduct.reviews && singleProduct.reviews.length > 0 ? (
                                             <div className="space-y-6">

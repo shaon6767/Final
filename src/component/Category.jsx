@@ -8,10 +8,16 @@ import { FaPen, FaCalendar } from 'react-icons/fa';
 import one from "../assets/bone.png"
 import two from "../assets/btwo.png"
 import three from "../assets/bthree.png"
+import { useNavigate } from 'react-router-dom';
 
 const Category = () => {
 
   let data = useContext(ApiData)
+  let navigate = useNavigate()
+
+  let handleCatgry = ()=>{
+  navigate("/allproduct")
+  }
 
   let categories = [...new Set(data?.products?.map(item => item.category) || [])];
 
@@ -42,7 +48,7 @@ const Category = () => {
             return (
               <div className="px-6 mt-[50px]">
                 <div className="text-center group cursor-pointer">
-                  <div className="relative w-68 h-68 mx-auto mb-6 group ">
+                  <div className="relative w-68 h-68 mx-auto mb-6 group " onClick={handleCatgry}>
                     <div className="w-full h-full bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
                       <img src={categoryProduct?.thumbnail} alt="" className="w-62 h-62 z-99 object-cover rounded-full transition-all duration-300 group-hover:scale-110"
                       />
