@@ -2,11 +2,13 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Home from "./pages/Home"
 import RootLayout from "./component/root/RootLayout"
 import AllProduct from "./pages/AllProduct"
+import ProductDetails from "./pages/ProductDetails"
 
 let router = createBrowserRouter(createRoutesFromElements(
   <Route element={<RootLayout/>}>
     <Route path="/" element={<Home/>}></Route>
     <Route path="/allproduct" element={<AllProduct/>}></Route>
+    <Route path="/productdetails/:id" element={<ProductDetails/>}></Route>
   </Route>
 ))
 

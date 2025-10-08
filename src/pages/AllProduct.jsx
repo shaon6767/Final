@@ -20,7 +20,7 @@ const AllProduct = () => {
   let [categories, setCategories] = useState([]);
   let [brands, setBrands] = useState([]);
   let [colors, setColors] = useState([]);
-  
+
   let [selectedBrand, setSelectedBrand] = useState('');
   let [selectedCategory, setSelectedCategory] = useState('');
   let [selectedRating, setSelectedRating] = useState(0);
@@ -134,25 +134,25 @@ const AllProduct = () => {
     setFilterShow(info);
   };
 
-    // Sorting function
-const sortProducts = (products) => {
-  const sorted = [...products];
-  switch(sortBy) {
-    case 'price-low':
-      return sorted.sort((a, b) => a.price - b.price);
-    case 'price-high':
-      return sorted.sort((a, b) => b.price - a.price);
-    case 'name':
-      return sorted.sort((a, b) => a.title.localeCompare(b.title));
-    case 'newest':
-    default:
-      return sorted.sort((a, b) => new Date(b.meta?.createdAt) - new Date(a.meta?.createdAt));
-  }
-};
+  // Sorting function
+  const sortProducts = (products) => {
+    const sorted = [...products];
+    switch (sortBy) {
+      case 'price-low':
+        return sorted.sort((a, b) => a.price - b.price);
+      case 'price-high':
+        return sorted.sort((a, b) => b.price - a.price);
+      case 'name':
+        return sorted.sort((a, b) => a.title.localeCompare(b.title));
+      case 'newest':
+      default:
+        return sorted.sort((a, b) => new Date(b.meta?.createdAt) - new Date(a.meta?.createdAt));
+    }
+  };
 
-useEffect(() => {
-  setCurrentPage(1);
-}, [selectedBrand, selectedCategory, selectedRating, selectedDiscount, selectedColor, sortBy, productsPerPage]);
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedBrand, selectedCategory, selectedRating, selectedDiscount, selectedColor, sortBy, productsPerPage]);
 
   // Pagination calculations
   let indexOfLastProduct = currentPage * productsPerPage;
@@ -161,7 +161,7 @@ useEffect(() => {
   let currentProducts = sortedProducts.slice(indexOfFirstProduct, indexOfLastProduct);
   let totalPages = Math.ceil(filterShow.length / productsPerPage);
 
-// Change page function
+  // Change page function
   let paginate = (pageNumber) => setCurrentPage(pageNumber);
   let nextPage = () => currentPage < totalPages && setCurrentPage(currentPage + 1);
   let prevPage = () => currentPage > 1 && setCurrentPage(currentPage - 1);
@@ -176,7 +176,7 @@ useEffect(() => {
 
   let discountRanges = [10, 15, 20, 25, 30];
 
-  
+
 
   let renderRatingStars = (rating) => {
     return Array.from({ length: 5 }, (_, index) => {
@@ -230,7 +230,7 @@ useEffect(() => {
 
               <div className="flex items-center space-x-2">
                 <span className="text-sm text-[#3F509E]">Sort by:</span>
-                <select  value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="text-sm border w-[150px] rounded px-2 py-1">
+                <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="text-sm border w-[150px] rounded px-2 py-1">
                   <option value="newest">Newest</option>
                   <option value="price-low">Price: Low to High</option>
                   <option value="price-high">Price: High to Low</option>
@@ -560,16 +560,17 @@ useEffect(() => {
 
                 {/* Products Display - Conditional Grid/List */}
                 {view === 'grid' ? (
-                  // ✅ GRID VIEW
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {currentProducts.map(item => (
                       <div key={item.id} className="p-4 hover:shadow-lg group hover:scale-105 duration-300 ease-in-out transition-all">
                         <div className="bg-gray-200 h-48 mb-4 rounded flex items-center justify-center">
-                          <img
-                            src={item.thumbnail}
-                            alt={item.title}
-                            className="h-full w-full object-cover rounded"
-                          />
+                          <Link to={`/productdetails/${item.id}`} className='w-full h-full block'>
+                            <img
+                              src={item.thumbnail}
+                              alt={item.title}
+                              className="h-full w-full object-cover rounded"
+                            />
+                          </Link>
                         </div>
                         <div className="flex justify-between items-center">
                           <h3 className="font-semibold text-gray-800 mb-2">{item.title}</h3>
@@ -610,11 +611,13 @@ useEffect(() => {
                         {/* Image Section */}
                         <div className="w-1/4 mr-6">
                           <div className="bg-gray-200 h-48 rounded flex items-center justify-center">
-                            <img
-                              src={item.thumbnail}
-                              alt={item.title}
-                              className="h-full w-full object-cover rounded"
-                            />
+                            <Link to={`/productdetails/${item.id}`} className='block h-full w-full'>
+                              <img
+                                src={item.thumbnail}
+                                alt={item.title}
+                                className="h-full w-full object-cover rounded"
+                              />
+                            </Link>
                           </div>
                         </div>
 
@@ -667,75 +670,73 @@ useEffect(() => {
                       </div>
                     ))}
                   </div>
+
                 )}
 
 
                 {/* changes */}
 
                 {/* pagination */}
-              {/* Pagination */}
-{totalPages > 1 && (
-  <div className="flex justify-center items-center space-x-2 mt-8">
-    {/* Previous Button */}
-    <button
-      onClick={prevPage}
-      disabled={currentPage === 1}
-      className={`px-3 py-1 rounded border ${
-        currentPage === 1 
-          ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
-          : 'bg-white text-blue-600 hover:bg-blue-50'
-      }`}
-    >
-      Previous
-    </button>
+                {/* Pagination */}
+                {totalPages > 1 && (
+                  <div className="flex justify-center items-center space-x-2 mt-8">
+                    {/* Previous Button */}
+                    <button
+                      onClick={prevPage}
+                      disabled={currentPage === 1}
+                      className={`px-3 py-1 rounded border ${currentPage === 1
+                          ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                          : 'bg-white text-blue-600 hover:bg-blue-50'
+                        }`}
+                    >
+                      Previous
+                    </button>
 
-    {/* Page Numbers */}
-    {[...Array(totalPages)].map((_, index) => {
-      const pageNumber = index + 1;
-      // Show limited page numbers for better UX
-      if (
-        pageNumber === 1 ||
-        pageNumber === totalPages ||
-        (pageNumber >= currentPage - 1 && pageNumber <= currentPage + 1)
-      ) {
-        return (
-          <button
-            key={pageNumber}
-            onClick={() => paginate(pageNumber)}
-            className={`px-3 py-1 rounded border ${
-              currentPage === pageNumber
-                ? 'bg-blue-600 text-white'
-                : 'bg-white text-blue-600 hover:bg-blue-50'
-            }`}
-          >
-            {pageNumber}
-          </button>
-        );
-      } else if (pageNumber === currentPage - 2 || pageNumber === currentPage + 2) {
-        return <span key={pageNumber} className="px-2 text-gray-500">...</span>;
-      }
-      return null;
-    })}
+                    {/* Page Numbers */}
+                    {[...Array(totalPages)].map((_, index) => {
+                      const pageNumber = index + 1;
+                      // Show limited page numbers for better UX
+                      if (
+                        pageNumber === 1 ||
+                        pageNumber === totalPages ||
+                        (pageNumber >= currentPage - 1 && pageNumber <= currentPage + 1)
+                      ) {
+                        return (
+                          <button
+                            key={pageNumber}
+                            onClick={() => paginate(pageNumber)}
+                            className={`px-3 py-1 rounded border ${currentPage === pageNumber
+                                ? 'bg-blue-600 text-white'
+                                : 'bg-white text-blue-600 hover:bg-blue-50'
+                              }`}
+                          >
+                            {pageNumber}
+                          </button>
+                        );
+                      } else if (pageNumber === currentPage - 2 || pageNumber === currentPage + 2) {
+                        return <span key={pageNumber} className="px-2 text-gray-500">...</span>;
+                      }
+                      return null;
+                    })}
 
-    {/* Next Button */}
-    <button
-      onClick={nextPage}
-      disabled={currentPage === totalPages}
-      className={`px-3 py-1 rounded border ${
-        currentPage === totalPages
-          ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-          : 'bg-white text-blue-600 hover:bg-blue-50'
-      }`}
-    >
-      Next
-    </button>
+                    {/* Next Button */}
+                    <button
+                      onClick={nextPage}
+                      disabled={currentPage === totalPages}
+                      className={`px-3 py-1 rounded border ${currentPage === totalPages
+                          ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                          : 'bg-white text-blue-600 hover:bg-blue-50'
+                        }`}
+                    >
+                      Next
+                    </button>
 
-    {/* Page Info */}
-    <span className="text-sm text-gray-600 ml-4">
-      Page {currentPage} of {totalPages}
-    </span>
-  </div>
-)}
+                    {/* Page Info */}
+                    <span className="text-sm text-gray-600 ml-4">
+                      Page {currentPage} of {totalPages}
+                    </span>
+                  </div>
+                )}
                 {/* pagination */}
 
 
