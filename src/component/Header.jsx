@@ -1,13 +1,52 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Container from './Container'
 import { GoMail } from 'react-icons/go'
 import { BiPhoneCall } from 'react-icons/bi'
 import { FaRegHeart, FaUser } from 'react-icons/fa'
 import { GrCart } from 'react-icons/gr'
+import { useDispatch, useSelector } from 'react-redux'
+import { productRemove } from './slice/productSlice'
+import { useNavigate } from 'react-router-dom'
 
 
 const Header = () => {
 
+    let data = useSelector((state) => state.product.cartItem)
+    let dispatch = useDispatch()
+    let navigate = useNavigate()
+    let [cart, setCart] = useState(false)
+    let cartRef = useRef()
+    let cartDropdownRef = useRef()
+
+    useEffect(() => {
+        let handleClick = (e) => {
+            if (cartRef.current.contains(e.target)) {
+                setCart(!cart)
+            } else if (cartDropdownRef.current && !cartDropdownRef.current.contains(e.target)) {
+                setCart(false)
+            }
+        }
+
+        document.addEventListener("click", handleClick)
+
+        return () => {
+            document.removeEventListener("click", handleClick)
+        }
+    }, [cart])
+
+    let handleRemove = (i,e) => {
+        e.stopPropagation();
+            dispatch(productRemove(i));
+        };
+
+          let { totalPrice } = data.reduce((acc, item) => {
+    acc.totalPrice += item.price * item.quantity
+    return acc;
+  }, { totalPrice: 0 })
+
+  let handleGoCart = ()=>{
+    navigate("/cart")
+  }
 
     return (
         <section className='bg-[#7E33E0] font-josefin'>
@@ -78,7 +117,7 @@ const Header = () => {
                                                 type="button"
                                             >
                                                 USD
-                                                <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                                <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="#" fill="none" viewBox="0 0 10 6">
                                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                                                 </svg>
                                             </button>
@@ -101,15 +140,68 @@ const Header = () => {
                                     <FaUser />
                                 </div>
                                 <div className="flex items-center gap-2 px-2 text-white">
-                                   <p>Wishlist</p>
+                                    <p>Wishlist</p>
                                     <FaRegHeart />
                                 </div>
-                                <div className="flex px-2 ml-[5px] text-white">
-                                    <GrCart />
+
+                                {/* Cart */}
+                                <div className="flex px-2 ml-[5px] text-white relative">
+                                    <button ref={cartRef} className="relative">
+                                        <GrCart className="text-xl" />
+                                        {data.length > 0 &&
+                                            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                                                {data.length}
+                                            </span>
+                                        }
+                                    </button>
+                                    {data.length > 0 &&
+                                        <>
+                                            {cart &&
+                                                <div className="absolute top-full right-0 mt-2 w-80 bg-white shadow-xl z-50" ref={cartDropdownRef}>
+                                                    <div className="p-4">
+                                                        <div className="max-h-60 overflow-y-auto">
+                                                            {data.map((item,i) => (
+                                                                <div className="flex items-center gap-3 py-3 border-b">
+                                                                    <img
+                                                                        src={item.thumbnail}
+                                                                        alt=""
+                                                                        className="w-12 h-12 object-cover rounded"
+                                                                    />
+                                                                    <div className="flex-1">
+                                                                        <h4 className="text-sm font-semibold text-gray-800 truncate">{item.title}</h4>
+                                                                        <p className="text-xs text-gray-500">{item.price}</p>
+                                                                    </div>
+                                                                    <button onClick={(e) => handleRemove(i,e)} className="text-gray-400 hover:text-red-500 transition-colors">
+                                                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                            ))}
+
+                                                        </div>
+                                                    </div>
+                                                    <div className="py-4 border-b">
+                                                        <div className="flex justify-between items-center px-4">
+                                                            <span className="text-sm font-semibold text-gray-700">Subtotal:</span>
+                                                            <span className="text-sm font-bold text-gray-800">${(totalPrice).toFixed(2)}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="pt-4 pb-2 px-2 flex gap-2">
+                                                        <button onClick={handleGoCart} className="flex-1 py-2 border border-[#7E33E0] text-[#7E33E0] rounded hover:bg-[#7E33E0] hover:text-white transition-colors text-sm font-semibold">
+                                                            View Cart
+                                                        </button>
+                                                        <button className="flex-1 py-2 border border-[#7E33E0] text-[#7E33E0] rounded hover:bg-[#7E33E0] hover:text-white transition-colors text-sm font-semibold">
+                                                            Checkout
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </>
+                                    }
                                 </div>
                             </div>
                         </div>
-
 
                     </div>
                 </div>

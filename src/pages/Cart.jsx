@@ -122,6 +122,10 @@ const Cart = () => {
                                                 <span>${totalPrice.toFixed(2)}</span>
                                             </div>
                                             <div className="flex justify-between text-gray-600">
+                                                <span>Quantity:</span>
+                                                <span>{totalQuantity}</span>
+                                            </div>
+                                            <div className="flex justify-between text-gray-600">
                                                 <span>Shipping:</span>
                                                 <span>${shipping.toFixed(2)}</span>
                                             </div>
