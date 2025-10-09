@@ -593,10 +593,10 @@ const AllProduct = () => {
                         </div>
                         <div className="flex justify-between items-center">
                           <div className='flex items-center gap-3'>
-                           <div className="flex items-center gap-2">
-                             <span className="text-lg font-bold text-[#111C85]">${discountPrice(item)}</span>
-                            <span className="text-lg font-bold line-through text-[#FF2AAA]">${item.price}</span>
-                           </div>
+                            <div className="flex items-center gap-2">
+                              <span className="text-lg font-bold text-[#111C85]">${discountPrice(item)}</span>
+                              <span className="text-lg font-bold line-through text-[#FF2AAA]">${item.price}</span>
+                            </div>
                             {item.discountPercentage > 0 && (
                               <span className="text-sm text-green-600 ml-2 mt-1">
                                 {item.discountPercentage}% off
@@ -650,9 +650,9 @@ const AllProduct = () => {
                           <div className="flex justify-between items-center">
                             <div className="flex items-center space-x-4">
                               <div className="flex items-center gap-2">
-                             <span className="text-lg font-bold text-[#111C85]">${discountPrice(item)}</span>
-                            <span className="text-lg font-bold line-through text-[#FF2AAA]">${item.price}</span>
-                           </div>
+                                <span className="text-lg font-bold text-[#111C85]">${discountPrice(item)}</span>
+                                <span className="text-lg font-bold line-through text-[#FF2AAA]">${item.price}</span>
+                              </div>
                               {item.discountPercentage > 0 && (
                                 <span className="text-sm text-green-600 bg-green-50 px-3 py-1 rounded-full">
                                   {item.discountPercentage}% OFF
@@ -688,11 +688,10 @@ const AllProduct = () => {
 
                 )}
 
-
                 {/* Pagination */}
                 {totalPages > 1 && (
                   <div className="flex justify-center items-center space-x-2 mt-8">
-                    {/* Previous*/}
+
                     <button
                       onClick={prevPage}
                       disabled={currentPage === 1}
@@ -704,33 +703,23 @@ const AllProduct = () => {
                       Previous
                     </button>
 
-                    {/* Page Numbers */}
                     {[...Array(totalPages)].map((_, index) => {
                       const pageNumber = index + 1;
-                      if (
-                        pageNumber === 1 ||
-                        pageNumber === totalPages ||
-                        (pageNumber >= currentPage - 1 && pageNumber <= currentPage + 1)
-                      ) {
-                        return (
-                          <button
-                            key={pageNumber}
-                            onClick={() => paginate(pageNumber)}
-                            className={`px-3 py-1 rounded border ${currentPage === pageNumber
-                              ? 'bg-blue-600 text-white'
-                              : 'bg-white text-blue-600 hover:bg-blue-50'
-                              }`}
-                          >
-                            {pageNumber}
-                          </button>
-                        );
-                      } else if (pageNumber === currentPage - 2 || pageNumber === currentPage + 2) {
-                        return <span key={pageNumber} className="px-2 text-gray-500">...</span>;
-                      }
-                      return null;
+                      return (
+                        <button
+                          key={pageNumber}
+                          onClick={() => paginate(pageNumber)}
+                          className={`px-3 py-1 rounded border ${currentPage === pageNumber
+                            ? 'bg-blue-600 text-white'
+                            : 'bg-white text-blue-600 hover:bg-blue-50'
+                            }`}
+                        >
+                          {pageNumber}
+                        </button>
+                      );
                     })}
 
-                    {/* Next */}
+
                     <button
                       onClick={nextPage}
                       disabled={currentPage === totalPages}
@@ -747,7 +736,6 @@ const AllProduct = () => {
                     </span>
                   </div>
                 )}
-                {/* pagination */}
 
 
 

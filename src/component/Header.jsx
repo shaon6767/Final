@@ -34,19 +34,29 @@ const Header = () => {
         }
     }, [cart])
 
-    let handleRemove = (i,e) => {
+    let handleRemove = (i, e) => {
         e.stopPropagation();
-            dispatch(productRemove(i));
-        };
+        dispatch(productRemove(i));
+    };
 
-          let { totalPrice } = data.reduce((acc, item) => {
-    acc.totalPrice += item.price * item.quantity
-    return acc;
-  }, { totalPrice: 0 })
+    let { totalPrice } = data.reduce((acc, item) => {
+        acc.totalPrice += item.price * item.quantity
+        return acc;
+    }, { totalPrice: 0 })
 
-  let handleGoCart = ()=>{
-    navigate("/cart")
-  }
+    let handleGoCart = () => {
+        setCart(false)
+        navigate("/cart")
+    }
+
+    let handleCheckout = () => {
+        setCart(false)
+        navigate("/checkout")
+    }
+
+    useEffect(() => {
+        setCart(false);
+    }, [navigate]);
 
     return (
         <section className='bg-[#7E33E0] font-josefin'>
@@ -85,7 +95,7 @@ const Header = () => {
                                             type="button"
                                         >
                                             English
-                                            <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                            <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="#" fill="none" viewBox="0 0 10 6">
                                                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                                             </svg>
                                         </button>
@@ -160,7 +170,7 @@ const Header = () => {
                                                 <div className="absolute top-full right-0 mt-2 w-80 bg-white shadow-xl z-50" ref={cartDropdownRef}>
                                                     <div className="p-4">
                                                         <div className="max-h-60 overflow-y-auto">
-                                                            {data.map((item,i) => (
+                                                            {data.map((item, i) => (
                                                                 <div className="flex items-center gap-3 py-3 border-b">
                                                                     <img
                                                                         src={item.thumbnail}
@@ -169,9 +179,9 @@ const Header = () => {
                                                                     />
                                                                     <div className="flex-1">
                                                                         <h4 className="text-sm font-semibold text-gray-800 truncate">{item.title}</h4>
-                                                                        <p className="text-xs text-gray-500">{item.price}</p>
+                                                                        <p className="text-xs text-gray-500">${item.price}</p>
                                                                     </div>
-                                                                    <button onClick={(e) => handleRemove(i,e)} className="text-gray-400 hover:text-red-500 transition-colors">
+                                                                    <button onClick={(e) => handleRemove(i, e)} className="text-gray-400 hover:text-red-500 transition-colors">
                                                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                                                         </svg>
@@ -182,16 +192,17 @@ const Header = () => {
                                                         </div>
                                                     </div>
                                                     <div className="py-4 border-b">
-                                                        <div className="flex justify-between items-center px-4">
+                                                        <div className="flex justify-between items-center px-6">
                                                             <span className="text-sm font-semibold text-gray-700">Subtotal:</span>
-                                                            <span className="text-sm font-bold text-gray-800">${(totalPrice).toFixed(2)}</span>
+                                                            <span className="text-sm font-bold text-[#0D134E]">${(totalPrice).toFixed(2)}</span>
                                                         </div>
                                                     </div>
                                                     <div className="pt-4 pb-2 px-2 flex gap-2">
-                                                        <button onClick={handleGoCart} className="flex-1 py-2 border border-[#7E33E0] text-[#7E33E0] rounded hover:bg-[#7E33E0] hover:text-white transition-colors text-sm font-semibold">
+                                                        <button onClick={handleGoCart} className="flex-1 py-2 border border-[#0D134E] hover:border-[#FB2E86] text-[#0D134E] hover:bg-[#FB2E86] hover:text-white transition-colors text-sm font-semibold">
                                                             View Cart
                                                         </button>
-                                                        <button className="flex-1 py-2 border border-[#7E33E0] text-[#7E33E0] rounded hover:bg-[#7E33E0] hover:text-white transition-colors text-sm font-semibold">
+
+                                                        <button onClick={handleCheckout} className="flex-1 py-2 border border-[#0D134E] hover:border-[#FB2E86] text-[#0D134E] hover:bg-[#FB2E86] hover:text-white transition-colors text-sm font-semibold">
                                                             Checkout
                                                         </button>
                                                     </div>

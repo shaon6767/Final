@@ -1,10 +1,9 @@
 import React, { useContext } from 'react'
 import Container from '../component/Container'
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import { FaStar, FaStarHalfAlt, FaRegStar, FaHeart, FaShoppingCart, FaArrowLeft } from 'react-icons/fa';
-import { BsShare } from 'react-icons/bs';
+import { FaStar, FaStarHalfAlt, FaRegStar, FaShoppingCart, FaArrowLeft } from 'react-icons/fa';
 import { ApiData } from '../component/ContextApi';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import { useDispatch } from 'react-redux';
@@ -21,7 +20,6 @@ const ProductDetails = () => {
     let [singleProduct, setSingleProduct] = useState();
     let [loading, setLoading] = useState(true);
     let [selectedImage, setSelectedImage] = useState(0);
-    let [quantity, setQuantity] = useState(1);
     let [activeSection, setActiveSection] = useState('reviews');
 
     useEffect(() => {
@@ -56,9 +54,9 @@ const ProductDetails = () => {
         });
     }
 
-    let handleCart = (item) => {      
+    let handleCart = (item) => {
         dispatch(addToCart(item))
-        toast("Your Order is Successfull");
+        toast("Your product has added");
         setTimeout(() => {
             navigate("/cart")
         }, 1500)
@@ -67,6 +65,13 @@ const ProductDetails = () => {
     return (
         <Container>
             <div className="">
+                <div className="mt-[40px] py-[40px]">
+                    <h2 className='text-[#101750] text-[36px] font-semibold'>Product Details</h2>
+                    <div className="">
+                         <h2 className='text-[#0D134E]'><Link to="/"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Home</span></Link>.Pages.<Link to="/allproduct"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Shop</span></Link></h2>
+                    </div>
+
+                </div>
                 {loading ? (
                     <div className="min-h-screen flex items-center justify-center">
                         <div className="text-center">
@@ -88,13 +93,16 @@ const ProductDetails = () => {
                     </div>
                 ) : (
                     <div className="min-h-screen py-8 font-josefin">
+                        <Link to="/allproduct">
+                        
                         <button
-                            onClick={() => navigate(-1)}
-                            className="flex items-center gap-2 text-gray-600 hover:text-blue-600 mb-6 transition-colors"
+                        
+                            className="flex items-center gap-2 text-gray-600 hover:text-[#FB2E86] cursor-pointer mb-6 transition-colors"
                         >
                             <FaArrowLeft />
                             <span>Back to Products</span>
                         </button>
+                        </Link>
 
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                             <div className="space-y-4">
@@ -103,33 +111,15 @@ const ProductDetails = () => {
                                     <img
                                         src={singleProduct.images?.[selectedImage] || singleProduct.thumbnail}
                                         alt={singleProduct.title}
-                                        className="h-[350px] w-[400px] object-cover rounded-lg"
+                                        className="mt-[80px] h-[450px] w-[500px] object-cover rounded-lg"
                                     />
-                                </div>
-
-                                {/* Small images*/}
-                                <div className="flex gap-4 overflow-x-auto">
-                                    {singleProduct.images?.map((image, index) => (
-                                        <button
-                                            key={index}
-                                            onClick={() => setSelectedImage(index)}
-                                            className={`flex-shrink-0 w-20 h-20 border-2 rounded-lg overflow-hidden ${selectedImage === index ? 'border-blue-600' : 'border-gray-300'
-                                                }`}
-                                        >
-                                            <img
-                                                src={image}
-                                                alt={`${singleProduct.title} ${index + 1}`}
-                                                className="w-full h-full object-cover"
-                                            />
-                                        </button>
-                                    ))}
                                 </div>
                             </div>
 
                             {/* Productdetails*/}
                             <div className="space-y-6">
                                 <div>
-                                    <h1 className="text-3xl font-bold text-gray-800 mb-2">{singleProduct.title}</h1>
+                                    <h1 className="text-3xl font-bold text-[#0D134E] mb-2">{singleProduct.title}</h1>
                                     <div className="flex items-center gap-4 mb-4">
                                         <div className="flex items-center gap-2">
                                             <div className="flex text-yellow-400">
@@ -147,8 +137,8 @@ const ProductDetails = () => {
                                     {singleProduct.discountPercentage > 0 ? (
                                         <div className="flex items-center gap-4">
                                             <span className="text-3xl font-bold text-blue-600">${discountPrice()}</span>
-                                            <span className="text-xl text-gray-400 line-through">${singleProduct.price}</span>
-                                            <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
+                                            <span className="text-xl text-[#FB2E86] line-through">${singleProduct.price}</span>
+                                            <span className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-semibold">
                                                 {singleProduct.discountPercentage}% OFF
                                             </span>
                                         </div>
@@ -185,15 +175,9 @@ const ProductDetails = () => {
                                 {/* Quantity*/}
                                 <div className="space-y-4">
                                     <div className="flex gap-4">
-                                        <button onClick={()=>handleCart(singleProduct)} className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2">
+                                        <button onClick={() => handleCart(singleProduct)} className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2">
                                             <FaShoppingCart />
                                             Add to Cart
-                                        </button>
-                                        <button className="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                                            <FaHeart className="text-gray-600 hover:text-red-500" />
-                                        </button>
-                                        <button className="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                                            <BsShare className="text-gray-600 hover:text-blue-500" />
                                         </button>
                                     </div>
                                 </div>
@@ -319,7 +303,7 @@ const ProductDetails = () => {
 
                         {/* Related products */}
                         <div className="mt-16">
-                            <h2 className="text-2xl font-bold text-gray-800 mb-6">Related Products</h2>
+                            <h2 className="text-2xl font-bold text-[#0D134E] mb-6">Related Products</h2>
                             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                                 {data.products
                                     .filter(product =>
@@ -341,11 +325,11 @@ const ProductDetails = () => {
                                                 alt={relatedProduct.title}
                                                 className="w-full h-48 object-cover rounded-md mb-4"
                                             />
-                                            <h3 className="font-semibold text-gray-800 mb-2">{relatedProduct.title}</h3>
+                                            <h3 className="font-semibold text-[#0D134E]  mb-2">{relatedProduct.title}</h3>
                                             <div className="flex items-center justify-between">
-                                                <div className="flex gap-5">
-                                                    <span className="text-blue-600 font-bold">${relatedProduct.price}</span>
-                                                    <span className="text-sm line-through text-red-600">${discountPrice()}</span>
+                                                <div className="flex items-center gap-5">
+                                                    <span className="text-[#0D134E] font-bold">${relatedProduct.price}</span>
+                                                    <span className="text-sm line-through text-[#FB2E86]">${discountPrice()}</span>
                                                 </div>
                                                 <div className="flex items-center gap-1">
                                                     <FaStar className="text-yellow-400" />

@@ -7,6 +7,7 @@ import { decrement, increment, productRemove } from '../component/slice/productS
 
 const Cart = () => {
     let dispatch = useDispatch();
+    let navigate = useNavigate()
     let data = useSelector((state) => state.product.cartItem)
     //    console.log(data);
     let handleIncrement = (i) => {
@@ -31,6 +32,10 @@ const Cart = () => {
     let tax = totalPrice > 0 ? (totalPrice * 0.07) : 0;
     let finalTotal = totalPrice + shipping + tax;
 
+    let handleToCheckout = ()=>{
+    navigate("/checkout")
+    }
+
     return (
         <Container>
             <div className="mt-[80px]">
@@ -38,8 +43,8 @@ const Cart = () => {
                 {data.length > 0 ? (
                     <>
                         <div className="min-h-screen py-8 font-josefin">
-                            <h1 className="text-3xl font-bold text-gray-800 mb-8">Shopping Cart</h1>
-
+                            <h1 className="text-3xl font-bold text-[#0D134E] mb-2">Shopping Cart</h1>
+                             <h2 className='mb-16 text-[#0D134E]'><Link to="/"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Home</span></Link>.Pages.<Link to="/allproduct"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Shop</span></Link></h2>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                                 {/* Left Column - Cart Items */}
                                 <div className="lg:col-span-2 bg-white">
@@ -64,7 +69,9 @@ const Cart = () => {
                                                         className="w-20 h-20 object-cover rounded-sm"
                                                     />
                                                     <div>
-                                                        <h3 className="font-semibold text-gray-800">{item.title}</h3>
+                                                        <Link  to={`/productdetails/${item.id}`}>
+                                                        <h3 className="font-semibold hover:underline text-[#0D134E]">{item.title}</h3>
+                                                        </Link>
                                                         <p className="text-sm text-gray-500">{item.category}</p>
                                                     </div>
                                                 </div>
@@ -91,19 +98,16 @@ const Cart = () => {
                                     ))}
 
 
-                                    <div className="items-center px-6 py-4 border-t">
-                                        <div className="flex justify-between">
-                                            <button className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
-                                                Update Cart
-                                            </button>
+                                    <div className="items-center px-6 py-4 border-t border-t-[#e9d6d6]">
+                                        <div className="flex justify-end">
                                             <button
                                                 onClick={() => {
                                                     data.forEach((_, index) => dispatch(productRemove(0)));
                                                 }}
                                                 disabled={data.length === 0}
-                                                className={`px-6 py-2 rounded-lg transition-colors ${data.length === 0
+                                                className={`px-6 py-2 rounded-sm transition-colors ${data.length === 0
                                                         ? 'bg-gray-400 cursor-not-allowed'
-                                                        : 'bg-red-600 hover:bg-red-700 text-white'
+                                                        : 'bg-[#FB2E86] hover:bg-[#c71d66] text-white'
                                                     }`}
                                             >
                                                 Clear Cart
@@ -133,7 +137,7 @@ const Cart = () => {
                                                 <span>Tax:</span>
                                                 <span>${tax.toFixed(2)}</span>
                                             </div>
-                                            <div className="border-t pt-3">
+                                            <div className="border-t border-t-[#e9d6d6] pt-3">
                                                 <div className="flex justify-between text-lg font-bold text-gray-800">
                                                     <span>Total:</span>
                                                     <span>${finalTotal.toFixed(2)}</span>
@@ -141,7 +145,7 @@ const Cart = () => {
                                             </div>
                                         </div>
 
-                                        <button className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                                        <button onClick={handleToCheckout} className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold">
                                             Proceed to Checkout
                                         </button>
                                     </div>
