@@ -7,7 +7,7 @@ const ContextApi = ({children}) => {
   let [info,setInfo] = useState([])
 
   let getData = ()=>{
-    axios.get("http://localhost:3001/products").then((response)=>{
+    axios.get("https://my-furniture-4lvu.onrender.com/products").then((response)=>{
     setInfo(response.data);
     
     })

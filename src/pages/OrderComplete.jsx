@@ -1,6 +1,7 @@
 import React from 'react'
 import Container from '../component/Container'
 import { FaCheckCircle, FaSmileBeam } from 'react-icons/fa'
+import com from "../assets/company.png"
 
 const OrderComplete = () => {
     return (
@@ -25,6 +26,9 @@ const OrderComplete = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="flex justify-center">
+                <img src={com} alt="" />
             </div>
         </Container>
     )
