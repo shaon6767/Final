@@ -7,10 +7,13 @@ import quality from "../assets/quality.png"
 import cashback from "../assets/cashback.png"
 import support from "../assets/support.png"
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addToCart } from './slice/productSlice'
 
-const Products = () => {
+const Latest = () => {
   let data = useContext(ApiData)
   let navigate = useNavigate();
+  let dispatch = useDispatch()
 
   let [newArrival, setNewArrival] = useState(true)
   let [bestSeller, setBestSeller] = useState(false)
@@ -19,22 +22,28 @@ const Products = () => {
 
   let filteredProducts = []
 
-  let handleLtst = ()=>{
+  let discountPrice = (product) => {
+    if (!product) return 0;
+    let discount = (product.price * product.discountPercentage) / 100;
+    return (product.price - discount).toFixed(2);
+  };
+
+  let handleLtst = () => {
     navigate("/allproduct")
   }
 
-  
-if (data && data.products) {
-  if (newArrival) {
-    filteredProducts = data.products.filter(item => item.isNew)
-  } else if (bestSeller) {
-    filteredProducts = data.products.filter(item => item.isBestSeller)
-  } else if (featured) {
-    filteredProducts = data.products.filter(item => item.isFeatured)
-  } else if (specialOffer) {
-    filteredProducts = data.products.filter(item => item.isSpecialOffer)
+
+  if (data && data.products) {
+    if (newArrival) {
+      filteredProducts = data.products.filter(item => item.isNew)
+    } else if (bestSeller) {
+      filteredProducts = data.products.filter(item => item.isBestSeller)
+    } else if (featured) {
+      filteredProducts = data.products.filter(item => item.isFeatured)
+    } else if (specialOffer) {
+      filteredProducts = data.products.filter(item => item.isSpecialOffer)
+    }
   }
-}
 
   filteredProducts = filteredProducts.slice(0, 6)
 
@@ -96,19 +105,24 @@ if (data && data.products) {
                   <button className="bg-white p-3 rounded-full shadow-lg hover:bg-blue-50 hover:text-blue-500 transition-colors">
                     <FaSearchPlus className="text-lg" />
                   </button>
-                  <button className="bg-white p-3 rounded-full shadow-lg hover:bg-green-50 hover:text-green-500 transition-colors">
-                    <FaShoppingCart className="text-lg" />
+                  <button onClick={()=>dispatch(addToCart(item))} className="bg-white p-3 rounded-full shadow-lg hover:bg-green-50 hover:text-green-500 transition-colors">
+                    <FaShoppingCart className="text-lg cursor-pointer" />
                   </button>
                 </div>
                 <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                   SALE
                 </div>
               </div>
-              <div className="flex justify-between px-14 mt-4">
-                <h3 className="text-[18px] font-semibold text-gray-800 mb-2">
+              <div className="flex justify-between items-center px-13 mt-4">
+                <h3 className="text-[16px] font-semibold text-[#151875] ">
                   {item.title}
                 </h3>
-                <p className="text-green-600 font-bold text-[14px]">${item.price}</p>
+
+               <div className="flex gap-2 items-center">
+                   <p className="text-blue-500 font-bold text-[14px]">${discountPrice(item)}</p>
+                <p className="text-red-600 line-through font-bold text-[14px]">${item.price}</p>
+               </div>
+
               </div>
             </div>
           ))}
@@ -126,7 +140,7 @@ if (data && data.products) {
                   </div>
                 </div>
                 <h3 className="text-lg font-semibold mb-3 text-[#151875]">24/7 Support</h3>
-                <p className="text-[#1a0b5b6c] text-sm w-[200px] mx-auto">
+                <p className="text-[#1a0b5b6c] text-sm w-[200px] pr-[12px]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.
                 </p>
               </div>
@@ -139,7 +153,7 @@ if (data && data.products) {
                   </div>
                 </div>
                 <h3 className="text-lg font-semibold mb-3 text-[#151875]">24/7 Support</h3>
-                <p className="text-[#1a0b5b6c] text-sm w-[200px] mx-auto">
+                <p className="text-[#1a0b5b6c] text-sm w-[200px] mx-auto pr-[12px]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.
                 </p>
               </div>
@@ -152,7 +166,7 @@ if (data && data.products) {
                   </div>
                 </div>
                 <h3 className="text-lg font-semibold mb-3 text-[#151875]">24/7 Support</h3>
-                <p className="text-[#1a0b5b6c] text-sm w-[200px] mx-auto">
+                <p className="text-[#1a0b5b6c] text-sm w-[200px] mx-auto pr-[12px]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.
                 </p>
               </div>
@@ -165,7 +179,7 @@ if (data && data.products) {
                   </div>
                 </div>
                 <h3 className="text-lg font-semibold mb-3 text-[#151875]">24/7 Support</h3>
-                <p className="text-[#1a0b5b6c] text-sm w-[200px] mx-auto">
+                <p className="text-[#1a0b5b6c] text-sm w-[200px] mx-auto pr-[12px]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.
                 </p>
               </div>
@@ -177,4 +191,4 @@ if (data && data.products) {
   )
 }
 
-export default Products
+export default Latest

@@ -12,6 +12,7 @@ import { TiTick } from 'react-icons/ti'
 import pinksofa from "../assets/pinksofa.png"
 import { FaHeart, FaShoppingCart, FaSync } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
+import { MdOutlineDone } from 'react-icons/md'
 
 
 function SampleNextArrow(props) {
@@ -46,10 +47,12 @@ const TrendingProducts = () => {
   let navigate = useNavigate()
   let trendingProducts = data?.products?.filter(item => item.isTrending) || []
 
-  let handleTrnd = ()=>{
-  navigate("/allproduct")
-  }
-  
+  let discountPrice = (product) => {
+    if (!product) return 0;
+    let discount = (product.price * product.discountPercentage) / 100;
+    return (product.price - discount).toFixed(2);
+  };
+
 
   var settings = {
     slidesToShow: 4,
@@ -65,42 +68,30 @@ const TrendingProducts = () => {
         <div className="">
           <div className="mt-8">
 
-            <div className="relative" onClick={handleTrnd}>
+            <div className="relative">
               <Slider {...settings}>
                 {trendingProducts.map((item) => (
-       <div className="px-3">
-        <div className="relative group overflow-hidden">
+                  <div className="px-3">
+                    <div className="relative group cursor-pointer overflow-hidden">
 
-          <div className="relative overflow-hidden">
-            <img
-              src={item.thumbnail}
-              alt=""
-              className="w-full h-[300px] object-cover transition-all duration-500 group-hover:blur-sm group-hover:scale-105"
-            />
-            <div className="absolute left-3 top-[200px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col gap-3">
-              <button className="text-white transition-colors">
-                <FaHeart className="text-xl" />
-              </button>
-              <button className="text-white transition-colors">
-                <FaShoppingCart className="text-xl" />
-              </button>
-              <button className="text-white transition-colors">
-                <FaSync className="text-xl" />
-              </button>
-            </div>
-            
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 flex items-center justify-center">
-              <div className="text-white text-center transform -translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
-                <h3 className="text-lg font-semibold mb-2 drop-shadow-lg">{item.title}</h3>
-                <div className="flex gap-4 justify-center">
-                  <p className="font-bold text-[#07fe07] drop-shadow-lg">${item.price}</p>
-                  <p className='line-through text-[red] opacity-75 drop-shadow-lg'>$42.00</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                      <div className="relative overflow-hidden" onClick={() => navigate("/allproduct")}>
+                        <img
+                          src={item.thumbnail}
+                          alt=""
+                          className="w-full h-[300px] object-cover transition-all duration-500 group-hover:blur-sm group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 flex items-center justify-center">
+                          <div className="text-white text-center transform -translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 className="text-lg font-semibold mb-2 mt-4 drop-shadow-lg">{item.title}</h3>
+                            <div className="flex gap-4 mt-9 justify-center">
+                              <p className='line-through text-[red] opacity-75 drop-shadow-lg'>${item.price}</p>
+                              <p className="font-bold text-[#07fe07] drop-shadow-lg">${discountPrice(item)}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </Slider>
             </div>
@@ -202,21 +193,21 @@ const TrendingProducts = () => {
                     </p>
                     <div className="flex gap-4">
                       <div className="flex items-center gap-1">
-                        <TiTick className='text-[#B7BACB]' />
+                        <MdOutlineDone size={20} className='text-[#B7BACB]' />
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                       <div className="flex items-center gap-1">
-                        <TiTick className='text-[#B7BACB]' />
+                         <MdOutlineDone size={20} className='text-[#B7BACB]' />
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                     </div>
                     <div className="flex gap-4 mb-10">
                       <div className="flex items-center gap-1">
-                        <TiTick className='text-[#B7BACB]' />
+                          <MdOutlineDone size={20} className='text-[#B7BACB]' />
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                       <div className="flex items-center gap-1">
-                        <TiTick className='text-[#B7BACB]' />
+                           <MdOutlineDone size={20} className='text-[#B7BACB]' />
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                     </div>

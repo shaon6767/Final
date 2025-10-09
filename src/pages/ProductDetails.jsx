@@ -18,7 +18,7 @@ const ProductDetails = () => {
     let navigate = useNavigate();
     let data = useContext(ApiData);
 
-    let [singleProduct, setSingleProduct] = useState(null);
+    let [singleProduct, setSingleProduct] = useState();
     let [loading, setLoading] = useState(true);
     let [selectedImage, setSelectedImage] = useState(0);
     let [quantity, setQuantity] = useState(1);
@@ -29,21 +29,21 @@ const ProductDetails = () => {
             if (data.products.length === 0) {
                 return;
             }
-            const product = data.products.find(item => item.id == productId.id);
+            let product = data.products.find(item => item.id == productId.id);
             setSingleProduct(product);
             setLoading(false);
         }
     }, [data, productId.id]);
 
 
-    const discountPrice = () => {
+    let discountPrice = () => {
         if (!singleProduct) return 0;
-        const discount = (singleProduct.price * singleProduct.discountPercentage) / 100;
+        let discount = (singleProduct.price * singleProduct.discountPercentage) / 100;
         return (singleProduct.price - discount).toFixed(2);
     };
 
 
-    const renderRatingStars = (rating) => {
+    let renderRatingStars = (rating) => {
         return Array.from({ length: 5 }, (_, index) => {
             let number = index + 0.5;
             return (

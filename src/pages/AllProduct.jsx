@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { GoZoomIn } from 'react-icons/go';
 import { BsCart } from 'react-icons/bs';
 import { SlHeart } from 'react-icons/sl';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../component/slice/productSlice';
 
 const AllProduct = () => {
 
@@ -15,6 +17,7 @@ const AllProduct = () => {
 
   let [info, setInfo] = useState([]);
   let [filterShow, setFilterShow] = useState([]);
+  let dispatch = useDispatch()
 
 
   let [categories, setCategories] = useState([]);
@@ -123,6 +126,12 @@ const AllProduct = () => {
     }));
   };
 
+  let discountPrice = (product) => {
+    if (!product) return 0;
+    let discount = (product.price * product.discountPercentage) / 100;
+    return (product.price - discount).toFixed(2);
+  };
+
 
   let clearAllFilters = () => {
     setSelectedBrand('');
@@ -134,7 +143,7 @@ const AllProduct = () => {
     setFilterShow(info);
   };
 
-  // Sorting function
+
   const sortProducts = (products) => {
     const sorted = [...products];
     switch (sortBy) {
@@ -154,14 +163,14 @@ const AllProduct = () => {
     setCurrentPage(1);
   }, [selectedBrand, selectedCategory, selectedRating, selectedDiscount, selectedColor, sortBy, productsPerPage]);
 
-  // Pagination calculations
+
   let indexOfLastProduct = currentPage * productsPerPage;
   const sortedProducts = sortProducts(filterShow);
   let indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   let currentProducts = sortedProducts.slice(indexOfFirstProduct, indexOfLastProduct);
   let totalPages = Math.ceil(filterShow.length / productsPerPage);
 
-  // Change page function
+
   let paginate = (pageNumber) => setCurrentPage(pageNumber);
   let nextPage = () => currentPage < totalPages && setCurrentPage(currentPage + 1);
   let prevPage = () => currentPage > 1 && setCurrentPage(currentPage - 1);
@@ -567,13 +576,13 @@ const AllProduct = () => {
                           <Link to={`/productdetails/${item.id}`} className='w-full h-full block'>
                             <img
                               src={item.thumbnail}
-                              alt={item.title}
+                              alt=""
                               className="h-full w-full object-cover rounded"
                             />
                           </Link>
                         </div>
                         <div className="flex justify-between items-center">
-                          <h3 className="font-semibold text-gray-800 mb-2">{item.title}</h3>
+                          <h3 className="font-semibold text-[#151875] mb-2">{item.title}</h3>
                           <span className="text-sm text-gray-500 capitalize">{item.color}</span>
                         </div>
                         <div className="flex items-center mb-2">
@@ -583,18 +592,21 @@ const AllProduct = () => {
                           <span className="text-sm text-gray-600 ml-2">({item.rating})</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <div>
-                            <span className="text-lg font-bold text-blue-600">${item.price}</span>
+                          <div className='flex items-center gap-3'>
+                           <div className="flex items-center gap-2">
+                             <span className="text-lg font-bold text-[#111C85]">${discountPrice(item)}</span>
+                            <span className="text-lg font-bold line-through text-[#FF2AAA]">${item.price}</span>
+                           </div>
                             {item.discountPercentage > 0 && (
-                              <span className="text-sm text-green-600 ml-2">
+                              <span className="text-sm text-green-600 ml-2 mt-1">
                                 {item.discountPercentage}% off
                               </span>
                             )}
                           </div>
                           <div className="flex opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out flex-col gap-3">
-                            <button className=" hover:bg-gray-100 rounded-full transition-colors"><SlHeart size={18} className="text-gray-600 hover:text-red-500"/></button>
-                            <button className=" hover:bg-gray-100 rounded-full transition-colors"><GoZoomIn size={18} className="text-gray-600 hover:text-red-500"/></button>
-                            <button className=" hover:bg-gray-100 rounded-full transition-colors"><BsCart size={18} className="text-gray-600 hover:text-red-500"/></button>
+                            <button className=" hover:bg-gray-100 rounded-full transition-colors"><SlHeart size={18} className="text-gray-600 hover:text-red-500" /></button>
+                            <button className=" hover:bg-gray-100 rounded-full transition-colors"><GoZoomIn size={18} className="text-gray-600 hover:text-red-500" /></button>
+                            <button onClick={() => dispatch(addToCart(item))} className=" hover:bg-gray-100 rounded-full transition-colors"><BsCart size={18} className="text-gray-600 cursor-pointer hover:text-red-500" /></button>
                           </div>
                         </div>
                         <div className="text-xs text-gray-500 mt-2">
@@ -624,7 +636,7 @@ const AllProduct = () => {
 
                         <div className="w-3/4">
                           <div className="flex justify-between items-start mb-3">
-                            <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
+                            <h3 className="text-xl font-semibold text-[#111C85]">{item.title}</h3>
                             <span className="text-sm text-gray-500 capitalize bg-gray-100 px-2 py-1 rounded">{item.color}</span>
                           </div>
 
@@ -633,20 +645,23 @@ const AllProduct = () => {
                             <span className="text-sm text-gray-600">({item.rating}) • {item.brand} • {item.category}</span>
                           </div>
 
-                          <p className="text-gray-600 mb-4 line-clamp-2">{item.description}</p>
+                          <p className="text-[#9295AA] mb-4 line-clamp-2">{item.description}</p>
 
                           <div className="flex justify-between items-center">
                             <div className="flex items-center space-x-4">
-                              <span className="text-2xl font-bold text-blue-600">${item.price}</span>
+                              <div className="flex items-center gap-2">
+                             <span className="text-lg font-bold text-[#111C85]">${discountPrice(item)}</span>
+                            <span className="text-lg font-bold line-through text-[#FF2AAA]">${item.price}</span>
+                           </div>
                               {item.discountPercentage > 0 && (
-                                <span className="text-lg text-green-600 bg-green-50 px-3 py-1 rounded-full">
+                                <span className="text-sm text-green-600 bg-green-50 px-3 py-1 rounded-full">
                                   {item.discountPercentage}% OFF
                                 </span>
                               )}
                               <span className="text-sm text-gray-500">SKU: {item.sku}</span>
                             </div>
 
-                          {/* buttons */}
+                            {/* buttons */}
                             <div className="flex opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out space-x-4">
                               <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                                 <SlHeart size={18} className="text-gray-600 hover:text-red-500" />
@@ -654,8 +669,8 @@ const AllProduct = () => {
                               <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                                 <GoZoomIn size={18} className="text-gray-600 hover:text-blue-500" />
                               </button>
-                              <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-                                <BsCart size={18} className="text-gray-600 hover:text-green-500" />
+                              <button onClick={() => dispatch(addToCart(item))} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                                <BsCart size={18} className="text-gray-600 cursor-pointer hover:text-green-500" />
                               </button>
                             </div>
                           </div>
@@ -682,8 +697,8 @@ const AllProduct = () => {
                       onClick={prevPage}
                       disabled={currentPage === 1}
                       className={`px-3 py-1 rounded border ${currentPage === 1
-                          ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                          : 'bg-white text-blue-600 hover:bg-blue-50'
+                        ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                        : 'bg-white text-blue-600 hover:bg-blue-50'
                         }`}
                     >
                       Previous
@@ -702,8 +717,8 @@ const AllProduct = () => {
                             key={pageNumber}
                             onClick={() => paginate(pageNumber)}
                             className={`px-3 py-1 rounded border ${currentPage === pageNumber
-                                ? 'bg-blue-600 text-white'
-                                : 'bg-white text-blue-600 hover:bg-blue-50'
+                              ? 'bg-blue-600 text-white'
+                              : 'bg-white text-blue-600 hover:bg-blue-50'
                               }`}
                           >
                             {pageNumber}
@@ -715,13 +730,13 @@ const AllProduct = () => {
                       return null;
                     })}
 
-                   {/* Next */}
+                    {/* Next */}
                     <button
                       onClick={nextPage}
                       disabled={currentPage === totalPages}
                       className={`px-3 py-1 rounded border ${currentPage === totalPages
-                          ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                          : 'bg-white text-blue-600 hover:bg-blue-50'
+                        ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                        : 'bg-white text-blue-600 hover:bg-blue-50'
                         }`}
                     >
                       Next
