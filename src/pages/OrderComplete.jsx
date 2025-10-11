@@ -13,7 +13,6 @@ const OrderComplete = () => {
                             <FaCheckCircle className="text-[#FF1788] text-6xl" />
                         </div>
 
-
                         <h1 className="text-3xl font-bold text-[#101750] mb-4">Your Order Is Completed! </h1>
                         <p className="text-gray-600 text-lg mb-2">Thank you for your order! Your order is being processed and will be completed within 3-6
                             hours. You will receive an email confirmation when your order is completed.

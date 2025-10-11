@@ -8,6 +8,7 @@ import { BsCart } from 'react-icons/bs';
 import { SlHeart } from 'react-icons/sl';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../component/slice/productSlice';
+import com from "../assets/company.png"
 
 const AllProduct = () => {
 
@@ -757,7 +758,9 @@ const AllProduct = () => {
         </div>
       </div>
 
-
+      <div className="mt-12 flex justify-end mr-[80px] cursor-pointer">
+        <img src={com} alt="" />
+      </div>
 
     </Container>
   )

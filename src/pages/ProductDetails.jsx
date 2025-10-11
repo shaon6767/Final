@@ -3,11 +3,12 @@ import Container from '../component/Container'
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import { FaStar, FaStarHalfAlt, FaRegStar, FaShoppingCart, FaArrowLeft } from 'react-icons/fa';
+import { FaStar, FaStarHalfAlt, FaRegStar, FaShoppingCart, FaArrowLeft, FaFacebook, FaInstagram } from 'react-icons/fa';
 import { ApiData } from '../component/ContextApi';
-import { FaArrowRightLong } from 'react-icons/fa6';
+import { FaArrowRightLong, FaXTwitter } from 'react-icons/fa6';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../component/slice/productSlice';
+import com from "../assets/company.png"
 
 
 const ProductDetails = () => {
@@ -41,7 +42,7 @@ const ProductDetails = () => {
     };
 
 
-    let renderRatingStars = (rating) => {
+    let clientRating = (rating) => {
         return Array.from({ length: 5 }, (_, index) => {
             let number = index + 0.5;
             return (
@@ -123,7 +124,7 @@ const ProductDetails = () => {
                                     <div className="flex items-center gap-4 mb-4">
                                         <div className="flex items-center gap-2">
                                             <div className="flex text-yellow-400">
-                                                {renderRatingStars(singleProduct.rating)}
+                                                {clientRating(singleProduct.rating)}
                                             </div>
                                             <span className="text-sm text-gray-600">({singleProduct.rating})</span>
                                         </div>
@@ -196,6 +197,15 @@ const ProductDetails = () => {
                                     <div className="flex justify-between">
                                         <span>Return Policy:</span>
                                         <span>{singleProduct.returnPolicy}</span>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center gap-2">
+                                    <h2 className='text-[18px] text-[#796c6c] font-josefin'>Share:</h2>
+                                    <div className="flex items-center gap-3">
+                                     <FaFacebook size={20} className='text-blue-700 cursor-pointer' />
+                                     <FaXTwitter size={20} className='text-black cursor-pointer'/>
+                                     <FaInstagram size={20} className='text-red-500 cursor-pointer'/>
                                     </div>
                                 </div>
                             </div>
@@ -282,7 +292,7 @@ const ProductDetails = () => {
                                                     <div key={index} className="pb-6">
                                                         <div className="flex items-center gap-4 mb-3">
                                                             <div className="flex text-yellow-400">
-                                                                {renderRatingStars(review.rating)}
+                                                                {clientRating(review.rating)}
                                                             </div>
                                                             <span className="font-semibold text-gray-800">{review.reviewerName}</span>
                                                             <span className="text-sm text-gray-500">
@@ -343,6 +353,10 @@ const ProductDetails = () => {
 
                     </div>
                 )}
+            </div>
+
+            <div className="mt-8 flex justify-center cursor-pointer">
+                <img src={com} alt="" />
             </div>
         </Container>
     )

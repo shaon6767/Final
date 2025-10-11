@@ -85,16 +85,16 @@ const Latest = () => {
         </div>
 
         <div className="flex justify-center gap-12 mt-8">
-          <button onClick={handleNewArrival} className={`text-[18px] font-semibold pb-2 ${newArrival ? 'text-pink-500 border-b-2 border-pink-500' : 'text-gray-600'}`}>New Arrival</button>
-          <button onClick={handleBestSeller} className={`text-[18px] font-semibold pb-2 ${bestSeller ? 'text-pink-500 border-b-2 border-pink-500' : 'text-gray-600'}`}>Best Seller </button>
-          <button onClick={handleFeatured} className={`text-[18px] font-semibold pb-2 ${featured ? 'text-pink-500 border-b-2 border-pink-500' : 'text-gray-600'}`}>Featured</button>
-          <button onClick={handleSpecialOffer} className={`text-[18px] font-semibold pb-2 ${specialOffer ? 'text-pink-500 border-b-2 border-pink-500' : 'text-gray-600'}`}>Special Offer</button>
+          <button onClick={handleNewArrival} className={`text-[18px] font-semibold pb-2 ${newArrival ? 'text-pink-500 border-b-2 border-pink-500' : 'text-[#1A0B5B]'}`}>New Arrival</button>
+          <button onClick={handleBestSeller} className={`text-[18px] font-semibold pb-2 ${bestSeller ? 'text-pink-500 border-b-2 border-pink-500' : 'text-[#1A0B5B]'}`}>Best Seller </button>
+          <button onClick={handleFeatured} className={`text-[18px] font-semibold pb-2 ${featured ? 'text-pink-500 border-b-2 border-pink-500' : 'text-[#1A0B5B]'}`}>Featured</button>
+          <button onClick={handleSpecialOffer} className={`text-[18px] font-semibold pb-2 ${specialOffer ? 'text-pink-500 border-b-2 border-pink-500' : 'text-[#1A0B5B]'}`}>Special Offer</button>
         </div>
 
         <div className="mt-[50px] grid grid-cols-3 gap-8">
           {filteredProducts.map((item) => (
             <div className="group">
-              <div className="bg-white p-6 h-[400px] flex items-center justify-center relative overflow-hidden">
+              <div className="bg-white p-6 h-[400px] flex items-center cursor-pointer justify-center relative overflow-hidden">
                 <img onClick={handleLtst}
                   className='w-[300px] h-[300px] object-cover transition-all z-10 duration-300 group-hover:scale-105' src={item.thumbnail} alt="" />
                 <div className="absolute inset-0 bg-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
@@ -119,10 +119,9 @@ const Latest = () => {
                 </h3>
 
                <div className="flex gap-2 items-center">
-                   <p className="text-blue-500 font-bold text-[14px]">${discountPrice(item)}</p>
-                <p className="text-red-600 line-through font-bold text-[14px]">${item.price}</p>
+                   <p className="text-[#151875] font-bold text-[14px]">${discountPrice(item)}</p>
+                <p className="text-[#FB2448] line-through font-bold text-[14px]">${item.price}</p>
                </div>
-
               </div>
             </div>
           ))}
