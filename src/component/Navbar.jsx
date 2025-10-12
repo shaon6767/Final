@@ -49,10 +49,10 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                 </li>
-                                <li className='hover:text-[#FB2E86]'><a href="#">Page</a></li>
-                                <li className='hover:text-[#FB2E86]'><Link to= "/allproduct"><a href="">Product</a></Link></li>
+                                <li className='hover:text-[#FB2E86]'><Link to= "/allproduct"><a href="">Products</a></Link></li>
+                                <li className='hover:text-[#FB2E86]'><Link to= "/shop"><a href="">Shop</a></Link></li>
                                 <li className='hover:text-[#FB2E86]'><a href="#">Blog</a></li>
-                                <li className='hover:text-[#FB2E86]'><a href="#">Shop</a></li>
+                                <li className='hover:text-[#FB2E86]'><a href="#">About</a></li>
                                 <li className='hover:text-[#FB2E86]'><a href="#">Contact</a></li>
                             </ul>
                         </div>

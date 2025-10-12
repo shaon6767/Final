@@ -205,9 +205,9 @@ const AllProduct = () => {
     <Container>
 
       <div className="mt-[60px] py-[40px]">
-        <h2 className='text-[#101750] text-[36px] font-semibold'>Shop List</h2>
+        <h2 className='text-[#101750] text-[36px] font-semibold'>Products</h2>
         <div className="">
-          <h2><Link to="/">Home</Link>.Pages.Shop</h2>
+          <h2><Link to="/">Home</Link>.Pages.<Link to="/shop">Shop</Link></h2>
         </div>
 
       </div>

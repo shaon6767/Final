@@ -83,7 +83,7 @@ const TrendingProducts = () => {
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 flex items-center justify-center">
                           <div className="text-white text-center transform -translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 className="text-lg font-semibold mb-2 mt-4 drop-shadow-lg">{item.title}</h3>
-                            <div className="flex gap-4 mt-9 justify-center">
+                            <div className="flex gap-4 mt-6 justify-center">
                               <p className='line-through text-[red] opacity-75 drop-shadow-lg'>${item.price}</p>
                               <p className="font-bold text-[#07fe07] drop-shadow-lg">${discountPrice(item)}</p>
                             </div>
@@ -164,19 +164,19 @@ const TrendingProducts = () => {
             <div className="flex justify-center gap-8 mb-12">
               <button
                 onClick={() => setActiveBtn("wood")}
-                className={`text-lg pb-2 ${activebtn === "wood" ? 'border-b-2 text-[#FB2E86] border-[#FB2E86]' : 'border-b-2 border-transparent'}`}
+                className={`text-lg pb-2 text-[#151875] ${activebtn === "wood" ? 'border-b-2 text-[#FB2E86] border-[#FB2E86]' : 'border-b-2 border-transparent'}`}
               >
                 Wood Chair
               </button>
               <button
                 onClick={() => setActiveBtn("plastic")}
-                className={`text-lg pb-2 ${activebtn === "plastic" ? 'border-b-2 text-[#FB2E86] border-[#FB2E86]' : 'border-b-2 border-transparent'}`}
+                className={`text-lg pb-2 text-[#151875] ${activebtn === "plastic" ? 'border-b-2 text-[#FB2E86] border-[#FB2E86]' : 'border-b-2 border-transparent'}`}
               >
                 Plastic Chair
               </button>
               <button
                 onClick={() => setActiveBtn("sofa")}
-                className={`text-lg pb-2 ${activebtn === "sofa" ? 'border-b-2 text-[#FB2E86] border-[#FB2E86]' : 'border-b-2 border-transparent'}`}
+                className={`text-lg pb-2 text-[#151875] ${activebtn === "sofa" ? 'border-b-2 text-[#FB2E86] border-[#FB2E86]' : 'border-b-2 border-transparent'}`}
               >
                 Sofa Collection
               </button>

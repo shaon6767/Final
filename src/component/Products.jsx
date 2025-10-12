@@ -67,18 +67,18 @@ const Products = () => {
               <div className="w-[24%] px-3">
                 <div className="bg-gray-100 p-4 h-[320px] flex items-center justify-center shadow-lg relative group">
                   <div className="absolute left-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex  gap-2">
-                    <button className="bg-white p-2 rounded-full shadow-md hover:bg-red-50 hover:text-red-500 transition-colors">
+                    <button className="bg-white p-2 rounded-full shadow-md hover:bg-red-50 hover:text-blue-500 transition-colors">
                       <FaHeart className="text-sm" />
                     </button>
                     <button className="bg-white p-2 rounded-full shadow-md hover:bg-blue-50 hover:text-blue-500 transition-colors">
                       <FiZoomIn className="text-sm" />
                     </button>
-                    <button onClick={()=>dispatch(addToCart(item))} className="bg-white p-2 rounded-full shadow-md hover:bg-green-50 hover:text-green-500 transition-colors">
+                    <button onClick={()=>dispatch(addToCart(item))} className="bg-white p-2 rounded-full shadow-md hover:bg-blue-50 hover:text-blue-500  transition-colors">
                       <FaShoppingCart className="text-sm cursor-pointer" />
                     </button>
                   </div>
                    <Link to={`/productdetails/${item.id}`}>
-                  <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-6 py-2 rounded-md opacity-0 group-hover:opacity-100 cursor-pointer transition-opacity duration-300 hover:bg-blue-700">
+                  <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-2 rounded-md opacity-0 group-hover:opacity-100 cursor-pointer transition-opacity duration-300 hover:bg-green-600">
                     View Details
                   </button>
                    </Link>
