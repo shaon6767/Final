@@ -44,7 +44,7 @@ const Cart = () => {
                     <>
                         <div className="min-h-screen py-8 font-josefin">
                             <h1 className="text-3xl font-bold text-[#0D134E] mb-2">Shopping Cart</h1>
-                             <h2 className='mb-16 text-[#0D134E]'><Link to="/"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Home</span></Link>.Pages.<Link to="/allproduct"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Shop</span></Link></h2>
+                             <h2 className='mb-16 text-[#0D134E]'><Link to="/"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Home</span></Link>.Pages.<Link to="/shop"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Shop</span></Link></h2>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                                 {/* Left Column - Cart Items */}
                                 <div className="lg:col-span-2 bg-white">
@@ -198,7 +198,7 @@ const Cart = () => {
                             <p className="text-[24px]">No data found </p>
                             <PiSmileySadLight className='text-[30px]' />
                         </div>
-                        <Link to="/allproduct"><button className='ml-6 mt-6 px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700'><a href="#">Back to Shop</a></button></Link>
+                        <Link to="/shop"><button className='ml-6 mt-6 px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700'><a href="#">Back to Shop</a></button></Link>
                     </div>
                 )}
             </div>

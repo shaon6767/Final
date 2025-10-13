@@ -32,7 +32,7 @@ const AllProduct = () => {
   let [priceRange, setPriceRange] = useState({ low: 0, high: 2000 });
   let [selectedColor, setSelectedColor] = useState('');
   let [currentPage, setCurrentPage] = useState(1);
-  let [productsPerPage, setProductsPerPage] = useState(9);
+  let [productsPerPage, setProductsPerPage] = useState(6);
   let [sortBy, setSortBy] = useState('newest');
 
 
@@ -205,7 +205,7 @@ const AllProduct = () => {
     <Container>
 
       <div className="mt-[60px] py-[40px]">
-        <h2 className='text-[#101750] text-[36px] font-semibold'>Products</h2>
+        <h2 className='text-[#101750] text-[36px] font-semibold'>Category</h2>
         <div className="">
           <h2><Link to="/">Home</Link>.Pages.<Link to="/shop">Shop</Link></h2>
         </div>

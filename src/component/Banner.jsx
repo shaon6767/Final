@@ -6,6 +6,7 @@ import { initFlowbite } from 'flowbite';
 import sofa from "../assets/sofa.png"
 import Slider from 'react-slick';
 import ban from "../assets/banner.png"
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     let [currentSlide, setCurrentSlide] = useState(0);
@@ -20,34 +21,34 @@ const Banner = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         appendDots: dots => (
-        <div style={{
-            position: 'absolute',
-            bottom: '-50px',
-            display: 'flex',
-            justifyContent: 'center',
-            width: '100%'
-        }}>
-            <ul style={{ 
-                display: 'flex', 
-                gap: '10px',
-                margin: 0,
-                padding: 0
-            }}> 
-                {dots} 
-            </ul>
-        </div>
+            <div style={{
+                position: 'absolute',
+                bottom: '-50px',
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100%'
+            }}>
+                <ul style={{
+                    display: 'flex',
+                    gap: '10px',
+                    margin: 0,
+                    padding: 0
+                }}>
+                    {dots}
+                </ul>
+            </div>
 
-    ),
-     customPaging: i => (
-        <div style={{
-            width: '12px',
-            height: '12px',
-            borderRadius: '50%',
-            backgroundColor: '#d1d5db',
-            cursor: 'pointer'
-        }}></div>
-     ),
-    
+        ),
+        customPaging: i => (
+            <div style={{
+                width: '12px',
+                height: '12px',
+                borderRadius: '50%',
+                backgroundColor: '#d1d5db',
+                cursor: 'pointer'
+            }}></div>
+        ),
+
         beforeChange: (current, next) => setCurrentSlide(next),
     };
     useEffect(() => {
@@ -91,7 +92,9 @@ const Banner = () => {
                                     <p className=' text-[#FB2E86] text-[18px]'>Best Furniture For Your Castle....</p>
                                     <h2 className='text-[53px] font-semibold mt-[20px] font-josefin w-[644px]'>New Furniture Collection Trends in 2020</h2>
                                     <p className='w-[560px] mt-[20px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Shop Now</a></button>
+                                    <Link to="/shop">
+                                        <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Shop Now</a></button>
+                                    </Link>
                                 </div>
                                 <div className="flex justify-end">
                                     <img src={sofa} alt="" />
@@ -102,7 +105,9 @@ const Banner = () => {
                                     <p className=' text-[#FB2E86] text-[18px]'>Best Furniture For Your Castle....</p>
                                     <h2 className='text-[53px] font-semibold mt-[20px] font-josefin w-[644px]'>Everything you need is here!!</h2>
                                     <p className='w-[560px] mt-[20px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Go to Products</a></button>
+                                    <Link to="/shop">
+                                        <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Shop Now</a></button>
+                                    </Link>
                                 </div>
                                 <div className="flex justify-end">
                                     <img src={sofa} alt="" />
@@ -113,7 +118,9 @@ const Banner = () => {
                                     <p className=' text-[#FB2E86] text-[18px]'>We got whats the best for you</p>
                                     <h2 className='text-[53px] font-semibold mt-[20px] font-josefin w-[644px]'>New Furniture Collection Trends</h2>
                                     <p className='w-[560px] mt-[20px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Get started</a></button>
+                                    <Link to="/shop">
+                                        <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Go to Shop</a></button>
+                                    </Link>
                                 </div>
                                 <div className="flex justify-end">
                                     <img src={sofa} alt="" />
@@ -124,7 +131,9 @@ const Banner = () => {
                                     <p className=' text-[#FB2E86] text-[18px]'>We got whats the best for you</p>
                                     <h2 className='text-[53px] font-semibold mt-[20px] font-josefin w-[644px]'>Everything you need is here</h2>
                                     <p className='w-[560px] mt-[20px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Buy now</a></button>
+                                    <Link to="/shop">
+                                        <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Shop Now</a></button>
+                                    </Link>
                                 </div>
                                 <div className="flex justify-end">
                                     <img src={sofa} alt="" />

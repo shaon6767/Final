@@ -18,7 +18,7 @@ const Shop = () => {
     let [filterShow, setFilterShow] = useState([]);
     let dispatch = useDispatch()
     let [currentPage, setCurrentPage] = useState(1);
-    let [productsPerPage, setProductsPerPage] = useState(9);
+    let [productsPerPage, setProductsPerPage] = useState(12);
     let [sortBy, setSortBy] = useState('newest');
 
     useEffect(() => {
@@ -63,7 +63,7 @@ const Shop = () => {
     let nextPage = () => currentPage < totalPages && setCurrentPage(currentPage + 1);
     let prevPage = () => currentPage > 1 && setCurrentPage(currentPage - 1);
 
-    let renderRatingStars = (rating) => {
+    let clientRating = (rating) => {
         return Array.from({ length: 5 }, (_, index) => {
             let number = index + 0.5;
             return (
@@ -153,11 +153,10 @@ const Shop = () => {
                 <div className="container mx-auto py-6">
                     <div className="flex flex-col lg:flex-row gap-10">
 
-                        {/* All Products - Full width */}
+                        {/*Products*/}
                         <div className="w-full">
                             <div className="bg-white">
 
-                                {/*Grid - 4 columns full width */}
                                 {view === 'grid' ? (
                                     <div className="grid grid-cols-4 gap-6">
                                         {currentProducts.map(item => (
@@ -172,43 +171,28 @@ const Shop = () => {
                                                     </Link>
                                                 </div>
                                                 <div className="flex justify-between items-center">
-                                                    <h3 className="font-semibold text-[#151875] mb-2">{item.title}</h3>
-                                                    <span className="text-sm text-gray-500 capitalize">{item.color}</span>
-                                                </div>
-                                                <div className="flex items-center mb-2">
-                                                    <div className="flex text-yellow-400">
-                                                        {renderRatingStars(item.rating)}
-                                                    </div>
-                                                    <span className="text-sm text-gray-600 ml-2">({item.rating})</span>
-                                                </div>
-                                                <div className="flex justify-between items-center">
-                                                    <div className='flex items-center gap-3'>
-                                                        <div className="flex items-center gap-2">
-                                                            <span className="text-lg font-bold text-[#111C85]">${discountPrice(item)}</span>
-                                                            <span className="text-lg font-bold line-through text-[#FF2AAA]">${item.price}</span>
+                                                    <div className="ml-[65px] space-y-3">
+                                                        <h3 className="font-semibold text-center text-[#151875]">{item.title}</h3>
+                                                        <span className="text-sm flex justify-center text-[#151875] capitalize">{item.color}</span>
+                                                        <div className="flex justify-center items-center gap-2">
+                                                            <p className="text-lg font-bold text-[#111C85]">${discountPrice(item)}</p>
+                                                            <p className="text-lg font-bold line-through text-[#FF2AAA]">${item.price}</p>
                                                         </div>
-                                                        {item.discountPercentage > 0 && (
-                                                            <span className="text-sm text-green-600 ml-2 mt-1">
-                                                                {item.discountPercentage}% off
-                                                            </span>
-                                                        )}
                                                     </div>
                                                     <div className="flex opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out flex-col gap-3">
                                                         <button className=" hover:bg-gray-100 rounded-full transition-colors"><SlHeart size={18} className="text-gray-600 hover:text-red-500" /></button>
                                                         <button className=" hover:bg-gray-100 rounded-full transition-colors"><GoZoomIn size={18} className="text-gray-600 hover:text-red-500" /></button>
                                                         <button onClick={() => dispatch(addToCart(item))} className=" hover:bg-gray-100 rounded-full transition-colors"><BsCart size={18} className="text-gray-600 cursor-pointer hover:text-red-500" /></button>
                                                     </div>
-                                                </div>
-                                                <div className="text-xs text-gray-500 mt-2">
-                                                    {item.brand} • {item.category}
+
                                                 </div>
                                             </div>
                                         ))}
                                     </div>
                                 ) : (
 
-                                    // List view
-                                    <div className="space-y-6">
+                                    // List
+                                    <div className="space-y-2">
                                         {currentProducts.map(item => (
                                             <div key={item.id} className="flex p-6 hover:shadow-lg hover:scale-105 transition-all duration-200 group">
                                                 <div className="w-1/4 mr-6">
@@ -224,33 +208,23 @@ const Shop = () => {
                                                 </div>
 
                                                 <div className="w-3/4">
-                                                    <div className="flex justify-between items-start mb-3">
+                                                    <div className="flex gap-2 items-start mb-3">
                                                         <h3 className="text-xl font-semibold text-[#111C85]">{item.title}</h3>
                                                         <span className="text-sm text-gray-500 capitalize bg-gray-100 px-2 py-1 rounded">{item.color}</span>
                                                     </div>
 
                                                     <div className="flex items-center mb-3">
-                                                        <div className="flex text-yellow-400 mr-2">{renderRatingStars(item.rating)}</div>
-                                                        <span className="text-sm text-gray-600">({item.rating}) • {item.brand} • {item.category}</span>
-                                                    </div>
-
-                                                    <p className="text-[#9295AA] mb-4 line-clamp-2">{item.description}</p>
-
-                                                    <div className="flex justify-between items-center">
-                                                        <div className="flex items-center space-x-4">
-                                                            <div className="flex items-center gap-2">
+                                                      <div className="flex items-center mt-4 gap-4">
                                                                 <span className="text-lg font-bold text-[#111C85]">${discountPrice(item)}</span>
                                                                 <span className="text-lg font-bold line-through text-[#FF2AAA]">${item.price}</span>
                                                             </div>
-                                                            {item.discountPercentage > 0 && (
-                                                                <span className="text-sm text-green-600 bg-green-50 px-3 py-1 rounded-full">
-                                                                    {item.discountPercentage}% OFF
-                                                                </span>
-                                                            )}
-                                                            <span className="text-sm text-gray-500">SKU: {item.sku}</span>
-                                                        </div>
+                                                        <span className="flex text-yellow-400 mt-4 ml-4">{clientRating(item.rating)}</span>
+                                                      
+                                                    </div>
 
-                                                        <div className="flex opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out space-x-4">
+                                                    <p className="text-[#9295AA] mb-4 mt-6 line-clamp-2">{item.description}</p>
+
+                                                        <div className="flex mt-8 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out space-x-2">
                                                             <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                                                                 <SlHeart size={18} className="text-gray-600 hover:text-red-500" />
                                                             </button>
@@ -261,13 +235,6 @@ const Shop = () => {
                                                                 <BsCart size={18} className="text-gray-600 cursor-pointer hover:text-green-500" />
                                                             </button>
                                                         </div>
-                                                    </div>
-
-                                                    <div className="flex space-x-6 mt-4 text-xs text-gray-500">
-                                                        <span>🛒 {item.stock} in stock</span>
-                                                        <span>🚚 {item.shippingInformation}</span>
-                                                        <span>📦 {item.returnPolicy}</span>
-                                                    </div>
                                                 </div>
                                             </div>
                                         ))}
@@ -332,7 +299,7 @@ const Shop = () => {
                 </div>
             </div>
 
-            <div className="mt-12 flex justify-end mr-[80px] cursor-pointer">
+            <div className="mt-12 flex justify-center mr-[80px] cursor-pointer">
                 <img src={com} alt="" />
             </div>
 
