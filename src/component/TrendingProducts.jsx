@@ -11,7 +11,7 @@ import three from "../assets/chairthree.png"
 import { TiTick } from 'react-icons/ti'
 import pinksofa from "../assets/pinksofa.png"
 import { FaHeart, FaShoppingCart, FaSync } from 'react-icons/fa'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { MdOutlineDone } from 'react-icons/md'
 
 
@@ -44,7 +44,6 @@ const TrendingProducts = () => {
   let [activebtn, setActiveBtn] = useState("wood")
 
   let data = useContext(ApiData)
-  let navigate = useNavigate()
   let trendingProducts = data?.products?.filter(item => item.isTrending) || []
 
   let discountPrice = (product) => {
@@ -72,9 +71,8 @@ const TrendingProducts = () => {
               <Slider {...settings}>
                 {trendingProducts.map((item) => (
                   <div className="px-3">
-                    <div className="relative group cursor-pointer overflow-hidden">
-
-                      <div className="relative overflow-hidden" onClick={() => navigate("/allproduct")}>
+                    <Link to={`/productdetails/${item.id}`} className="relative group cursor-pointer overflow-hidden">
+                      <div className="relative overflow-hidden" >
                         <img
                           src={item.thumbnail}
                           alt=""
@@ -90,7 +88,7 @@ const TrendingProducts = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </Slider>
@@ -197,17 +195,17 @@ const TrendingProducts = () => {
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                       <div className="flex items-center gap-1">
-                         <MdOutlineDone size={20} className='text-[#B7BACB]' />
+                        <MdOutlineDone size={20} className='text-[#B7BACB]' />
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                     </div>
                     <div className="flex gap-4 mb-10">
                       <div className="flex items-center gap-1">
-                          <MdOutlineDone size={20} className='text-[#B7BACB]' />
+                        <MdOutlineDone size={20} className='text-[#B7BACB]' />
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                       <div className="flex items-center gap-1">
-                           <MdOutlineDone size={20} className='text-[#B7BACB]' />
+                        <MdOutlineDone size={20} className='text-[#B7BACB]' />
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                     </div>

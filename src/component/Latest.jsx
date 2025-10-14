@@ -6,7 +6,7 @@ import delivery from "../assets/delivery.png"
 import quality from "../assets/quality.png"
 import cashback from "../assets/cashback.png"
 import support from "../assets/support.png"
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addToCart } from './slice/productSlice'
 
@@ -27,10 +27,6 @@ const Latest = () => {
     let discount = (product.price * product.discountPercentage) / 100;
     return (product.price - discount).toFixed(2);
   };
-
-  let handleLtst = () => {
-    navigate("/allproduct")
-  }
 
 
   if (data && data.products) {
@@ -93,19 +89,19 @@ const Latest = () => {
 
         <div className="mt-[50px] grid grid-cols-3 gap-8">
           {filteredProducts.map((item) => (
-            <div className="group">
+            <Link to={`/productdetails/${item.id}`} className="group">
               <div className="bg-white p-6 h-[400px] flex items-center cursor-pointer justify-center relative overflow-hidden">
-                <img onClick={handleLtst}
+                <img
                   className='w-[300px] h-[300px] object-cover transition-all z-10 duration-300 group-hover:scale-105' src={item.thumbnail} alt="" />
                 <div className="absolute inset-0 bg-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-                <div className="absolute left-0 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col gap-4">
-                  <button className="bg-white p-3 rounded-full shadow-lg hover:bg-red-50 hover:text-red-500 transition-colors">
+                <div className="absolute left-0 top-[200px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col gap-4 pointer-events-none">
+                  <button className="bg-white p-3 rounded-full shadow-lg hover:bg-blue-50 pointer-events-auto hover:text-blue-500 transition-colors">
                     <FaHeart className="text-lg" />
                   </button>
-                  <button className="bg-white p-3 rounded-full shadow-lg hover:bg-blue-50 hover:text-blue-500 transition-colors">
+                  <button className="bg-white p-3 rounded-full shadow-lg pointer-events-auto hover:bg-blue-50 hover:text-blue-500 transition-colors">
                     <FaSearchPlus className="text-lg" />
                   </button>
-                  <button onClick={()=>dispatch(addToCart(item))} className="bg-white p-3 rounded-full shadow-lg hover:bg-green-50 hover:text-green-500 transition-colors">
+                  <button onClick={() => dispatch(addToCart(item))} className="bg-white p-3 rounded-full shadow-lg hover:bg-blue-50 pointer-events-auto hover:text-blue-500 transition-colors">
                     <FaShoppingCart className="text-lg cursor-pointer" />
                   </button>
                 </div>
@@ -118,12 +114,12 @@ const Latest = () => {
                   {item.title}
                 </h3>
 
-               <div className="flex gap-2 items-center">
-                   <p className="text-[#151875] font-bold text-[14px]">${discountPrice(item)}</p>
-                <p className="text-[#FB2448] line-through font-bold text-[14px]">${item.price}</p>
-               </div>
+                <div className="flex gap-2 items-center">
+                  <p className="text-[#151875] font-bold text-[14px]">${discountPrice(item)}</p>
+                  <p className="text-[#FB2448] line-through font-bold text-[14px]">${item.price}</p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

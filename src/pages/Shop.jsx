@@ -82,7 +82,7 @@ const Shop = () => {
             <div className="mt-[60px] py-[40px]">
                 <h2 className='text-[#101750] text-[36px] font-semibold'>Shop list</h2>
                 <div className="">
-                    <h2><Link to="/">Home</Link>.Pages.<Link to="/allproduct">Products</Link></h2>
+                    <h2 className='text-[#0D134E]'><Link to="/"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Home</span></Link>.Pages.<Link to="/allproduct"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Category</span></Link></h2>
                 </div>
             </div>
 

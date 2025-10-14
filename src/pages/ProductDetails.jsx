@@ -94,7 +94,7 @@ const ProductDetails = () => {
                     </div>
                 ) : (
                     <div className="min-h-screen py-8 font-josefin">
-                        <Link to="/allproduct">
+                        <Link to="/shop">
                         
                         <button
                         
@@ -107,12 +107,12 @@ const ProductDetails = () => {
 
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                             <div className="space-y-4">
-                                {/* Main image */}
+                                {/* Image */}
                                 <div className="flex items-center justify-center h-96">
                                     <img
                                         src={singleProduct.images?.[selectedImage] || singleProduct.thumbnail}
                                         alt={singleProduct.title}
-                                        className="mt-[80px] h-[450px] w-[500px] object-cover rounded-lg"
+                                        className="mt-[40px] h-[400px] w-[450px] object-cover rounded-lg"
                                     />
                                 </div>
                             </div>
@@ -128,8 +128,6 @@ const ProductDetails = () => {
                                             </div>
                                             <span className="text-sm text-gray-600">({singleProduct.rating})</span>
                                         </div>
-                                        <span className="text-sm text-gray-500">•</span>
-                                        <span className="text-sm text-green-600">{singleProduct.stock} in stock</span>
                                     </div>
                                 </div>
 
@@ -139,13 +137,12 @@ const ProductDetails = () => {
                                         <div className="flex items-center gap-4">
                                             <span className="text-3xl font-bold text-blue-600">${discountPrice()}</span>
                                             <span className="text-xl text-[#FB2E86] line-through">${singleProduct.price}</span>
-                                            <span className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-semibold">
-                                                {singleProduct.discountPercentage}% OFF
-                                            </span>
                                         </div>
                                     ) : (
                                         <span className="text-3xl font-bold text-blue-600">${singleProduct.price}</span>
+                                        
                                     )}
+                                        <h2 className=" mt-4 text-gray-600 capitalize">Color: {singleProduct.color}</h2>
                                 </div>
 
                                 <div>
@@ -153,27 +150,6 @@ const ProductDetails = () => {
                                     <p className="text-gray-600 leading-relaxed">{singleProduct.description}</p>
                                 </div>
 
-                                {/* Product details */}
-                                <div className="grid grid-cols-2 gap-4 text-sm">
-                                    <div>
-                                        <span className="font-semibold text-gray-700">Brand:</span>
-                                        <span className="ml-2 text-gray-600">{singleProduct.brand}</span>
-                                    </div>
-                                    <div>
-                                        <span className="font-semibold text-gray-700">Category:</span>
-                                        <span className="ml-2 text-gray-600 capitalize">{singleProduct.category}</span>
-                                    </div>
-                                    <div>
-                                        <span className="font-semibold text-gray-700">SKU:</span>
-                                        <span className="ml-2 text-gray-600">{singleProduct.sku}</span>
-                                    </div>
-                                    <div>
-                                        <span className="font-semibold text-gray-700">Weight:</span>
-                                        <span className="ml-2 text-gray-600">{singleProduct.weight} kg</span>
-                                    </div>
-                                </div>
-
-                                {/* Quantity*/}
                                 <div className="space-y-4">
                                     <div className="flex gap-4">
                                         <button onClick={() => handleCart(singleProduct)} className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2">
@@ -184,23 +160,7 @@ const ProductDetails = () => {
                                 </div>
                                 <ToastContainer />
 
-                                {/* Additional info */}
-                                <div className="pt-4 space-y-3 text-sm text-gray-600">
-                                    <div className="flex justify-between">
-                                        <span>Shipping:</span>
-                                        <span>{singleProduct.shippingInformation}</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span>Warranty:</span>
-                                        <span>{singleProduct.warrantyInformation}</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span>Return Policy:</span>
-                                        <span>{singleProduct.returnPolicy}</span>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center gap-2">
+                                <div className="flex mt-10 items-center gap-2">
                                     <h2 className='text-[18px] text-[#796c6c] font-josefin'>Share:</h2>
                                     <div className="flex items-center gap-3">
                                      <FaFacebook size={20} className='text-blue-700 cursor-pointer' />
@@ -339,7 +299,6 @@ const ProductDetails = () => {
                                             <div className="flex items-center justify-between">
                                                 <div className="flex items-center gap-5">
                                                     <span className="text-[#0D134E] font-bold">${relatedProduct.price}</span>
-                                                    <span className="text-sm line-through text-[#FB2E86]">${discountPrice()}</span>
                                                 </div>
                                                 <div className="flex items-center gap-1">
                                                     <FaStar className="text-yellow-400" />

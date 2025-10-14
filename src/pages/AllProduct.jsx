@@ -203,15 +203,12 @@ const AllProduct = () => {
 
   return (
     <Container>
-
       <div className="mt-[60px] py-[40px]">
         <h2 className='text-[#101750] text-[36px] font-semibold'>Category</h2>
         <div className="">
-          <h2><Link to="/">Home</Link>.Pages.<Link to="/shop">Shop</Link></h2>
+           <h2 className='text-[#0D134E]'><Link to="/"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Home</span></Link>.Pages.<Link to="/shop"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Shop</span></Link></h2>
         </div>
-
       </div>
-
 
 
       <div className="">
@@ -223,7 +220,6 @@ const AllProduct = () => {
                 Ecommerce Accessories & Fashion Items
               </h2>
             </div>
-
 
             <div className="w-full md:w-3/5 flex flex-col md:flex-row justify-end items-center space-y-3 md:space-y-0 md:space-x-4">
               <div className="flex items-center space-x-2">
@@ -237,7 +233,6 @@ const AllProduct = () => {
                 </select>
               </div>
 
-
               <div className="flex items-center space-x-2">
                 <span className="text-sm text-[#3F509E]">Sort by:</span>
                 <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="text-sm border w-[150px] rounded px-2 py-1">
@@ -247,7 +242,6 @@ const AllProduct = () => {
                   <option value="name">Name A-Z</option>
                 </select>
               </div>
-
 
               <div className="flex items-center space-x-1 p-1">
                 <h2 className='text-[#3F509E]'>View:</h2>
