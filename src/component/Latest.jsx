@@ -12,66 +12,46 @@ import { addToCart } from './slice/productSlice'
 
 const Latest = () => {
   let data = useContext(ApiData)
-  let navigate = useNavigate();
   let dispatch = useDispatch()
-
-  let [newArrival, setNewArrival] = useState(true)
-  let [bestSeller, setBestSeller] = useState(false)
-  let [featured, setFeatured] = useState(false)
-  let [specialOffer, setSpecialOffer] = useState(false)
-
+  
+  let [activeCategory, setActiveCategory] = useState("newArrival")
   let filteredProducts = []
 
-  let discountPrice = (product) => {
-    if (!product) return 0;
-    let discount = (product.price * product.discountPercentage) / 100;
-    return (product.price - discount).toFixed(2);
-  };
-
-
   if (data && data.products) {
-    if (newArrival) {
+    if (activeCategory == "newArrival") {
       filteredProducts = data.products.filter(item => item.isNew)
-    } else if (bestSeller) {
+    } else if (activeCategory == "bestSeller") {
       filteredProducts = data.products.filter(item => item.isBestSeller)
-    } else if (featured) {
+    } else if (activeCategory == "featured") {
       filteredProducts = data.products.filter(item => item.isFeatured)
-    } else if (specialOffer) {
+    } else if (activeCategory == "specialOffer") {
       filteredProducts = data.products.filter(item => item.isSpecialOffer)
     }
   }
 
   filteredProducts = filteredProducts.slice(0, 6)
 
-
   let handleNewArrival = () => {
-    setNewArrival(true)
-    setBestSeller(false)
-    setFeatured(false)
-    setSpecialOffer(false)
+    setActiveCategory("newArrival")
   }
 
   let handleBestSeller = () => {
-    setNewArrival(false)
-    setBestSeller(true)
-    setFeatured(false)
-    setSpecialOffer(false)
+    setActiveCategory("bestSeller")
   }
 
   let handleFeatured = () => {
-    setNewArrival(false)
-    setBestSeller(false)
-    setFeatured(true)
-    setSpecialOffer(false)
+    setActiveCategory("featured")
   }
 
   let handleSpecialOffer = () => {
-    setNewArrival(false)
-    setBestSeller(false)
-    setFeatured(false)
-    setSpecialOffer(true)
+    setActiveCategory("specialOffer")
   }
 
+  let discountPrice = (product) => {
+    if (!product) return 0;
+    let discount = (product.price * product.discountPercentage) / 100;
+    return (product.price - discount).toFixed(2);
+  };
 
   return (
     <Container>
@@ -81,10 +61,10 @@ const Latest = () => {
         </div>
 
         <div className="flex justify-center gap-12 mt-8">
-          <button onClick={handleNewArrival} className={`text-[18px] font-semibold pb-2 ${newArrival ? 'text-pink-500 border-b-2 border-pink-500' : 'text-[#1A0B5B]'}`}>New Arrival</button>
-          <button onClick={handleBestSeller} className={`text-[18px] font-semibold pb-2 ${bestSeller ? 'text-pink-500 border-b-2 border-pink-500' : 'text-[#1A0B5B]'}`}>Best Seller </button>
-          <button onClick={handleFeatured} className={`text-[18px] font-semibold pb-2 ${featured ? 'text-pink-500 border-b-2 border-pink-500' : 'text-[#1A0B5B]'}`}>Featured</button>
-          <button onClick={handleSpecialOffer} className={`text-[18px] font-semibold pb-2 ${specialOffer ? 'text-pink-500 border-b-2 border-pink-500' : 'text-[#1A0B5B]'}`}>Special Offer</button>
+          <button onClick={handleNewArrival} className={`text-[18px] font-semibold pb-2 ${activeCategory == "newArrival" ? 'text-pink-500 border-b-2 border-pink-500' : 'text-[#1A0B5B]'}`}>New Arrival</button>
+          <button onClick={handleBestSeller} className={`text-[18px] font-semibold pb-2 ${activeCategory == "bestSeller" ? 'text-pink-500 border-b-2 border-pink-500' : 'text-[#1A0B5B]'}`}>Best Seller </button>
+          <button onClick={handleFeatured} className={`text-[18px] font-semibold pb-2 ${activeCategory == "featured" ? 'text-pink-500 border-b-2 border-pink-500' : 'text-[#1A0B5B]'}`}>Featured</button>
+          <button onClick={handleSpecialOffer} className={`text-[18px] font-semibold pb-2 ${activeCategory == "specialOffer" ? 'text-pink-500 border-b-2 border-pink-500' : 'text-[#1A0B5B]'}`}>Special Offer</button>
         </div>
 
         <div className="mt-[50px] grid grid-cols-3 gap-8">

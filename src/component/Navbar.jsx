@@ -29,24 +29,7 @@ const Navbar = () => {
                                             type="button"
                                         >
                                             <Link to="/">Home</Link>
-                                            <svg className="w-2.5 h-2.5 ms-3 transition-transform group-hover:rotate-180" aria-hidden="true" xmlns="" fill="none" viewBox="0 0 10 6">
-                                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
-                                            </svg>
                                         </button>
-
-                                        <div className="absolute left-0 top-full z-50 bg-white divide-y divide-gray-100 shadow-lg w-40 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
-                                            <ul className="text-gray-700 py-1">
-                                                <li>
-                                                    <a href="#" className="block px-4 py-2 hover:bg-gray-100 transition-colors">Whats New!</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" className="block px-4 py-2 hover:bg-gray-100 transition-colors">Discount</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" className="block px-4 py-2 hover:bg-gray-100 transition-colors">Special offers</a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </li>
                                 <li className='hover:text-[#FB2E86]'><Link to= "/allproduct"><a href="">Category</a></Link></li>

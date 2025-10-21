@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import Container from './Container'
 import Slider from 'react-slick';
 import { ApiData } from './ContextApi';
@@ -11,15 +11,19 @@ import three from "../assets/bthree.png"
 import { useNavigate } from 'react-router-dom';
 
 const Category = () => {
-
   let data = useContext(ApiData)
   let navigate = useNavigate()
+  let [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    if (data && data.products) {
+      setCategories([...new Set(data.products.map(item => item.category))])
+    }
+  }, [data])
 
   let handleCatgry = ()=>{
-  navigate("/allproduct")
+    navigate("/allproduct")
   }
-
-  let categories = [...new Set(data?.products?.map(item => item.category) || [])];
 
   const settings = {
     arrows: false,
@@ -37,14 +41,15 @@ const Category = () => {
       <div className="w-3 h-3 bg-white border-1 border-[#FB2E86] rounded-full"></div>
     )
   };
+  
   return (
     <Container>
       <div className="mt-16 category font-josefin">
         <h2 className="text-center text-[#1A0B5B] text-[42px] font-semibold">Top Categories</h2>
 
         <Slider {...settings}>
-          {categories.map((category, index) => {
-            let categoryProduct = data?.products?.find((item) => item.category === category);
+          {categories.map((category) => {
+            let categoryProduct = data.products?.find((item) => item.category == category);
             return (
               <div className="px-6 mt-[50px]">
                 <div className="text-center group cursor-pointer">

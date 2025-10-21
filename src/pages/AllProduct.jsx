@@ -298,10 +298,7 @@ const AllProduct = () => {
 
                   {/* Brand */}
                   <div className="pb-4 mb-4">
-                    <div
-                      className="flex justify-between items-center cursor-pointer"
-                      onClick={() => toggleSection('brand')}
-                    >
+                    <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection('brand')}>
                       <h3 className="font-semibold text-[#151875] underline">Product Brand</h3>
                       {expandedSections.brand ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
                     </div>
@@ -699,7 +696,7 @@ const AllProduct = () => {
                     </button>
 
                     {[...Array(totalPages)].map((_, index) => {
-                      const pageNumber = index + 1;
+                      let pageNumber = index + 1;
                       return (
                         <button
                           key={pageNumber}

@@ -1,5 +1,5 @@
 import Container from './Container'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ApiData } from './ContextApi'
 import Slider from 'react-slick'
 import { GrLinkNext, GrLinkPrevious } from 'react-icons/gr'
@@ -10,10 +10,8 @@ import two from "../assets/chairtwo.png"
 import three from "../assets/chairthree.png"
 import { TiTick } from 'react-icons/ti'
 import pinksofa from "../assets/pinksofa.png"
-import { FaHeart, FaShoppingCart, FaSync } from 'react-icons/fa'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { MdOutlineDone } from 'react-icons/md'
-
 
 function SampleNextArrow(props) {
   const { onClick } = props;
@@ -40,18 +38,34 @@ function SamplePrevArrow(props) {
 }
 
 const TrendingProducts = () => {
-
-  let [activebtn, setActiveBtn] = useState("wood")
-
   let data = useContext(ApiData)
-  let trendingProducts = data?.products?.filter(item => item.isTrending) || []
+  let [activeCategory, setActiveCategory] = useState("wood")
+  let [filterShow, setFilterShow] = useState([])
+
+  useEffect(() => {
+    if (data && data.products) {
+      let trending = data.products.filter(item => item.isTrending)
+      setFilterShow(trending)
+    }
+  }, [data])
+
+  let handleWood = () => {
+    setActiveCategory("wood")
+  }
+
+  let handlePlastic = () => {
+    setActiveCategory("plastic")
+  }
+
+  let handleSofa = () => {
+    setActiveCategory("sofa")
+  }
 
   let discountPrice = (product) => {
     if (!product) return 0;
     let discount = (product.price * product.discountPercentage) / 100;
     return (product.price - discount).toFixed(2);
   };
-
 
   var settings = {
     slidesToShow: 4,
@@ -69,8 +83,8 @@ const TrendingProducts = () => {
 
             <div className="relative">
               <Slider {...settings}>
-                {trendingProducts.map((item) => (
-                  <div className="px-3">
+                {filterShow.map((item) => (
+                  <div className="px-3" key={item.id}>
                     <Link to={`/productdetails/${item.id}`} className="relative group cursor-pointer overflow-hidden">
                       <div className="relative overflow-hidden" >
                         <img
@@ -119,7 +133,6 @@ const TrendingProducts = () => {
                 </div>
               </div>
 
-
               <div className="col-span-1 space-y-8">
                 <div className="flex items-center gap-4">
                   <div className="w-28 h-20 bg-gray-300 flex items-center justify-center">
@@ -161,27 +174,27 @@ const TrendingProducts = () => {
 
             <div className="flex justify-center gap-8 mb-12">
               <button
-                onClick={() => setActiveBtn("wood")}
-                className={`text-lg pb-2 text-[#151875] ${activebtn === "wood" ? 'border-b-2 text-[#FB2E86] border-[#FB2E86]' : 'border-b-2 border-transparent'}`}
+                onClick={handleWood}
+                className={`text-lg pb-2 text-[#151875] ${activeCategory == "wood" ? 'border-b-2 text-[#FB2E86] border-[#FB2E86]' : 'border-b-2 border-transparent'}`}
               >
                 Wood Chair
               </button>
               <button
-                onClick={() => setActiveBtn("plastic")}
-                className={`text-lg pb-2 text-[#151875] ${activebtn === "plastic" ? 'border-b-2 text-[#FB2E86] border-[#FB2E86]' : 'border-b-2 border-transparent'}`}
+                onClick={handlePlastic}
+                className={`text-lg pb-2 text-[#151875] ${activeCategory == "plastic" ? 'border-b-2 text-[#FB2E86] border-[#FB2E86]' : 'border-b-2 border-transparent'}`}
               >
                 Plastic Chair
               </button>
               <button
-                onClick={() => setActiveBtn("sofa")}
-                className={`text-lg pb-2 text-[#151875] ${activebtn === "sofa" ? 'border-b-2 text-[#FB2E86] border-[#FB2E86]' : 'border-b-2 border-transparent'}`}
+                onClick={handleSofa}
+                className={`text-lg pb-2 text-[#151875] ${activeCategory == "sofa" ? 'border-b-2 text-[#FB2E86] border-[#FB2E86]' : 'border-b-2 border-transparent'}`}
               >
                 Sofa Collection
               </button>
             </div>
 
             <div className="transition-all duration-500">
-              {activebtn === "wood" && (
+              {activeCategory == "wood" && (
                 <div className="grid grid-cols-2 items-center">
                   <div>
                     <h3 className="text-[#151875] text-[35px] font-semibold mb-4">20% Discount Of All Chairs</h3>
@@ -209,7 +222,9 @@ const TrendingProducts = () => {
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                     </div>
-                    <button className="bg-pink-500 text-white px-8 py-3 cursor-pointer">Shop Now</button>
+                    <Link to="/shop">
+                      <button className="bg-pink-500 text-white px-8 py-3 cursor-pointer">Shop Now</button>
+                    </Link>
                   </div>
                   <div className="flex items-center justify-end">
                     <img src={pinksofa} alt="wood chair" className="w-full h-full object-contain" />
@@ -217,7 +232,7 @@ const TrendingProducts = () => {
                 </div>
               )}
 
-              {activebtn === "plastic" && (
+              {activeCategory == "plastic" && (
                 <div className="grid grid-cols-2 items-center">
                   <div>
                     <h3 className="text-[#151875] text-[35px] font-semibold mb-4">20% Discount Of All Plastic Products</h3>
@@ -245,7 +260,9 @@ const TrendingProducts = () => {
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                     </div>
-                    <button className="bg-pink-500 text-white px-8 py-3 cursor-pointer">Shop Now</button>
+                    <Link to="/shop">
+                      <button className="bg-pink-500 text-white px-8 py-3 cursor-pointer">Shop Now</button>
+                    </Link>
                   </div>
                   <div className="flex items-center justify-end">
                     <img src={pinksofa} alt="plastic chair" className="w-full h-full object-contain" />
@@ -253,7 +270,7 @@ const TrendingProducts = () => {
                 </div>
               )}
 
-              {activebtn === "sofa" && (
+              {activeCategory == "sofa" && (
                 <div className="grid grid-cols-2 items-center">
                   <div>
                     <h3 className="text-[#151875] text-[35px] font-semibold mb-4">20% Discount Of All Sofa Products</h3>
@@ -281,7 +298,9 @@ const TrendingProducts = () => {
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                     </div>
-                    <button className="bg-pink-500 text-white px-8 py-3 cursor-pointer">Shop Now</button>
+                    <Link to="/shop">
+                      <button className="bg-pink-500 text-white px-8 py-3 cursor-pointer">Shop Now</button>
+                    </Link>
                   </div>
                   <div className="flex items-center justify-end">
                     <img src={pinksofa} alt="sofa" className="w-full h-full object-contain" />
@@ -289,8 +308,6 @@ const TrendingProducts = () => {
                 </div>
               )}
             </div>
-
-
           </div>
         </div>
       </div>

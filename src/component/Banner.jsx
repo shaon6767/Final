@@ -9,9 +9,10 @@ import ban from "../assets/banner.png"
 import { Link } from 'react-router-dom';
 
 const Banner = () => {
-    let [currentSlide, setCurrentSlide] = useState(0);
-    let sliderRef = useRef(null);
-    let totalSlides = 4;
+    const [slideIndex, setSlideIndex] = useState(0);
+    const [updateCount, setUpdateCount] = useState(0);
+    let sliderRef = useRef()
+
 
     var settings = {
         infinite: true,
@@ -21,46 +22,37 @@ const Banner = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         appendDots: dots => (
-            <div style={{
-                position: 'absolute',
-                bottom: '-50px',
-                display: 'flex',
-                justifyContent: 'center',
-                width: '100%'
-            }}>
-                <ul style={{
-                    display: 'flex',
-                    gap: '10px',
-                    margin: 0,
-                    padding: 0
-                }}>
-                    {dots}
-                </ul>
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    padding: "10px"
+                }}
+            >
+                <ul style={{ display: "flex", margin: "0px", gap: "15px" }}> {dots} </ul>
             </div>
-
         ),
         customPaging: i => (
-            <div style={{
-                width: '12px',
-                height: '12px',
-                borderRadius: '50%',
-                backgroundColor: '#d1d5db',
-                cursor: 'pointer'
-            }}></div>
+            <div
+                style={{
+                    height: "12px",
+                    width: "12px",
+                    color: "blue",
+                    borderRadius: "50%",
+                    border: "1px gray solid"
+                }}
+            >
+            </div>
         ),
 
-        beforeChange: (current, next) => setCurrentSlide(next),
+        afterChange: () => setUpdateCount(updateCount + 1),
+        beforeChange: (current, next) => setSlideIndex(next)
     };
-    useEffect(() => {
 
+
+    useEffect(() => {
         initFlowbite();
     }, []);
-
-    const handleRangeChange = (e) => {
-        const slideIndex = parseInt(e.target.value);
-        setCurrentSlide(slideIndex);
-        sliderRef.current.slickGoTo(slideIndex);
-    };
 
     return (
         <section className='bg-[#F2F0FF]'>
@@ -72,21 +64,21 @@ const Banner = () => {
                             <img src={ban} alt="" />
                         </div>
 
-                        <div className="absolute top-[530px] left-[-150px]">
+
+
+                        <div className="absolute top-[530px] left-[-170px]">
                             <div className="max-w-[80px]">
-                                <input
-                                    id="slide-control"
+                                <input 
+                                    onChange={e => sliderRef.slickGoTo(e.target.value)}
+                                    value={slideIndex}
                                     type="range"
-                                    min="0"
-                                    max={totalSlides - 1}
-                                    value={currentSlide}
-                                    onChange={handleRangeChange}
-                                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-[#44434710] [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#FB2E86]"
+                                    min={0}
+                                    max={3}
                                 />
                             </div>
                         </div>
 
-                        <Slider ref={sliderRef} {...settings}>
+                        <Slider ref={slider => { sliderRef = slider; }} {...settings}>
                             <div className="relative">
                                 <div className="absolute top-[200px] left-0">
                                     <p className=' text-[#FB2E86] text-[18px]'>Best Furniture For Your Castle....</p>
