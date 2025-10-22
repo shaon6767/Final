@@ -33,7 +33,7 @@ const Navbar = () => {
                                     </div>
                                 </li>
                                 <li className='hover:text-[#FB2E86]'><Link to= "/allproduct"><a href="">Products</a></Link></li>
-                                <li className='hover:text-[#FB2E86]'><a href="#">Blog</a></li>
+                                <li className='hover:text-[#FB2E86]'><Link to="/blog"><a href="">Blog</a></Link></li>
                                 <li className='hover:text-[#FB2E86]'><a href="#">About</a></li>
                                 <li className='hover:text-[#FB2E86]'><a href="#">FAQ</a></li>
                                 <li className='hover:text-[#FB2E86]'><a href="#">Contact</a></li>
