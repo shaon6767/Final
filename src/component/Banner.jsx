@@ -84,7 +84,7 @@ const Banner = () => {
                                     <p className=' text-[#FB2E86] text-[18px]'>Best Furniture For Your Castle....</p>
                                     <h2 className='text-[53px] font-semibold mt-[20px] font-josefin w-[644px]'>New Furniture Collection Trends in 2020</h2>
                                     <p className='w-[560px] mt-[20px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <Link to="/shop">
+                                    <Link to="/allproduct">
                                         <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Shop Now</a></button>
                                     </Link>
                                 </div>
@@ -97,7 +97,7 @@ const Banner = () => {
                                     <p className=' text-[#FB2E86] text-[18px]'>Best Furniture For Your Castle....</p>
                                     <h2 className='text-[53px] font-semibold mt-[20px] font-josefin w-[644px]'>Everything you need is here!!</h2>
                                     <p className='w-[560px] mt-[20px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <Link to="/shop">
+                                    <Link to="/allproduct">
                                         <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Shop Now</a></button>
                                     </Link>
                                 </div>
@@ -110,7 +110,7 @@ const Banner = () => {
                                     <p className=' text-[#FB2E86] text-[18px]'>We got whats the best for you</p>
                                     <h2 className='text-[53px] font-semibold mt-[20px] font-josefin w-[644px]'>New Furniture Collection Trends</h2>
                                     <p className='w-[560px] mt-[20px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <Link to="/shop">
+                                    <Link to="/allproduct">
                                         <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Go to Shop</a></button>
                                     </Link>
                                 </div>
@@ -123,7 +123,7 @@ const Banner = () => {
                                     <p className=' text-[#FB2E86] text-[18px]'>We got whats the best for you</p>
                                     <h2 className='text-[53px] font-semibold mt-[20px] font-josefin w-[644px]'>Everything you need is here</h2>
                                     <p className='w-[560px] mt-[20px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <Link to="/shop">
+                                    <Link to="/allproduct">
                                         <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Shop Now</a></button>
                                     </Link>
                                 </div>

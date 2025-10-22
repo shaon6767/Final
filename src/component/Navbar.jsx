@@ -21,7 +21,7 @@ const Navbar = () => {
                             <a href="#"> <img src={logo} alt="" /></a>
                         </div>
                         <div className="col-span-2">
-                            <ul className='flex gap-6 items-center'>
+                            <ul className='flex gap-6 justify-center items-center'>
                                 <li className="group relative">
                                     <div className="ml-4">
                                         <button
@@ -32,10 +32,10 @@ const Navbar = () => {
                                         </button>
                                     </div>
                                 </li>
-                                <li className='hover:text-[#FB2E86]'><Link to= "/allproduct"><a href="">Category</a></Link></li>
-                                <li className='hover:text-[#FB2E86]'><Link to= "/shop"><a href="">Shop</a></Link></li>
+                                <li className='hover:text-[#FB2E86]'><Link to= "/allproduct"><a href="">Products</a></Link></li>
                                 <li className='hover:text-[#FB2E86]'><a href="#">Blog</a></li>
                                 <li className='hover:text-[#FB2E86]'><a href="#">About</a></li>
+                                <li className='hover:text-[#FB2E86]'><a href="#">FAQ</a></li>
                                 <li className='hover:text-[#FB2E86]'><a href="#">Contact</a></li>
                             </ul>
                         </div>

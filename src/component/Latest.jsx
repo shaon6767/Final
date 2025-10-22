@@ -6,7 +6,7 @@ import delivery from "../assets/delivery.png"
 import quality from "../assets/quality.png"
 import cashback from "../assets/cashback.png"
 import support from "../assets/support.png"
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addToCart } from './slice/productSlice'
 

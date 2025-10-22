@@ -222,7 +222,7 @@ const TrendingProducts = () => {
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                     </div>
-                    <Link to="/shop">
+                    <Link to="/allproduct">
                       <button className="bg-pink-500 text-white px-8 py-3 cursor-pointer">Shop Now</button>
                     </Link>
                   </div>
@@ -260,7 +260,7 @@ const TrendingProducts = () => {
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                     </div>
-                    <Link to="/shop">
+                    <Link to="/allproduct">
                       <button className="bg-pink-500 text-white px-8 py-3 cursor-pointer">Shop Now</button>
                     </Link>
                   </div>
@@ -298,7 +298,7 @@ const TrendingProducts = () => {
                         <p className='text-[#B7BACB]'>Material expose like metals</p>
                       </div>
                     </div>
-                    <Link to="/shop">
+                    <Link to="/allproduct">
                       <button className="bg-pink-500 text-white px-8 py-3 cursor-pointer">Shop Now</button>
                     </Link>
                   </div>

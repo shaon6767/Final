@@ -8,10 +8,7 @@ const ContextApi = ({ children }) => {
 
   let getData = () => {
     axios.get("/db.json").then((response) => {
-        setInfo(response.data.products || []);
-      })
-      .catch((error) => {
-        console.error("Error loading db.json:", error);
+        setInfo(response.data.products);
       });
   };
 
