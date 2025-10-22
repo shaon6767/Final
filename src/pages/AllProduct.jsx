@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Container from '../component/Container'
-import { FaChevronDown, FaChevronUp, FaList, FaRegStar, FaStar, FaStarHalfAlt, FaTh } from 'react-icons/fa';
+import { FaList, FaRegStar, FaStar, FaStarHalfAlt, FaTh } from 'react-icons/fa';
 import { ApiData } from '../component/ContextApi'
 import { Link } from 'react-router-dom';
 import { GoZoomIn } from 'react-icons/go';
@@ -11,12 +11,9 @@ import { addToCart } from '../component/slice/productSlice';
 import com from "../assets/company.png"
 
 const AllProduct = () => {
-  let data = useContext(ApiData);
-  let [info, setInfo] = useState([]);
+  let info = useContext(ApiData);
   let [filterShow, setFilterShow] = useState([]);
   let dispatch = useDispatch()
-
-
   let [view, setView] = useState("");
   let [categories, setCategories] = useState([]);
   let [brands, setBrands] = useState([]);
@@ -24,59 +21,43 @@ const AllProduct = () => {
   let [perPage, setPerPage] = useState(6);
   let [currentPage, setCurrentPage] = useState(1);
 
-
-  let [selectedBrand, setSelectedBrand] = useState('');
-  let [selectedCategory, setSelectedCategory] = useState('');
-  let [selectedColor, setSelectedColor] = useState('');
-  let [low, setLow] = useState(0);
-  let [high, setHigh] = useState(2000);
-
-
-  let [expandedSections, setExpandedSections] = useState({
-    brand: false,
-    categories: false,
-    color: false
-  });
-
   useEffect(() => {
-    if (data && data.products) {
-      setInfo(data.products);
-      setFilterShow(data.products);
-    }
-  }, [data]);
-
-  useEffect(() => {
-    if (info.length > 0) {
-      setCategories([...new Set(info.map((item) => item.category))]);
-      setBrands([...new Set(info.map((item) => item.brand))]);
-      setColors([...new Set(info.map((item) => item.color))]);
+    if (info && info.products) {
+      setFilterShow(info.products);
     }
   }, [info]);
 
-
-  let handleBrand = (bitem) => {
-    setSelectedBrand(bitem);
-    let brandFilter = info.filter((item) => item.brand === bitem);
-    setFilterShow(brandFilter);
-  }
+  useEffect(() => {
+    if (info && info.products) {
+      setCategories([...new Set(info.products.map((item) => item.category))]);
+      setBrands([...new Set(info.products.map((item) => item.brand))]);
+      setColors([...new Set(info.products.map((item) => item.color))]);
+    }
+  }, [info]);
 
   let handleCategory = (citem) => {
-    setSelectedCategory(citem);
-    let cateFilter = info.filter((item) => item.category === citem);
+    let cateFilter = info.products.filter((item) => item.category === citem);
     setFilterShow(cateFilter);
   }
 
+  let handleBrand = (bitem) => {
+    let brandFilter = info.products.filter((item) => item.brand === bitem);
+    setFilterShow(brandFilter);
+  }
+
   let handleColor = (colorItem) => {
-    setSelectedColor(colorItem);
-    let colorFilter = info.filter((item) => item.color === colorItem);
+    let colorFilter = info.products.filter((item) => item.color === colorItem);
     setFilterShow(colorFilter);
   }
 
   let handlePrice = (value) => {
-    setLow(value.low);
-    setHigh(value.high);
-    let priceShow = info.filter((item) => item.price > value.low && item.price < value.high)
+    let priceShow = info.products.filter((item) => item.price > value.low && item.price < value.high)
     setFilterShow(priceShow);
+  }
+
+  let handleRating = (rating) => {
+    let ratingFilter = info.products.filter((item) => item.rating == rating);
+    setFilterShow(ratingFilter);
   }
 
   let handleGridView = () => {
@@ -92,20 +73,8 @@ const AllProduct = () => {
   }
 
   let handleClear = () => {
-    setFilterShow(info);
-    setSelectedBrand('');
-    setSelectedCategory('');
-    setSelectedColor('');
-    setLow(0);
-    setHigh(2000);
+    setFilterShow(info.products);
   }
-
-  let toggleSection = (section) => {
-    setExpandedSections(prev => ({
-      ...prev,
-      [section]: !prev[section]
-    }));
-  };
 
   let discountPrice = (product) => {
     if (!product) return 0;
@@ -113,7 +82,6 @@ const AllProduct = () => {
     return (product.price - discount).toFixed(2);
   };
 
-  // Simple pagination like Page 1
   let lastPage = perPage * currentPage;
   let firstPage = lastPage - perPage;
   let currentProducts = filterShow.slice(firstPage, lastPage);
@@ -144,10 +112,10 @@ const AllProduct = () => {
       let number = index + 0.5;
       return (
         rating > index + 1
-          ? <FaStar className='text-yellow-400' />
+          ? <FaStar key={index} className='text-[gold]' />
           : rating > number
-            ? <FaStarHalfAlt className='text-yellow-400' />
-            : <FaRegStar className='text-yellow-400' />
+            ? <FaStarHalfAlt key={index} className='text-[gold]' />
+            : <FaRegStar key={index} className='text-[gold]' />
       );
     });
   };
@@ -229,119 +197,149 @@ const AllProduct = () => {
                 <div className="flex justify-between items-center mb-8">
                   <h2 className="font-semibold text-[18px] text-[blue]">All Category</h2>
                   {filterShow.length > 0 &&
-                    <button onClick={handleClear} className="text-sm text-blue-600 hover:text-blue-800">
-                      Clear All
+                    <button onClick={handleClear} className="text-sm underline text-red-600 cursor-pointer">
+                      Clear Filters
                     </button>
                   }
                 </div>
 
+                <div className="pb-4 mb-4">
+                  <h3 className="font-semibold text-[#151875] underline">Categories</h3>
+                  <div className="mt-3 space-y-2 max-h-[180px] overflow-y-scroll">
+                    {categories.map(category => (
+                      <div key={category} className="flex items-center">
+
+                        <label
+                          onClick={() => handleCategory(category)}
+                          className="text-sm text-gray-600 cursor-pointer capitalize"
+                        >
+                          {category}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
                 <div className="pb-4 mb-4">
-                  <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection('categories')}>
-                    <h3 className="font-semibold text-[#151875] underline">Categories</h3>
-                    {expandedSections.categories ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
+                  <h3 className="font-semibold text-[#151875] underline">Brand</h3>
+                  <div className="mt-3 space-y-2 max-h-[200px] overflow-y-scroll">
+                    {brands.map(brand => (
+                      <div key={brand} className="flex items-center">
+                        <label
+                          onClick={() => handleBrand(brand)}
+                          className="text-sm text-gray-600 cursor-pointer"
+                        >
+                          {brand}
+                        </label>
+                      </div>
+                    ))}
                   </div>
-                  {expandedSections.categories && (
-                    <div className="mt-3 space-y-2">
-                      {categories.map(category => (
-                        <div key={category} className="flex items-center">
-                          <label
-                            onClick={() => handleCategory(category)}
-                            className="text-sm text-gray-600 cursor-pointer capitalize"
-                          >
-                            {category}
-                          </label>
-                        </div>
-                      ))}
+                </div>
+
+                <div className="pb-4 mb-4">
+                  <h3 className="font-semibold text-[#151875] underline">Price</h3>
+                  <div className="mt-3 space-y-2">
+                    <div className="flex items-center">
+                      <label
+                        onClick={() => handlePrice({ low: 0, high: 100 })}
+                        className="text-sm text-gray-600 cursor-pointer py-2"
+                      >
+                        $0 - $99.99
+                      </label>
                     </div>
-                  )}
+                    <div className="flex items-center">
+                      <label
+                        onClick={() => handlePrice({ low: 100, high: 500 })}
+                        className="text-sm text-gray-600 cursor-pointer py-2"
+                      >
+                        $100 - $499.99
+                      </label>
+                    </div>
+                    <div className="flex items-center">
+                      <label
+                        onClick={() => handlePrice({ low: 500, high: 1000 })}
+                        className="text-sm text-gray-600 cursor-pointer py-2"
+                      >
+                        $500 - $999.99
+                      </label>
+                    </div>
+                    <div className="flex items-center">
+                      <label
+                        onClick={() => handlePrice({ low: 1000, high: 2000 })}
+                        className="text-sm text-gray-600 cursor-pointer py-2"
+                      >
+                        $1000 - $1999.99
+                      </label>
+                    </div>
+                  </div>
                 </div>
 
 
                 <div className="pb-4 mb-4">
-                  <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection('brand')}>
-                    <h3 className="font-semibold text-[#151875] underline">Brand</h3>
-                    {expandedSections.brand ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
-                  </div>
-                  {expandedSections.brand && (
-                    <div className="mt-3 space-y-2">
-                      {brands.map(brand => (
-                        <div key={brand} className="flex items-center">
-                          <label
-                            onClick={() => handleBrand(brand)}
-                            className="text-sm text-gray-600 cursor-pointer"
-                          >
-                            {brand}
-                          </label>
-                        </div>
-                      ))}
+                  <h3 className="font-semibold text-[#151875] underline mb-3">Rating</h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center">
+                      <label
+                        onClick={() => handleRating()}
+                        className="text-sm text-gray-600 cursor-pointer py-2 flex items-center"
+                      >
+                        {clientRating(5)}
+                        (5)
+                      </label>
                     </div>
-                  )}
+                    <div className="flex items-center">
+                      <label
+                        onClick={() => handleRating(4)}
+                        className="text-sm text-gray-600 cursor-pointer py-2 flex items-center"
+                      >
+                        {clientRating(4)}
+                        (4)
+                      </label>
+                    </div>
+                    <div className="flex items-center">
+                      <label
+                        onClick={() => handleRating(3)}
+                        className="text-sm text-gray-600 cursor-pointer py-2 flex items-center"
+                      >
+                        {clientRating(3)}
+                        (3)
+                      </label>
+                    </div>
+                    <div className="flex items-center">
+                      <label
+                        onClick={() => handleRating(2)}
+                        className="text-sm text-gray-600 cursor-pointer py-2 flex items-center"
+                      >
+                        {clientRating(2)}
+                        (2)
+                      </label>
+                    </div>
+                    <div className="flex items-center">
+                      <label
+                        onClick={() => handleRating(1)}
+                        className="text-sm text-gray-600 cursor-pointer py-2 flex items-center"
+                      >
+                        {clientRating(1)}
+                        (1)
+                      </label>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="pb-4 mb-4">
-                  <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection('price')}>
-                    <h3 className="font-semibold text-[#151875] underline">Price</h3>
-                    {expandedSections.price ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
+                <div className="pb-4 ">
+                  <h3 className="font-semibold text-[#151875] underline">Color</h3>
+                  <div className="mt-3 max-h-[200px] overflow-y-scroll space-y-2">
+                    {colors.map(color => (
+                      <div key={color} className="flex items-center">
+                        <label
+                          onClick={() => handleColor(color)}
+                          className="text-sm text-gray-600 cursor-pointer capitalize"
+                        >
+                          {color}
+                        </label>
+                      </div>
+                    ))}
                   </div>
-                  {expandedSections.price && (
-                    <div className="mt-3 space-y-2">
-                      <div className="flex items-center">
-                        <label
-                          onClick={() => handlePrice({ low: 0, high: 100 })}
-                          className="text-sm text-gray-600 cursor-pointer py-2"
-                        >
-                          $0 - $99.99
-                        </label>
-                      </div>
-                      <div className="flex items-center">
-                        <label
-                          onClick={() => handlePrice({ low: 100, high: 500 })}
-                          className="text-sm text-gray-600 cursor-pointer py-2"
-                        >
-                          $100 - $499.99
-                        </label>
-                      </div>
-                      <div className="flex items-center">
-                        <label
-                          onClick={() => handlePrice({ low: 500, high: 1000 })}
-                          className="text-sm text-gray-600 cursor-pointer py-2"
-                        >
-                          $500 - $999.99
-                        </label>
-                      </div>
-                      <div className="flex items-center">
-                        <label
-                          onClick={() => handlePrice({ low: 1000, high: 2000 })}
-                          className="text-sm text-gray-600 cursor-pointer py-2"
-                        >
-                          $1000 - $1999.99
-                        </label>
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-
-                <div className="pb-4">
-                  <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection('color')}>
-                    <h3 className="font-semibold text-[#151875] underline">Color</h3>
-                    {expandedSections.color ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
-                  </div>
-                  {expandedSections.color && (
-                    <div className="mt-3 space-y-2">
-                      {colors.map(color => (
-                        <div key={color} className="flex items-center">
-                          <label
-                            onClick={() => handleColor(color)}
-                            className="text-sm text-gray-600 cursor-pointer capitalize"
-                          >
-                            {color}
-                          </label>
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
@@ -428,36 +426,23 @@ const AllProduct = () => {
                   </div>
                 )}
 
-
                 {pageNumber.length > 1 && (
                   <div className="flex justify-center mt-[50px]">
                     <nav aria-label="Page navigation example">
                       <ul className="flex justify-center gap-1 items-center">
                         <li>
-                          <a onClick={previous} className="px-3 py-1 rounded-sm border flex justify-center cursor-pointer bg-blue-900 text-white hover:bg-blue-600">Previous</a>
+                          <a onClick={previous} className="px-3 py-1 rounded-sm flex justify-center cursor-pointer bg-white hover:bg-blue-50 text-blue-700 border-1 border-[blue]">Previous</a>
                         </li>
                         {pageNumber.map((item, i) => (
                           <li key={i} onClick={() => paginate(item)}>
-                            <a className={` px-3 py-1 rounded border-1 border-[white] flex justify-center cursor-pointer ${currentPage == i + 1 ? "bg-blue-600 text-white" : "bg-blue-400 text-white "}`}>{item + 1}</a>
+                            <a className={` px-3 py-1 rounded  flex justify-center cursor-pointer ${currentPage == i + 1 ? "bg-blue-600 text-white" : "bg-white text-blue-700 border-1 border-[blue] "}`}>{item + 1}</a>
                           </li>
                         ))}
                         <li>
-                          <a onClick={next} className="px-3 py-1 cursor-pointer rounded-sm border flex justify-center bg-blue-800 hover:bg-blue-600 text-white">Next</a>
+                          <a onClick={next} className="px-3 py-1 cursor-pointer rounded-sm flex justify-center  bg-white hover:bg-blue-50 text-blue-700 border-1 border-[blue]">Next</a>
                         </li>
                       </ul>
                     </nav>
-                  </div>
-                )}
-
-                {filterShow.length > 0 === (
-                  <div className="text-center text-gray-500 py-12">
-                    <p className="text-lg">No products found matching your filters</p>
-                    <button
-                      onClick={handleClear}
-                      className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                    >
-                      Clear Filters
-                    </button>
                   </div>
                 )}
               </div>
