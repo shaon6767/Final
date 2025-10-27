@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Container from '../component/Container'
 import { initFlowbite } from 'flowbite';
+import con from "../assets/contactus.png"
 
 
 const Contact = () => {
@@ -11,29 +12,32 @@ const Contact = () => {
   return (
 
     <Container>
-      <div className="">
+      <div className=" mt-[100px] flex justify-between items-center">
         <section class="bg-white">
-          <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-            <h2 class="mb-4 text-4xl tracking-tight font-bold text-center text-black">Contact Us</h2>
-            <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-700 sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
+          <div class="py-8 lg:py-16 px-4 max-w-screen-md">
+            <h2 class="mb-4 text-4xl tracking-tight font-bold text-center text-[#151875]">Get in Touch</h2>
+            <p class="mb-8 lg:mb-16 w-[550px] font-light text-center text-[#151875]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis neque ultrices  tristique amet erat vitae eget dolor los vitae lobortis quis bibendum quam.</p>
             <form action="#" class="space-y-8">
               <div>
-                <label for="email" class="block mb-2 text-sm font-medium text-black">Name</label>
-                <input type="email" id="email" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="Your Name" required />
+                <label for="name" class="block mb-2 text-sm font-medium text-black">Name</label>
+                <input type="name" id="name" class=" border border-gray-300 text-gray-900 text-sm block w-full p-2.5" placeholder="Your Name" required />
               </div>
               <div>
                 <label for="email" class="block mb-2 text-sm font-medium text-black">Email</label>
-                <input type="email" id="email" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="Your Email" required />
+                <input type="email" id="email" class=" border border-gray-300 text-gray-900 text-sm block w-full p-2.5" placeholder="Your Email" required />
               </div>
 
               <div class="sm:col-span-2">
-                <label for="message" class="block mb-2 text-sm font-medium text-black dark:text-gray-400">Your message</label>
-                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-black" placeholder="Leave a comment..."></textarea>
+                <label for="message" class="block mb-2 text-sm font-medium text-black ">Your message</label>
+                <textarea id="message" rows="6" class="block border border-gray-300 p-2.5 w-full h-[250px] text-sm text-black" placeholder="Leave a comment..."></textarea>
               </div>
-              <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-700"><a href="#">Send message</a></button>
+              <button type="submit" class="py-3 px-9 text-sm font-medium text-center text-white rounded-sm bg-[#FB2E86]"><a href="#">Send Mail</a></button>
             </form>
           </div>
         </section>
+        <div className="">
+          <img src={con} alt="" />
+        </div>
       </div>
     </Container>
   )

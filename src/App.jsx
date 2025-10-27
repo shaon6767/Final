@@ -10,8 +10,10 @@ import Blog from "./pages/Blog"
 import About from "./pages/About"
 import Faq from "./pages/Faq"
 import Contact from "./pages/Contact"
+import Error from "./pages/Error"
 
 let router = createBrowserRouter(createRoutesFromElements(
+  <>
   <Route element={<RootLayout/>}>
     <Route path="/" element={<Home/>}></Route>
     <Route path="/allproduct" element={<AllProduct/>}></Route>
@@ -24,6 +26,8 @@ let router = createBrowserRouter(createRoutesFromElements(
     <Route path="/faq" element={<Faq/>}></Route>
     <Route path="/contact" element={<Contact/>}></Route>
   </Route>
+   <Route path="/*" element={<Error/>}></Route>
+  </>
 ))
 
 function App() {
