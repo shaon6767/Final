@@ -1,7 +1,6 @@
 import React from 'react'
 import Container from './Container'
 import logo from "../assets/Hekto.png"
-import { IoSearch } from 'react-icons/io5'
 
 const Footer = () => {
     return (
@@ -9,8 +8,6 @@ const Footer = () => {
             <Container>
                 <div className="mt-[100px]">
                     <div className="">
-
-
                         <footer class="bg-[#EEEFFB]">
                             <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                                 <div class="md:flex md:justify-between">
@@ -95,7 +92,6 @@ const Footer = () => {
                                                 <li class="mb-4">
                                                     <a href="#" class="hover:underline">WooCommerce Pages</a>
                                                 </li>
-
                                             </ul>
                                         </div>
                                     </div>
@@ -138,7 +134,6 @@ const Footer = () => {
                                 </div>
                             </div>
                         </footer>
-
                     </div>
                 </div>
             </Container>

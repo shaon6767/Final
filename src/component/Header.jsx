@@ -58,12 +58,16 @@ const Header = () => {
         setCart(false);
     }, [navigate]);
 
+    useEffect(() => {
+        initFlowbite();
+    }, []);
+
     return (
         <section className='bg-[#7E33E0] font-josefin'>
             <Container>
                 <div className="">
                     <div className="py-2">
-                        <div className="grid grid-cols-6">
+                        <div className="grid lg:grid-cols-6 sm:grid-cols-10 md:grid-cols-8">
                             <div className="flex gap-10">
                                 <div className="flex gap-2 items-center">
                                     <div className="text-white">
@@ -85,7 +89,7 @@ const Header = () => {
                             <div className=""></div>
                             <div className=""></div>
                             <div className=""></div>
-                            <div className="flex ml-[30px] items-center gap-3">
+                            <div className="flex lg:ml-[30px] sm:ml-[10px] items-center gap-3">
                                 <div className="flex items-center">
                                     <div className="">
                                         <button
@@ -118,7 +122,7 @@ const Header = () => {
                                         </div>
                                     </div>
 
-                                    <div className="ml-4">
+                                    <div className="lg:ml-4 sm:ml-2">
                                         <div className="">
                                             <button
                                                 id="dropdownDefaultSecButton"
@@ -145,17 +149,17 @@ const Header = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="flex items-center px-2 gap-2 text-white">
+                                <div className="flex items-center lg:px-2 sm:px-0 gap-2 text-white">
                                     <p>Login</p>
                                     <FaUser />
                                 </div>
-                                <div className="flex items-center gap-2 px-2 text-white">
+                                <div className="flex items-center gap-2 lg:px-2 sm:px-0 text-white">
                                     <p>Wishlist</p>
                                     <FaRegHeart />
                                 </div>
 
                                 {/* Cart */}
-                                <div className="flex px-2 ml-[5px] text-white relative">
+                                <div className="flex lg:px-2 sm:px-0 lg:ml-[5px] sm:ml-[10px] text-white relative">
                                     <button ref={cartRef} className="relative">
                                         <GrCart className="text-xl" />
                                         {data.length > 0 &&

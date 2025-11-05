@@ -11,7 +11,7 @@ import { addToCart } from './slice/productSlice'
 const Products = () => {
   let data = useContext(ApiData)
   let dispatch = useDispatch()
-  
+
   let [filterShow, setFilterShow] = useState([])
 
   useEffect(() => {
@@ -26,8 +26,36 @@ const Products = () => {
     arrows: false,
     dots: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToShow: window.innerWidth < 640 ? 2 : window.innerWidth < 768 ? 2 : window.innerWidth < 1024 ? 3 : 4,
+    slidesToScroll: window.innerWidth < 640 ? 2 : window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 2,
+    autoplay: window.innerWidth < 1024,
+    autoplaySpeed: 1500,
+    responsive: [
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          autoplay: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          autoplay: true
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          autoplay: false
+        }
+      }
+    ],
     appendDots: dots => (
       <div
         style={{
@@ -66,16 +94,16 @@ const Products = () => {
 
   return (
     <Container>
-      <div className="mt-[80px] font-josefin">
-        <div className="text-center text-[#1A0B5B] text-[42px] font-semibold ">
+      <div className="mt-8 sm:mt-12 lg:mt-[80px] font-josefin">
+        <div className="text-center text-[#1A0B5B] text-2xl sm:text-3xl lg:text-[42px] font-semibold ">
           <h2>Featured Products</h2>
         </div>
 
-        <div className="mt-[60px] prdct ">
+        <div className="mt-8 sm:mt-12 lg:mt-[60px] prdct">
           <Slider {...products}>
             {filterShow.map(item => (
-              <div className="w-[24%] px-3">
-                <div className="bg-gray-100 p-4 h-[320px] flex items-center justify-center shadow-lg relative group">
+              <div className="px-2 sm:px-3">
+                <div className="bg-gray-100 p-3 sm:p-4 h-[200px] sm:h-[250px] lg:h-[320px] flex items-center justify-center shadow-lg relative group">
                   <div className="absolute left-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-2">
                     <button className="bg-white p-2 rounded-full shadow-md hover:bg-red-50 hover:text-blue-500 transition-colors">
                       <FaHeart className="text-sm" />
@@ -92,37 +120,35 @@ const Products = () => {
                   </div>
 
                   <Link to={`/productdetails/${item.id}`}>
-                    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-2 rounded-md opacity-0 group-hover:opacity-100 cursor-pointer transition-opacity duration-300 hover:bg-green-600">
+                    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white lg:px-4 sm:px-6 py-2 rounded-md opacity-0 group-hover:opacity-100 cursor-pointer transition-opacity duration-300 hover:bg-green-600 text-sm sm:text-base">
                       View Details
                     </button>
                   </Link>
 
-
                   <Link to="/allproduct">
                     <img
-                      className="w-[250px] h-[250px] object-cover"
+                      className="h-[150px] w-[300px] lg:h-[250px] lg:w-[250px] object-cover"
                       src={item.thumbnail}
                       alt={item.title}
                     />
                   </Link>
                 </div>
 
-
-                <div className="bg-white p-4 shadow-lg min-h-[120px] group hover:bg-[#2F1AC4] transition-all duration-300 ease-in-out cursor-pointer text-center">
-                  <h3 className="text-lg text-[#FB2E86] group-hover:text-white mb-2">
+                <div className="bg-white p-3 sm:p-4 shadow-lg min-h-[100px] sm:min-h-[120px] group hover:bg-[#2F1AC4] transition-all duration-300 ease-in-out cursor-pointer text-center">
+                  <h3 className="text-sm sm:text-base lg:text-lg text-[#FB2E86] group-hover:text-white mb-1 sm:mb-2">
                     {item.title}
                   </h3>
 
-                  <div className="flex gap-3 justify-center py-2">
-                    <div className="h-[2px] w-[20px] bg-[green] rounded-[2px]"></div>
-                    <div className="h-[2px] w-[20px] bg-[#fc03f3] rounded-[2px]"></div>
-                    <div className="h-[2px] w-[20px] bg-[blue] group-hover:bg-[white] rounded-[2px]"></div>
+                  <div className="flex gap-2 sm:gap-3 justify-center py-1 sm:py-2">
+                    <div className="h-[2px] w-[15px] sm:w-[20px] bg-[green] rounded-[2px]"></div>
+                    <div className="h-[2px] w-[15px] sm:w-[20px] bg-[#fc03f3] rounded-[2px]"></div>
+                    <div className="h-[2px] w-[15px] sm:w-[20px] bg-[blue] group-hover:bg-[white] rounded-[2px]"></div>
                   </div>
 
-                  <span className="text-[#151875] group-hover:text-white block mt-3">
+                  <span className="text-[#151875] group-hover:text-white block mt-2 sm:mt-3 text-xs sm:text-sm lg:text-base">
                     Code - Y523201
                   </span>
-                  <span className="text-[#151875] group-hover:text-white mt-4 block">
+                  <span className="text-[#151875] group-hover:text-white mt-2 sm:mt-4 block text-sm sm:text-base lg:text-base">
                     ${item.price}
                   </span>
                 </div>

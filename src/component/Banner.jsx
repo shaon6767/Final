@@ -13,7 +13,6 @@ const Banner = () => {
     const [updateCount, setUpdateCount] = useState(0);
     let sliderRef = useRef()
 
-
     var settings = {
         infinite: true,
         arrows: false,
@@ -21,6 +20,28 @@ const Banner = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplay: window.innerWidth < 1024,
+        autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 640,
+                settings: {
+                    autoplay: true 
+                }
+            },
+            {
+                breakpoint: 768, 
+                settings: {
+                    autoplay: true 
+                }
+            },
+            {
+                breakpoint: 1024, 
+                settings: {
+                    autoplay: false 
+                }
+            }
+        ],
         appendDots: dots => (
             <div
                 style={{
@@ -44,11 +65,9 @@ const Banner = () => {
             >
             </div>
         ),
-
         afterChange: () => setUpdateCount(updateCount + 1),
         beforeChange: (current, next) => setSlideIndex(next)
     };
-
 
     useEffect(() => {
         initFlowbite();
@@ -60,15 +79,13 @@ const Banner = () => {
                 <div className="relative">
                     <div className="font-josefin py-4">
 
-                        <div className="absolute top-0 left-[-200px]">
+                        <div className="hidden lg:block absolute top-0 left-[-200px]">
                             <img src={ban} alt="" />
                         </div>
 
-
-
-                        <div className="absolute top-[530px] left-[-170px]">
+                        <div className="hidden lg:block absolute top-[530px] left-[-170px]">
                             <div className="max-w-[80px]">
-                                <input 
+                                <input
                                     onChange={e => sliderRef.slickGoTo(e.target.value)}
                                     value={slideIndex}
                                     type="range"
@@ -80,58 +97,86 @@ const Banner = () => {
 
                         <Slider ref={slider => { sliderRef = slider; }} {...settings}>
                             <div className="relative">
-                                <div className="absolute top-[200px] left-0">
-                                    <p className=' text-[#FB2E86] text-[18px]'>Best Furniture For Your Castle....</p>
-                                    <h2 className='text-[53px] font-semibold mt-[20px] font-josefin w-[644px]'>New Furniture Collection Trends in 2020</h2>
-                                    <p className='w-[560px] mt-[20px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
+                                <div className="lg:absolute lg:top-[200px] lg:left-0 text-center lg:text-left px-4 lg:px-0">
+                                    <p className='text-[#FB2E86] text-sm sm:text-base lg:text-[18px]'>Best Furniture For Your Castle....</p>
+                                    <h2 className='text-2xl sm:text-3xl lg:text-[53px] font-semibold mt-4 lg:mt-[20px] font-josefin w-full lg:w-[644px]'>
+                                        New Furniture Collection Trends in 2020
+                                    </h2>
+                                    <p className='w-full lg:w-[560px] mt-3 lg:mt-[20px] text-xs sm:text-sm lg:text-lg'>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.
+                                    </p>
                                     <Link to="/allproduct">
-                                        <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Shop Now</a></button>
+                                        <button className='mt-6 lg:mt-[40px]'>
+                                            <a className='px-4 py-2 sm:px-6 sm:py-3 bg-[#FB2E86] text-white text-sm sm:text-base' href="#">Shop Now</a>
+                                        </button>
                                     </Link>
                                 </div>
-                                <div className="flex justify-end">
-                                    <img src={sofa} alt="" />
-                                </div>
-                            </div>
-                            <div className="relative">
-                                <div className="absolute top-[200px] left-0">
-                                    <p className=' text-[#FB2E86] text-[18px]'>Best Furniture For Your Castle....</p>
-                                    <h2 className='text-[53px] font-semibold mt-[20px] font-josefin w-[644px]'>Everything you need is here!!</h2>
-                                    <p className='w-[560px] mt-[20px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <Link to="/allproduct">
-                                        <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Shop Now</a></button>
-                                    </Link>
-                                </div>
-                                <div className="flex justify-end">
-                                    <img src={sofa} alt="" />
-                                </div>
-                            </div>
-                            <div className="relative">
-                                <div className="absolute top-[200px] left-0">
-                                    <p className=' text-[#FB2E86] text-[18px]'>We got whats the best for you</p>
-                                    <h2 className='text-[53px] font-semibold mt-[20px] font-josefin w-[644px]'>New Furniture Collection Trends</h2>
-                                    <p className='w-[560px] mt-[20px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <Link to="/allproduct">
-                                        <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Go to Shop</a></button>
-                                    </Link>
-                                </div>
-                                <div className="flex justify-end">
-                                    <img src={sofa} alt="" />
-                                </div>
-                            </div>
-                            <div className="relative">
-                                <div className="absolute top-[200px] left-0">
-                                    <p className=' text-[#FB2E86] text-[18px]'>We got whats the best for you</p>
-                                    <h2 className='text-[53px] font-semibold mt-[20px] font-josefin w-[644px]'>Everything you need is here</h2>
-                                    <p className='w-[560px] mt-[20px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <Link to="/allproduct">
-                                        <button className='mt-[40px]'> <a className='px-6 py-3 bg-[#FB2E86] text-[white]' href="#">Shop Now</a></button>
-                                    </Link>
-                                </div>
-                                <div className="flex justify-end">
-                                    <img src={sofa} alt="" />
+                                <div className="flex justify-center lg:justify-end mt-4 lg:mt-0">
+                                    <img src={sofa} alt="" className="w-40 h-32 sm:w-64 sm:h-48 lg:w-auto lg:h-auto" />
                                 </div>
                             </div>
 
+                            <div className="relative">
+                                <div className="lg:absolute lg:top-[200px] lg:left-0 text-center lg:text-left px-4 lg:px-0">
+                                    <p className='text-[#FB2E86] text-sm sm:text-base lg:text-[18px]'>Best Furniture For Your Castle....</p>
+                                    <h2 className='text-2xl sm:text-3xl lg:text-[53px] font-semibold mt-4 lg:mt-[20px] font-josefin w-full lg:w-[644px]'>
+                                        Everything you need is here!!
+                                    </h2>
+                                    <p className='w-full lg:w-[560px] mt-3 lg:mt-[20px] text-xs sm:text-sm lg:text-lg'>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.
+                                    </p>
+                                    <Link to="/allproduct">
+                                        <button className='mt-6 lg:mt-[40px]'>
+                                            <a className='px-4 py-2 sm:px-6 sm:py-3 bg-[#FB2E86] text-white text-sm sm:text-base' href="#">Shop Now</a>
+                                        </button>
+                                    </Link>
+                                </div>
+                                <div className="flex justify-center lg:justify-end mt-4 lg:mt-0">
+                                    <img src={sofa} alt="" className="w-40 h-32 sm:w-64 sm:h-48 lg:w-auto lg:h-auto" />
+                                </div>
+                            </div>
+
+
+                            <div className="relative">
+                                <div className="lg:absolute lg:top-[200px] lg:left-0 text-center lg:text-left px-4 lg:px-0">
+                                    <p className='text-[#FB2E86] text-sm sm:text-base lg:text-[18px]'>We got whats the best for you</p>
+                                    <h2 className='text-2xl sm:text-3xl lg:text-[53px] font-semibold mt-4 lg:mt-[20px] font-josefin w-full lg:w-[644px]'>
+                                        New Furniture Collection Trends
+                                    </h2>
+                                    <p className='w-full lg:w-[560px] mt-3 lg:mt-[20px] text-xs sm:text-sm lg:text-lg'>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.
+                                    </p>
+                                    <Link to="/allproduct">
+                                        <button className='mt-6 lg:mt-[40px]'>
+                                            <a className='px-4 py-2 sm:px-6 sm:py-3 bg-[#FB2E86] text-white text-sm sm:text-base' href="#">Go to Shop</a>
+                                        </button>
+                                    </Link>
+                                </div>
+                                <div className="flex justify-center lg:justify-end mt-4 lg:mt-0">
+                                    <img src={sofa} alt="" className="w-40 h-32 sm:w-64 sm:h-48 lg:w-auto lg:h-auto" />
+                                </div>
+                            </div>
+
+
+                            <div className="relative">
+                                <div className="lg:absolute lg:top-[200px] lg:left-0 text-center lg:text-left px-4 lg:px-0">
+                                    <p className='text-[#FB2E86] text-sm sm:text-base lg:text-[18px]'>We got whats the best for you</p>
+                                    <h2 className='text-2xl sm:text-3xl lg:text-[53px] font-semibold mt-4 lg:mt-[20px] font-josefin w-full lg:w-[644px]'>
+                                        Everything you need is here
+                                    </h2>
+                                    <p className='w-full lg:w-[560px] mt-3 lg:mt-[20px] text-xs sm:text-sm lg:text-lg'>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.
+                                    </p>
+                                    <Link to="/allproduct">
+                                        <button className='mt-6 lg:mt-[40px]'>
+                                            <a className='px-4 py-2 sm:px-6 sm:py-3 bg-[#FB2E86] text-white text-sm sm:text-base' href="#">Shop Now</a>
+                                        </button>
+                                    </Link>
+                                </div>
+                                <div className="flex justify-center lg:justify-end mt-4 lg:mt-0">
+                                    <img src={sofa} alt="" className="w-40 h-32 sm:w-64 sm:h-48 lg:w-auto lg:h-auto" />
+                                </div>
+                            </div>
                         </Slider>
                     </div>
                 </div>
