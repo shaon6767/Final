@@ -67,9 +67,9 @@ const Header = () => {
             <Container>
                 <div className="">
                     <div className="py-2">
-                        <div className="grid lg:grid-cols-6 sm:grid-cols-10 md:grid-cols-8">
+                        <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-6 ">
                             <div className="flex gap-10">
-                                <div className="flex gap-2 items-center">
+                                <div className="hidden sm:flex gap-2 items-center">
                                     <div className="text-white">
                                         <GoMail />
                                     </div>
@@ -90,7 +90,7 @@ const Header = () => {
                             <div className=""></div>
                             <div className=""></div>
                             <div className="flex lg:ml-[30px] sm:ml-[10px] items-center gap-3">
-                                <div className="flex items-center">
+                                <div className="hidden lg:flex items-center ">
                                     <div className="">
                                         <button
                                             id="dropdownDefaultButton"
@@ -150,11 +150,11 @@ const Header = () => {
                                     </div>
                                 </div>
                                 <div className="flex items-center lg:px-2 sm:px-0 gap-2 text-white">
-                                    <p>Login</p>
+                                    <p className='hidden sm:block'>Login</p>
                                     <FaUser />
                                 </div>
                                 <div className="flex items-center gap-2 lg:px-2 sm:px-0 text-white">
-                                    <p>Wishlist</p>
+                                    <p className='hidden sm:block'>Wishlist</p>
                                     <FaRegHeart />
                                 </div>
 

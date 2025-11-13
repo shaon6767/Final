@@ -46,9 +46,7 @@ const Cart = () => {
                             <h1 className="text-3xl font-bold text-[#0D134E] mb-2">Shopping Cart</h1>
                              <h2 className='mb-16 text-[#0D134E]'><Link to="/"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Home</span></Link>.Pages.<Link to="/allproduct"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Products</span></Link></h2>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                                {/* Left Column - Cart Items */}
                                 <div className="lg:col-span-2 bg-white">
-                                    {/* Table Header */}
                                     <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-gray-50 font-semibold text-gray-700">
                                         <div className="col-span-4">Product</div>
                                         <div className="col-span-2 text-center">Price</div>
@@ -70,17 +68,17 @@ const Cart = () => {
                                                     />
                                                     <div>
                                                         <Link  to={`/productdetails/${item.id}`}>
-                                                        <h3 className="font-semibold hover:underline text-[#0D134E]">{item.title}</h3>
+                                                        <h3 className="font-semibold hover:underline hidden md:block text-[#0D134E]">{item.title}</h3>
                                                         </Link>
-                                                        <p className="text-sm text-gray-500">{item.category}</p>
+                                                        <p className="text-sm text-gray-500 hidden md:block">{item.category}</p>
                                                     </div>
                                                 </div>
                                                 <div className="col-span-2 text-center text-gray-600">${item.price}</div>
                                                 <div className="col-span-3 flex justify-center">
                                                     <div className="flex items-center bg-blue-50 rounded-lg overflow-hidden">
-                                                        <button onClick={() => handleDecrement(i)} className="px-4 py-2 text-blue-600 hover:bg-blue-100 transition-colors">-</button>
+                                                        <button onClick={() => handleDecrement(i)} className="px-0 md:px-4 py-0  md:py-2 text-blue-600 hover:bg-blue-100 transition-colors">-</button>
                                                         <span className="px-4 py-2 bg-white border-x border-blue-200">{item.quantity}</span>
-                                                        <button onClick={() => handleIncrement(i)} className="px-4 py-2 text-blue-600 hover:bg-blue-100 transition-colors">+</button>
+                                                        <button onClick={() => handleIncrement(i)} className="px-0 md:px-4 py-0 md:py-2 text-blue-600 hover:bg-blue-100 transition-colors">+</button>
                                                     </div>
                                                 </div>
                                                 <div className="col-span-2 text-center font-semibold text-gray-800 flex items-center justify-center gap-2">
@@ -183,8 +181,8 @@ const Cart = () => {
                                                 </div>
                                             </div>
 
-                                            <button className="w-full border border-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-50 transition-colors">
-                                                Calculate Shipping
+                                            <button className="w-full mt-7 border border-gray-300 text-white py-2 rounded-lg bg-blue-500 hover:bg-blue-600 transition-colors">
+                                               <a href="#"> Calculate Shipping</a>
                                             </button>
                                         </div>
                                     </div>

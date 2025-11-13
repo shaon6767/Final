@@ -106,7 +106,7 @@ const Latest = () => {
         <div className="mt-8 sm:mt-12 lg:mt-[100px]">
           <h2 className='text-center text-[#1A0B5B] text-2xl sm:text-3xl lg:text-[42px] font-semibold'>What Shopex Offer!</h2>
           <div className="">
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-6 sm:mt-8">
+            <div className="grid grid-cols-2  xl:grid-cols-4 gap-4 sm:gap-6 mt-6 sm:mt-8">
               <div className="bg-white p-6 sm:p-8 lg:p-16 shadow-lg text-center">
                 <div className="flex justify-center mb-3 sm:mb-4">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gray-200 rounded-full flex items-center justify-center">

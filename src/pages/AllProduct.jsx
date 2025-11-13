@@ -135,7 +135,7 @@ const AllProduct = () => {
 
   return (
     <Container>
-      <div className="mt-[60px] py-[40px]">
+      <div className="mt-2 lg:mt-[60px] py-[40px]">
         <h2 className='text-[#101750] text-[36px] font-semibold'>Category</h2>
         <div className="">
           <h2 className='text-[#0D134E]'><Link to="/"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Home</span></Link>.Pages.<Link to="/allproduct"><span className='text-[#0D134E] hover:text-[#FB2E86]'>Products</span></Link></h2>
@@ -145,16 +145,16 @@ const AllProduct = () => {
       <div className="">
         <div className="mx-auto py-3">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="w-full md:w-2/5 mb-3 md:mb-0">
+            <div className="w-full md:w-2/5 mb-3 md:mb-0 hidden lg:block">
               <h2 className="text-lg font-semibold text-[#151875]">
                 Ecommerce Accessories & Fashion Items
               </h2>
             </div>
 
-            <div className="w-full md:w-3/5 flex flex-col md:flex-row justify-end items-center space-y-3 md:space-y-0 md:space-x-4">
+            <div className="flex gap-2 w-full md:flex lg:flex sm:flex-row justify-end items-center space-y-3 md:space-y-0 md:space-x-4">
               {filterShow.length === 0 && (
-                <div className="flex items-center space-x-2">
-                  <span className="text-sm text-[#3F509E]">Per page:</span>
+                <div className="flex items-center space-x-0 lg:space-x-2">
+                  <span className="text-sm text-[#3F509E] hidden sm:block">Per page:</span>
                   <select onChange={handlePerPage} className="text-sm border rounded px-2 w-[60px] py-1">
                     <option value="6">6</option>
                     <option value="9">9</option>
@@ -166,7 +166,7 @@ const AllProduct = () => {
               )}
 
               <div className="flex items-center space-x-2">
-                <span className="text-sm text-[#3F509E]">Sort by:</span>
+                <span className="text-sm text-[#3F509E] hidden sm:block">Sort by:</span>
                 <select className="text-sm border w-[150px] rounded px-2 py-1">
                   <option value="newest">Newest</option>
                   <option value="price-low">Price: Low to High</option>
@@ -180,7 +180,7 @@ const AllProduct = () => {
                 <button onClick={handleGridView} className={`p-1.5 rounded ${view == "active" ? "" : "bg-blue-500 text-white"}`}> <FaTh size={16} /> </button>
                 <button onClick={handleListView} className={`p-1.5 rounded ${view == "active" ? "bg-blue-500 text-white" : ""}`}>
                   <FaList size={16} /> </button></div>
-              <div className="flex-1 max-w-xs"> <input type="text" className="w-full py-1.5 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 text-sm" placeholder="" />
+              <div className="flex-1 max-w-xs"> <input type="text" className="hidden sm:block w-full py-1.5 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 text-sm" placeholder="" />
               </div>
             </div>
           </div>
@@ -190,10 +190,10 @@ const AllProduct = () => {
       <div className="">
         <div className="container mx-auto py-6">
           <div className="flex flex-col lg:flex-row gap-10">
-            <div className="w-full lg:w-1/5">
+            <div className="w-full lg:w-1/5 hidden md:block">
               <div className="bg-white">
                 <div className="flex justify-between items-center mb-8">
-                  <h2 className="font-semibold text-[18px] text-[blue]">All Category</h2>
+                  <h2 className="font-semibold text-[18px] text-[blue] hidden lg:block">All Category</h2>
                   {filterShow.length > 0 &&
                     <button onClick={handleClear} className="text-sm underline text-red-600 cursor-pointer">
                       Clear Filters
@@ -278,23 +278,23 @@ const AllProduct = () => {
                         {cateFilterShow.map((item) => (
                           <div key={item.id} className={`flex items-center gap-4 p-4 w-full bg-white hover:shadow-lg hover:scale-105 transition-all ease-in-out`}>
                             <Link to={`/productdetails/${item.id}`}>
-                              <img src={item.thumbnail} alt="" className={`w-[200px] h-[170px] flex justify-start`} />
+                              <img src={item.thumbnail} alt="" className={`w-[60px] h-[60px] md:w-[120px] md:h-[100px] lg:w-[200px] lg:h-[170px] flex justify-start`} />
                             </Link>
                             <div className="flex-1">
                               <h2 className={`w-full flex justify-start text-[#151875] font-semibold text-lg`}>{item.title}</h2>
                               <div className="flex items-center mt-2">
-                                <div className="flex text-yellow-400">
+                                <div className=" text-yellow-400 hidden md:flex">
                                   {clientRating(item.rating)}
                                 </div>
-                                <span className="text-sm text-gray-600 ml-2">({item.rating})</span>
+                                <span className="text-sm text-gray-600 hidden md:block ml-2">({item.rating})</span>
                               </div>
-                              <p className="text-[#9295AA] mt-2">{item.description}</p>
+                              <p className="text-[#9295AA] mt-2 hidden lg:block">{item.description}</p>
                               <div className="flex justify-between items-center mt-3">
                                 <div className="flex items-center gap-2">
                                   <span className="text-lg font-bold text-[#111C85]">${discountPrice(item)}</span>
                                   <span className="text-lg font-bold line-through text-[#FF2AAA]">${item.price}</span>
                                 </div>
-                                <div className="">
+                                <div className="flex">
                                   <button className="bg-white p-2 rounded-full hover:bg-gray-200">
                                     <SlHeart size={18} className="text-blue-600" />
                                   </button>
@@ -311,11 +311,11 @@ const AllProduct = () => {
                         ))}
                       </div>
                     ) : (
-                      <div className={`w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6`}>
+                      <div className={`w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6`}>
                         {cateFilterShow.map((item) => (
                           <div key={item.id} className={`py-2 group relative bg-white hover:shadow-lg hover:scale-105 transition-all ease-in-out`}>
                             <Link to={`/productdetails/${item.id}`}>
-                              <img src={item.thumbnail} alt="" className={`w-full h-[250px] object-cover`} />
+                              <img src={item.thumbnail} alt="" className={`w-full h-[150px] lg:h-[250px] object-cover`} />
                             </Link>
                             <div className="p-4">
                               <h2 className={`flex justify-center text-blue-600 duration-150 ease-in-out`}>{item.title}</h2>
@@ -361,27 +361,27 @@ const AllProduct = () => {
                 ) : (
                   <div>
                     {view == "active" ? (
-                      <div className={`w-full flex flex-col space-y-4`}>
+                      <div className={`w-full flex flex-col space-y-0 md:space-y-2 lg:space-y-4`}>
                         {allPage.map((item) => (
                           <div key={item.id} className={`flex items-center gap-4 p-4 w-full bg-white hover:shadow-lg hover:scale-105 transition-all ease-in-out`}>
                             <Link to={`/productdetails/${item.id}`}>
-                              <img src={item.thumbnail} alt="" className={`w-[200px] h-[170px] flex justify-start`} />
+                              <img src={item.thumbnail} alt="" className={`w-[60px] h-[60px] md:w-[120px] md:h-[100px] lg:w-[200px] lg:h-[170px] flex justify-start`} />
                             </Link>
                             <div className="flex-1">
                               <h2 className={`w-full flex justify-start text-[#151875] font-semibold text-lg`}>{item.title}</h2>
                               <div className="flex items-center mt-2">
-                                <div className="flex text-yellow-400">
+                                <div className=" text-yellow-400 hidden md:flex">
                                   {clientRating(item.rating)}
                                 </div>
-                                <span className="text-sm text-gray-600 ml-2">({item.rating})</span>
+                                <span className="text-sm text-gray-600 hidden md:block ml-2">({item.rating})</span>
                               </div>
-                              <p className="text-[#9295AA] mt-2">{item.description}</p>
+                              <p className="text-[#9295AA] mt-2 hidden lg:block">{item.description}</p>
                               <div className="flex justify-between items-center mt-3">
                                 <div className="flex items-center gap-2">
                                   <span className="text-lg font-bold text-[#111C85]">${discountPrice(item)}</span>
                                   <span className="text-lg font-bold line-through text-[#FF2AAA]">${item.price}</span>
                                 </div>
-                                <div className="">
+                                <div className="flex sm:gap-4 lg:gap-0">
                                   <button className="bg-white p-2 rounded-full hover:bg-gray-200">
                                     <SlHeart size={18} className="text-blue-800" />
                                   </button>
@@ -398,11 +398,11 @@ const AllProduct = () => {
                         ))}
                       </div>
                     ) : (
-                      <div className={`w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6`}>
+                      <div className={`w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6`}>
                         {allPage.map((item) => (
                           <div key={item.id} className={`py-2 group relative bg-white hover:shadow-lg hover:scale-105 transition-all ease-in-out`}>
                             <Link to={`/productdetails/${item.id}`}>
-                              <img src={item.thumbnail} alt="" className={`w-full h-[250px] object-cover`} />
+                              <img src={item.thumbnail} alt="" className={`w-full h-[150px] lg:h-[250px] object-cover`} />
                             </Link>
                             <div className="p-4">
                               <h2 className={`flex justify-center text-blue-600 duration-150 ease-in-out`}>{item.title}</h2>
