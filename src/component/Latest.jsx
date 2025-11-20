@@ -67,7 +67,7 @@ const Latest = () => {
           <button onClick={handleSpecialOffer} className={`text-sm sm:text-base lg:text-[18px] font-semibold pb-2 ${activeCategory == "specialOffer" ? 'text-pink-500 border-b-2 border-pink-500' : 'text-[#1A0B5B]'}`}>Special Offer</button>
         </div>
 
-        <div className="mt-6 sm:mt-8 lg:mt-[50px] grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="mt-6 sm:mt-8 lg:mt-[50px] grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-2">
           {filteredProducts.map((item) => (
             <Link to={`/productdetails/${item.id}`} className="group">
               <div className="bg-white p-2 sm:p-6 lg:p-4 h-[180px] sm:h-[350px] lg:h-[400px] flex items-center cursor-pointer justify-center relative overflow-hidden">

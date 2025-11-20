@@ -182,7 +182,7 @@ const Cart = () => {
                                             </div>
 
                                             <button className="w-full mt-7 border border-gray-300 text-white py-2 rounded-lg bg-blue-500 hover:bg-blue-600 transition-colors">
-                                               <a href="#"> Calculate Shipping</a>
+                                               <a href="#">Calculate Shipping</a>
                                             </button>
                                         </div>
                                     </div>
@@ -193,7 +193,7 @@ const Cart = () => {
                 ) : (
                     <div className="max-w-[300px] mx-auto mt-[200px] pb-[100px]">
                         <div className="flex items-center gap-2">
-                            <p className="text-[24px]">No data found </p>
+                            <p className="text-[24px]">No Data found </p>
                             <PiSmileySadLight className='text-[30px]' />
                         </div>
                         <Link to="/allproduct"><button className='ml-6 mt-6 px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700'><a href="#">Back to Products</a></button></Link>
