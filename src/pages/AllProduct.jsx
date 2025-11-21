@@ -21,6 +21,7 @@ const AllProduct = () => {
   let [view, setView] = useState("");
   let [cateFilterShow, setCateFilterShow] = useState([]);
   let [show, setShow] = useState(true);
+  let [searchProduct, setSearchProduct] = useState("");
   let dispatch = useDispatch()
 
   let lastPage = perPage * currentPage;
@@ -85,6 +86,22 @@ const AllProduct = () => {
     let ratingFilter = info.products.filter((item) => item.rating == rating);
     setFilterShow(ratingFilter);
   }
+
+  let handleSearch = (e) => {
+    let searchValue = e.target.value.toLowerCase();
+    setSearchProduct(searchValue);
+
+    if (searchValue === "") {
+      setFilterShow([]);
+    } else {
+      let searchResults = info.products.filter(item =>
+        item.title.toLowerCase().includes(searchValue) ||
+        item.category.toLowerCase().includes(searchValue) ||
+        item.brand.toLowerCase().includes(searchValue)
+      );
+      setFilterShow(searchResults);
+    }
+  };
 
   let handleClear = () => {
     setFilterShow([]);
@@ -180,7 +197,14 @@ const AllProduct = () => {
                 <button onClick={handleGridView} className={`p-1.5 rounded ${view == "active" ? "" : "bg-blue-500 text-white"}`}> <FaTh size={16} /> </button>
                 <button onClick={handleListView} className={`p-1.5 rounded ${view == "active" ? "bg-blue-500 text-white" : ""}`}>
                   <FaList size={16} /> </button></div>
-              <div className="flex-1 max-w-xs"> <input type="text" className="hidden sm:block w-full py-1.5 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 text-sm" placeholder="" />
+              <div className="flex-1 max-w-xs">
+                <input
+                  type="text"
+                  className="hidden sm:block w-full py-1.5 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 text-sm"
+                  placeholder="Search products..."
+                  value={searchProduct}
+                  onChange={handleSearch}
+                />
               </div>
             </div>
           </div>
